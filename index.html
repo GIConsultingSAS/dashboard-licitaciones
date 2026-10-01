@@ -1022,6 +1022,299 @@
       .opps-grid { grid-template-columns: 1fr; }
       .card-actions { grid-template-columns: 1fr; }
     }
+
+    /* --- COMPONENTES ESPECIALES: RADICACIÓN, TIMELINE Y COUNTDOWNS --- */
+    .banner-radicada {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(6, 78, 59, 0.4) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+    }
+
+    .banner-radicada-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #34d399;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .pulse-dot-green {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 12px #10b981;
+      display: inline-block;
+      animation: pulseGreen 1.6s infinite ease-in-out;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    .banner-radicada-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem;
+      font-size: 0.775rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .banner-radicada-grid div span {
+      color: #94a3b8;
+      font-weight: 500;
+      margin-right: 0.35rem;
+    }
+
+    .banner-radicada-grid div strong {
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+
+    /* Timeline de Fases Post-Radicación */
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+      padding: 0.75rem 0.5rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .t-step {
+      text-align: center;
+      position: relative;
+      padding: 0.4rem 0.2rem;
+    }
+
+    .t-step-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .t-step.done .t-step-icon {
+      background: #10b981;
+      color: #064e3b;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    }
+
+    .t-step.active .t-step-icon {
+      background: #f59e0b;
+      color: #78350f;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+      animation: pulseAmber 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseAmber {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    .t-step.pending .t-step-icon {
+      background: rgba(255, 255, 255, 0.08);
+      color: #64748b;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .t-step-title {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .t-step-date {
+      font-size: 0.675rem;
+      color: #94a3b8;
+      margin-top: 0.2rem;
+    }
+
+    /* Caja de Cuenta Regresiva (Countdown Box) */
+    .countdown-box {
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      border: 1px solid;
+    }
+
+    .countdown-urgent {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(159, 18, 57, 0.25) 100%);
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .countdown-warning {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(3, 105, 161, 0.22) 100%);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .countdown-normal {
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(15, 118, 110, 0.2) 100%);
+      border-color: rgba(45, 212, 191, 0.3);
+    }
+
+    .countdown-closed {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 95, 70, 0.2) 100%);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .countdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .countdown-timer {
+      font-family: 'Outfit', monospace, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .countdown-footer {
+      font-size: 0.725rem;
+      color: #94a3b8;
+    }
+
+    /* Panel Maestro de Rendimiento Financiero del Portafolio */
+    .portfolio-financial-panel {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .p-fin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .p-fin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .p-fin-item {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .p-fin-item.highlight {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+    }
+
+    .p-fin-item .lbl {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 0.25rem;
+    }
+
+    .p-fin-item .val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .p-fin-item.highlight .val {
+      color: #34d399;
+    }
+
+    .p-fin-item .sub {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* Tab 6: Banco de Expertos */
+    .expert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .expert-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .expert-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-prof { background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.4); }
+    .badge-cro { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-invima { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+    .pitch-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
   </style>
 </head>
 <body>
@@ -1053,50 +1346,54 @@
     <div class="metrics-grid">
       <div class="metric-card" style="--card-color: var(--accent-emerald);">
         <div class="metric-label">
-          <span>Cartera Lista para Radicación</span>
-          <span style="color: var(--accent-emerald);">● Listo</span>
+          <span>Oferta Radicada en CCB 32540</span>
+          <span style="color: var(--accent-emerald);">● RADICADA & CERRADA</span>
         </div>
-        <div class="metric-value">$518.011.000</div>
-        <div class="metric-subtext">5 propuestas completas en PDF/DOCX con 97 soportes</div>
+        <div class="metric-value" style="color:#34d399;">$110.000.000</div>
+        <div class="metric-subtext">🔒 Convocatoria Cerrada 30-Sep • En Evaluación Técnica (Hito ~05-Oct)</div>
+      </div>
+
+      <div class="metric-card" style="--card-color: var(--accent-rose);">
+        <div class="metric-label">
+          <span>Próximo Cierre de Cartera</span>
+          <span style="color: var(--accent-rose);">● 🚨 CRÍTICO</span>
+        </div>
+        <div class="metric-value" id="topKpiCountdownBic" style="font-size:1.7rem; color:#fb7185;">5d 20h Restantes</div>
+        <div class="metric-subtext">Grupo Bicentenario ($175M) • Cierre: 06-Oct-2026 17:00 SECOP II</div>
       </div>
 
       <div class="metric-card" style="--card-color: var(--accent-blue);">
         <div class="metric-label">
-          <span>Pipeline Mamonal & Caribe</span>
-          <span style="color: var(--accent-blue);">● Radar Activo</span>
+          <span>Cartera Total Estructurada</span>
+          <span style="color: var(--accent-blue);">● 5 Propuestas</span>
         </div>
-        <div class="metric-value">247 Procesos</div>
-        <div class="metric-subtext">Reficar, Ecopetrol, Esenttia, Bolívar y Distrito Cartagena</div>
-      </div>
-
-      <div class="metric-card" style="--card-color: var(--accent-indigo);">
-        <div class="metric-label">
-          <span>Grandes Compradores Mapeados</span>
-          <span style="color: var(--accent-indigo);">● Homologación</span>
-        </div>
-        <div class="metric-value">11 Empresas</div>
-        <div class="metric-subtext">Argos, Tenaris, Yara, Promigas, Celsia, Terpel, Bancolombia</div>
+        <div class="metric-value">$518.011.000</div>
+        <div class="metric-subtext">$110M Radicada + $408M Listas para Radicación Inmediata</div>
       </div>
 
       <div class="metric-card" style="--card-color: var(--accent-amber);">
         <div class="metric-label">
-          <span>Equipo Proponente Habilitado</span>
-          <span style="color: var(--accent-amber);">● 100% Idóneo</span>
+          <span>Margen Neto Proyectado Libre</span>
+          <span style="color: var(--accent-amber);">● 75.8% Margen</span>
         </div>
-        <div class="metric-value">3 Líderes</div>
-        <div class="metric-subtext">Dra. Julia Pardo (Farmacia/HSEQ) • Ing. Alicia Guzmán (Cumplimiento) • Dr. Luis Daniel (Legal)</div>
+        <div class="metric-value" style="color:#fbbf24;">$392.711.000</div>
+        <div class="metric-subtext">Utilidad neta libre proyectada después de costos y retenciones</div>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="tabs-nav">
       <button class="tab-btn active" onclick="switchTab('cartera')">
-        ⭐ Cartera Estructurada y Lista
-        <span class="badge-count">5</span>
+        ⭐ Cartera y Ofertas
+        <span class="badge-count" style="background:var(--accent-emerald);">1 Radicada • 4 Listas</span>
       </button>
       <button class="tab-btn" onclick="switchTab('radar')">
         📡 Radar de Oportunidades SECOP II & Mamonal
-        <span class="badge-count">247</span>
+        <span class="badge-count">251 Procesos</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('expertos')">
+        👥 Banco de Expertos (Bioequivalencia CCB)
+        <span class="badge-count" style="background:var(--accent-indigo);">5 Aliados</span>
       </button>
       <button class="tab-btn" onclick="switchTab('homologacion')">
         🏢 Homologación de Proveedores (Suplos / Ariba / Exiros)
@@ -1153,17 +1450,144 @@
 
       <div id="carteraGrid" class="cartera-grid">
 
+        <div class="cartera-card" data-estado="RADICADA" data-proponente="JULIA" data-monto="110000000" data-text="cámara de comercio de bogotá — ccb (clúster farmacéutico) convocatoria privada — cotización aceptada n° 32540 (convocatoria-2807-2026) asesoría técnica especializada en biodisponibilidad (bd), bioequivalencia (be), bioexenciones (guía invima ass-rsa-gu052) y caracterización de laboratorios para 15 empresas farmacéuticas. julia inés pardo carmona">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+              <span class="cartera-tag tag-emerald">🔒 CERRADA • ✅ RADICADA OFICIALMENTE</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: CCB_FARMACEUTICO</span>
+            </div>
+
+            <h3>CÁMARA DE COMERCIO DE BOGOTÁ — CCB (Clúster Farmacéutico)</h3>
+            <div class="proc-code">Convocatoria Privada — Cotización Aceptada N° 32540 (Convocatoria-2807-2026)</div>
+
+            
+            <!-- BANNER OFICIAL DE RADICACIÓN Y CIERRE -->
+            <div class="banner-radicada">
+              <div class="banner-radicada-top">
+                <span class="pulse-dot-green"></span>
+                <span>🔒 CONVOCATORIA CERRADA • ✅ OFERTA RADICADA OFICIALMENTE</span>
+              </div>
+              <div class="banner-radicada-grid">
+                <div><span>Radicación:</span> <strong>30 de Septiembre de 2026, 16:55:49 COT</strong></div>
+                <div><span>Plataforma:</span> <strong>Portal Transaccional Itbid CCB</strong></div>
+                <div><span>Expediente:</span> <strong>18 Documentos y Soportes Oficiales</strong></div>
+                <div><span>Proponente:</span> <strong>Julia Inés Pardo Carmona (TP 408)</strong></div>
+                <div><span>Presupuesto Radicado:</span> <strong>$110.000.000 COP (IVA $0)</strong></div>
+                <div><span>Fase Actual:</span> <strong>Fase 2: Evaluación Técnica y Económica por Comité CCB</strong></div>
+              </div>
+            </div>
+
+            <!-- TIMELINE VISUAL DE 4 ETAPAS POST-RADICACIÓN -->
+            <div class="timeline-steps">
+              <div class="t-step done">
+                <div class="t-step-icon">✓</div>
+                <div class="t-step-title">1. Radicación Oficial</div>
+                <div class="t-step-date">30-Sep 16:55 (Completada)</div>
+              </div>
+              <div class="t-step active">
+                <div class="t-step-icon">⏳</div>
+                <div class="t-step-title">2. Evaluación Técnica</div>
+                <div class="t-step-date">01 al 05-Oct (En Curso)</div>
+              </div>
+              <div class="t-step pending">
+                <div class="t-step-icon">📋</div>
+                <div class="t-step-title">3. Subsanaciones</div>
+                <div class="t-step-date">~05 al 08-Oct</div>
+              </div>
+              <div class="t-step pending">
+                <div class="t-step-icon">🎯</div>
+                <div class="t-step-title">4. Adjudicación</div>
+                <div class="t-step-date">~12-Oct</div>
+              </div>
+            </div>
+
+            <!-- PRÓXIMO HITO CCB -->
+            <div class="countdown-box countdown-closed">
+              <div class="countdown-header" style="color:#34d399;">
+                <span>🎯 Próximo Hito de Seguimiento CCB</span>
+                <span>Fase de Evaluación</span>
+              </div>
+              <div class="countdown-timer" id="timer_CCB" style="color:#a7f3d0; font-size:1.05rem;">
+                ⏳ Publicación del Informe de Evaluación y Lista de Elegibles en Itbid CCB
+              </div>
+              <div class="countdown-footer">
+                Fecha programada: <strong>05 de Octubre de 2026, 17:00 COT</strong> • Tiempo estimado: <strong class="live-cd" data-deadline="2026-10-05T17:00:00">Calculando...</strong>
+              </div>
+            </div>
+        
+
+            <p class="cartera-desc">Asesoría técnica especializada en Biodisponibilidad (BD), Bioequivalencia (BE), Bioexenciones (Guía INVIMA ASS-RSA-GU052) y caracterización de laboratorios para 15 empresas farmacéuticas.</p>
+            
+            <div class="proponent-box">
+              <div class="proponent-name">
+                Julia Inés Pardo Carmona 
+                <span>(Líder Proponente Habilitado)</span>
+              </div>
+              <div class="proponent-detail">Química Farmacéutica (TP 408) | Especialista en SG-SST (Licencia DADIS 306) | Auditora Líder ICONTEC (+30 años de experiencia) | Experiencia en laboratorios farmacéuticos y CCAA ante INVIMA</div>
+              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
+                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán (NDAs y Reserva de Patentes) + Ing. Alicia Guzmán (Coordinación 150h) + Banco de Expertos BD/BE
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="cartera-financials">
+              <div>
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Presupuesto Oficial</div>
+                <div class="price">$110.000.000 COP</div>
+              </div>
+              <div class="term">8 Meses (A todo costo antes de IVA - No Responsable de IVA)</div>
+            </div>
+
+            <div class="card-actions">
+              <a href="propuesta ccb 32540/01 Propuesta Tecnica CCB 32540.pdf" target="_blank" class="btn btn-primary">
+                📄 Propuesta Técnica PDF
+              </a>
+              <a href="propuesta ccb 32540/02 Formato Oficial Cotizacion Numeral11.pdf" target="_blank" class="btn btn-secondary">
+                💰 Propuesta Económica
+              </a>
+              <a href="propuesta ccb 32540/00 Invitacion CCB Diligenciada Oficial.pdf" target="_blank" class="btn btn-secondary">
+                ✉️ Carta de Presentación
+              </a>
+              <a href="propuesta ccb 32540/03 Checklist Radicacion CCB 32540.pdf" target="_blank" class="btn btn-secondary">
+                ✅ Checklist (18 Docs)
+              </a>
+            </div>
+          </div>
+        </div>
+    
         <div class="cartera-card" data-estado="LISTA" data-proponente="ALICIA" data-monto="174996000" data-text="grupo bicentenario s.a.s. (holding financiero del estado) proceso secop ii n° 0112-2025 (id requerimiento: co1.req.9991699) oficialía de cumplimiento sagrilaft y programa de transparencia y ética empresarial (ptee). prestación de servicios profesionales de oficialía integral durante 12 meses. alicia esther guzmán pardo">
           <div>
-            <span class="cartera-tag tag-emerald">100% Radicable</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+              <span class="cartera-tag tag-rose">🚨 CIERRE EN 5 DÍAS • 📋 LISTA PARA RADICAR</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: BICENTENARIO</span>
+            </div>
+
             <h3>GRUPO BICENTENARIO S.A.S. (Holding Financiero del Estado)</h3>
             <div class="proc-code">Proceso SECOP II N° 0112-2025 (ID Requerimiento: CO1.REQ.9991699)</div>
+
+            
+            <!-- COUNTDOWN BOX EN TIEMPO REAL -->
+            <div class="countdown-box countdown-urgent">
+              <div class="countdown-header" style="color:#f43f5e;">
+                <span>⏳ Tiempo Restante para Cierre SECOP II</span>
+                <span style="background:rgba(0,0,0,0.3); padding:0.15rem 0.5rem; border-radius:4px;">Cierre Oficial</span>
+              </div>
+              <div class="countdown-timer live-cd" data-deadline="2026-10-06T17:00:00" style="color:#fff;">
+                Calculando tiempo restante...
+              </div>
+              <div class="countdown-footer">
+                Fecha límite improrrogable: <strong>06 de Octubre de 2026, 17:00:00 COT</strong>
+              </div>
+            </div>
+        
+
             <p class="cartera-desc">Oficialía de Cumplimiento SAGRILAFT y Programa de Transparencia y Ética Empresarial (PTEE). Prestación de servicios profesionales de oficialía integral durante 12 meses.</p>
             
             <div class="proponent-box">
               <div class="proponent-name">
                 Alicia Esther Guzmán Pardo 
-                <span>(Líder Proponente)</span>
+                <span>(Líder Proponente Habilitado)</span>
               </div>
               <div class="proponent-detail">Ingeniera Industrial (COPNIA) | Esp. Gerencia de Proyectos | Oficial de Cumplimiento Titular Cargoport | Diplomado 120h Infolaft | Certificación UIAF</div>
               <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
@@ -1198,107 +1622,38 @@
           </div>
         </div>
     
-        <div class="cartera-card" data-estado="RADICADA" data-proponente="JULIA" data-monto="110000000" data-text="cámara de comercio de bogotá — ccb (clúster farmacéutico) convocatoria privada — cotización aceptada n° 32540 (convocatoria-2807-2026) asesoría técnica especializada en biodisponibilidad (bd), bioequivalencia (be), bioexenciones (guía invima ass-rsa-gu052) y caracterización de laboratorios para 15 empresas farmacéuticas. julia inés pardo carmona">
-          <div>
-            <span class="cartera-tag tag-emerald">✅ OFERTA RADICADA (30-09-2026 16:55:49)</span>
-            <h3>CÁMARA DE COMERCIO DE BOGOTÁ — CCB (Clúster Farmacéutico)</h3>
-            <div class="proc-code">Convocatoria Privada — Cotización Aceptada N° 32540 (Convocatoria-2807-2026)</div>
-            <p class="cartera-desc">Asesoría técnica especializada en Biodisponibilidad (BD), Bioequivalencia (BE), Bioexenciones (Guía INVIMA ASS-RSA-GU052) y caracterización de laboratorios para 15 empresas farmacéuticas.</p>
-            
-            <div class="proponent-box">
-              <div class="proponent-name">
-                Julia Inés Pardo Carmona 
-                <span>(Líder Proponente)</span>
-              </div>
-              <div class="proponent-detail">Química Farmacéutica (TP 408) | Especialista en SG-SST (Licencia DADIS 306) | Auditora Líder ICONTEC (+30 años de experiencia) | Experiencia en laboratorios farmacéuticos y CCAA ante INVIMA</div>
-              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
-                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán (NDAs y Reserva de Patentes) + Ing. Alicia Guzmán (Coordinación 150h)
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="cartera-financials">
-              <div>
-                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Presupuesto Oficial</div>
-                <div class="price">$110.000.000 COP</div>
-              </div>
-              <div class="term">8 Meses (A todo costo antes de IVA - No Responsable de IVA)</div>
-            </div>
-
-            <div class="card-actions">
-              <a href="propuesta ccb 32540/01 Propuesta Tecnica CCB 32540.pdf" target="_blank" class="btn btn-primary">
-                📄 Propuesta Técnica PDF
-              </a>
-              <a href="propuesta ccb 32540/02 Formato Oficial Cotizacion Numeral11.pdf" target="_blank" class="btn btn-secondary">
-                💰 Propuesta Económica
-              </a>
-              <a href="propuesta ccb 32540/00 Invitacion CCB Diligenciada Oficial.pdf" target="_blank" class="btn btn-secondary">
-                ✉️ Carta de Presentación
-              </a>
-              <a href="propuesta ccb 32540/03 Checklist Radicacion CCB 32540.pdf" target="_blank" class="btn btn-secondary">
-                ✅ Checklist (18 Docs)
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="cartera-card" data-estado="LISTA" data-proponente="ALICIA" data-monto="22815000" data-text="bogotábio s.a.s. (planta de biológicos y vacunas de bogotá) proceso secop ii n° 022-2026 (id requerimiento: co1.req.9892110) asesoría integral en sagrilaft, programa de transparencia y ética empresarial (ptee), protección de datos personales (ley 1581) y protocolo de prevención del acoso laboral y sexual. alicia esther guzmán pardo">
-          <div>
-            <span class="cartera-tag tag-amber">100% Radicable</span>
-            <h3>BOGOTÁBIO S.A.S. (Planta de Biológicos y Vacunas de Bogotá)</h3>
-            <div class="proc-code">Proceso SECOP II N° 022-2026 (ID Requerimiento: CO1.REQ.9892110)</div>
-            <p class="cartera-desc">Asesoría integral en SAGRILAFT, Programa de Transparencia y Ética Empresarial (PTEE), Protección de Datos Personales (Ley 1581) y Protocolo de Prevención del Acoso Laboral y Sexual.</p>
-            
-            <div class="proponent-box">
-              <div class="proponent-name">
-                Alicia Esther Guzmán Pardo 
-                <span>(Líder Proponente)</span>
-              </div>
-              <div class="proponent-detail">Ingeniera Industrial (UTB) | Oficial de Cumplimiento Certificada UIAF e Infolaft 120h | Auditora Interna HSEQ ICONTEC | Auditora BASC V6</div>
-              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
-                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán Pardo (Abogado y Auditor ISO 27001)
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="cartera-financials">
-              <div>
-                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Presupuesto Oficial</div>
-                <div class="price">$22.815.000 COP</div>
-              </div>
-              <div class="term">3 Meses (Forma de pago por 3 entregables)</div>
-            </div>
-
-            <div class="card-actions">
-              <a href="propuesta_bogotabio_022_2026/01_Propuesta_Tecnica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-primary">
-                📄 Propuesta Técnica PDF
-              </a>
-              <a href="propuesta_bogotabio_022_2026/02_Propuesta_Economica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-secondary">
-                💰 Propuesta Económica
-              </a>
-              <a href="propuesta_bogotabio_022_2026/03_Carta_de_Presentacion_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-secondary">
-                ✉️ Carta de Presentación
-              </a>
-              <a href="propuesta_bogotabio_022_2026/04_Checklist_Radicacion_SECOP_BogotaBio.pdf" target="_blank" class="btn btn-secondary">
-                ✅ Checklist (22 Docs)
-              </a>
-            </div>
-          </div>
-        </div>
-    
         <div class="cartera-card" data-estado="LISTA" data-proponente="LUIS" data-monto="145200000" data-text="ministerio de tecnologías de la información y las comunicaciones (mintic) proceso secop ii — selección abreviada / menor cuantía (id requerimiento: co1.req.9987823 | notice uid: co1.ntc.9839958) consultoría técnica y jurídica para la articulación de mipg, directrices de seguridad digital bajo ntc-iso/iec 27001:2022, datos personales (ley 1581) y transformación pública institucional. dr. luis daniel guzmán pardo">
           <div>
-            <span class="cartera-tag tag-cyan">100% Radicable</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+              <span class="cartera-tag tag-cyan">⏰ CIERRE EN 8 DÍAS • 📋 LISTA PARA RADICAR</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: MINTIC</span>
+            </div>
+
             <h3>MINISTERIO DE TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (MinTIC)</h3>
             <div class="proc-code">Proceso SECOP II — Selección Abreviada / Menor Cuantía (ID Requerimiento: CO1.REQ.9987823 | Notice UID: CO1.NTC.9839958)</div>
+
+            
+            <!-- COUNTDOWN BOX EN TIEMPO REAL -->
+            <div class="countdown-box countdown-warning">
+              <div class="countdown-header" style="color:#38bdf8;">
+                <span>⏳ Tiempo Restante para Cierre SECOP II</span>
+                <span style="background:rgba(0,0,0,0.3); padding:0.15rem 0.5rem; border-radius:4px;">Cierre Oficial</span>
+              </div>
+              <div class="countdown-timer live-cd" data-deadline="2026-10-09T15:00:00" style="color:#fff;">
+                Calculando tiempo restante...
+              </div>
+              <div class="countdown-footer">
+                Fecha límite improrrogable: <strong>09 de Octubre de 2026, 15:00:00 COT</strong>
+              </div>
+            </div>
+        
+
             <p class="cartera-desc">Consultoría técnica y jurídica para la articulación de MIPG, directrices de Seguridad Digital bajo NTC-ISO/IEC 27001:2022, datos personales (Ley 1581) y transformación pública institucional.</p>
             
             <div class="proponent-box">
               <div class="proponent-name">
                 Dr. Luis Daniel Guzmán Pardo 
-                <span>(Líder Proponente)</span>
+                <span>(Líder Proponente Habilitado)</span>
               </div>
               <div class="proponent-detail">Abogado (Universidad de Cartagena, TP 288012 CSJ) | Auditor Interno ISO/IEC 27001:2022 (ICONTEC 48h) | Auditor Interno HSEQ | Ex-Asesor Jurídico Gobernación de Bolívar</div>
               <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
@@ -1335,15 +1690,36 @@
     
         <div class="cartera-card" data-estado="LISTA" data-proponente="ALICIA" data-monto="65000000" data-text="empresas públicas de cundinamarca s.a. e.s.p. (epc) proceso secop ii — menor cuantía (id requerimiento: co1.req.9985957 | notice uid: co1.ntc.9838084) apoyo a la gestión para la articulación, fortalecimiento y auditoría del sistema de gestión de calidad (iso 9001), control interno y gestión del riesgo bajo lineamientos mipg. alicia esther guzmán pardo">
           <div>
-            <span class="cartera-tag tag-teal">100% Radicable</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+              <span class="cartera-tag tag-teal">📅 CIERRE EN 12 DÍAS • 📋 LISTA PARA RADICAR</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: EPC</span>
+            </div>
+
             <h3>EMPRESAS PÚBLICAS DE CUNDINAMARCA S.A. E.S.P. (EPC)</h3>
             <div class="proc-code">Proceso SECOP II — Menor Cuantía (ID Requerimiento: CO1.REQ.9985957 | Notice UID: CO1.NTC.9838084)</div>
+
+            
+            <!-- COUNTDOWN BOX EN TIEMPO REAL -->
+            <div class="countdown-box countdown-normal">
+              <div class="countdown-header" style="color:#2dd4bf;">
+                <span>⏳ Tiempo Restante para Cierre SECOP II</span>
+                <span style="background:rgba(0,0,0,0.3); padding:0.15rem 0.5rem; border-radius:4px;">Cierre Oficial</span>
+              </div>
+              <div class="countdown-timer live-cd" data-deadline="2026-10-13T16:00:00" style="color:#fff;">
+                Calculando tiempo restante...
+              </div>
+              <div class="countdown-footer">
+                Fecha límite improrrogable: <strong>13 de Octubre de 2026, 16:00:00 COT</strong>
+              </div>
+            </div>
+        
+
             <p class="cartera-desc">Apoyo a la gestión para la articulación, fortalecimiento y auditoría del Sistema de Gestión de Calidad (ISO 9001), Control Interno y Gestión del Riesgo bajo lineamientos MIPG.</p>
             
             <div class="proponent-box">
               <div class="proponent-name">
                 Alicia Esther Guzmán Pardo 
-                <span>(Líder Proponente)</span>
+                <span>(Líder Proponente Habilitado)</span>
               </div>
               <div class="proponent-detail">Ingeniera Industrial (COPNIA) | Esp. Gerencia de Proyectos (UTB) | Auditora Interna HSEQ ICONTEC | Auditora BASC V6 | Oficial de Cumplimiento Titular Cargoport</div>
               <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
@@ -1373,6 +1749,72 @@
               </a>
               <a href="propuesta_epc_9985957/04_Checklist_Radicacion_SECOP_EPC.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (15 Docs)
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="cartera-card" data-estado="LISTA" data-proponente="ALICIA" data-monto="22815000" data-text="bogotábio s.a.s. (planta de biológicos y vacunas de bogotá) proceso secop ii n° 022-2026 (id requerimiento: co1.req.9892110) asesoría integral en sagrilaft, programa de transparencia y ética empresarial (ptee), protección de datos personales (ley 1581) y protocolo de prevención del acoso laboral y sexual. alicia esther guzmán pardo">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+              <span class="cartera-tag tag-amber">📅 CIERRE EN 15 DÍAS • 📋 LISTA PARA RADICAR</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: BOGOTABIO</span>
+            </div>
+
+            <h3>BOGOTÁBIO S.A.S. (Planta de Biológicos y Vacunas de Bogotá)</h3>
+            <div class="proc-code">Proceso SECOP II N° 022-2026 (ID Requerimiento: CO1.REQ.9892110)</div>
+
+            
+            <!-- COUNTDOWN BOX EN TIEMPO REAL -->
+            <div class="countdown-box countdown-normal">
+              <div class="countdown-header" style="color:#2dd4bf;">
+                <span>⏳ Tiempo Restante para Cierre SECOP II</span>
+                <span style="background:rgba(0,0,0,0.3); padding:0.15rem 0.5rem; border-radius:4px;">Cierre Oficial</span>
+              </div>
+              <div class="countdown-timer live-cd" data-deadline="2026-10-16T17:00:00" style="color:#fff;">
+                Calculando tiempo restante...
+              </div>
+              <div class="countdown-footer">
+                Fecha límite improrrogable: <strong>16 de Octubre de 2026, 17:00:00 COT</strong>
+              </div>
+            </div>
+        
+
+            <p class="cartera-desc">Asesoría integral en SAGRILAFT, Programa de Transparencia y Ética Empresarial (PTEE), Protección de Datos Personales (Ley 1581) y Protocolo de Prevención del Acoso Laboral y Sexual.</p>
+            
+            <div class="proponent-box">
+              <div class="proponent-name">
+                Alicia Esther Guzmán Pardo 
+                <span>(Líder Proponente Habilitado)</span>
+              </div>
+              <div class="proponent-detail">Ingeniera Industrial (UTB) | Oficial de Cumplimiento Certificada UIAF e Infolaft 120h | Auditora Interna HSEQ ICONTEC | Auditora BASC V6</div>
+              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
+                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán Pardo (Abogado y Auditor ISO 27001)
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="cartera-financials">
+              <div>
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Presupuesto Oficial</div>
+                <div class="price">$22.815.000 COP</div>
+              </div>
+              <div class="term">3 Meses (Forma de pago por 3 entregables)</div>
+            </div>
+
+            <div class="card-actions">
+              <a href="propuesta_bogotabio_022_2026/01_Propuesta_Tecnica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-primary">
+                📄 Propuesta Técnica PDF
+              </a>
+              <a href="propuesta_bogotabio_022_2026/02_Propuesta_Economica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-secondary">
+                💰 Propuesta Económica
+              </a>
+              <a href="propuesta_bogotabio_022_2026/03_Carta_de_Presentacion_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-secondary">
+                ✉️ Carta de Presentación
+              </a>
+              <a href="propuesta_bogotabio_022_2026/04_Checklist_Radicacion_SECOP_BogotaBio.pdf" target="_blank" class="btn btn-secondary">
+                ✅ Checklist (22 Docs)
               </a>
             </div>
           </div>
@@ -2414,6 +2856,255 @@
       </div>
     </div>
 
+
+    <!-- TAB 6: BANCO DE EXPERTOS & RED DE SUBCONTRATACIÓN (CCB 32540) -->
+    <div id="tab-expertos" class="tab-pane">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>Banco de Expertos & Red de Subcontratación Estratégica (CCB 32540)</h2>
+          <p>Ecosistema técnico especializado para la ejecución operativa de la consultoría farmacéutica en Biodisponibilidad, Bioequivalencia y Bioexenciones ($110.000.000 COP).</p>
+        </div>
+        <a href="https://www.linkedin.com/search/results/people/?keywords=%22Quimico%20Farmaceutico%22%20Bioequivalencia%20Colombia" target="_blank" class="btn btn-primary">
+          🔍 Buscar Especialistas en LinkedIn
+        </a>
+      </div>
+
+      <!-- Resumen Financiero de Subcontratación y Margen Operativo -->
+      <div class="portfolio-financial-panel">
+        <div class="p-fin-header">
+          <div>
+            <h3 style="font-family:'Outfit'; font-size:1.25rem; color:#fff; display:flex; align-items:center; gap:0.5rem;">
+              <span>💼 Estructura de Subcontratación y Margen Neto Libre (Contrato CCB)</span>
+            </h3>
+            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
+              Modelo de tercerización por honorarios técnicos independientes bajo la dirección general de la Dra. Julia Inés Pardo Carmona.
+            </p>
+          </div>
+          <span class="cartera-tag tag-emerald" style="font-size:0.8rem; padding:0.35rem 0.8rem;">
+            ✅ Contrato Radicado: $110.000.000 COP
+          </span>
+        </div>
+
+        <div class="p-fin-grid">
+          <div class="p-fin-item">
+            <div class="lbl">Presupuesto Radicado</div>
+            <div class="val">$110.000.000</div>
+            <div class="sub">Persona Natural (IVA $0)</div>
+          </div>
+          <div class="p-fin-item">
+            <div class="lbl">Subcontratación Expertos</div>
+            <div class="val" style="color:#f43f5e;">$33.000.000 - $39.000.000</div>
+            <div class="sub">30% - 35% del contrato</div>
+          </div>
+          <div class="p-fin-item">
+            <div class="lbl">Retenciones Estimadas</div>
+            <div class="val" style="color:#f59e0b;">~$7.600.000</div>
+            <div class="sub">ReteFuente (6%) + ReteICA (0.9%)</div>
+          </div>
+          <div class="p-fin-item highlight">
+            <div class="lbl">Utilidad Neta Libre</div>
+            <div class="val">$63.400.000 - $69.400.000</div>
+            <div class="sub">57.6% a 63.1% Margen Neto Libre</div>
+          </div>
+        </div>
+
+        <!-- Tabla Desglose de Componentes Operativos -->
+        <table class="opps-table" style="margin-top:1rem; font-size:0.825rem;">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Rol a Subcontratar</th>
+              <th>Dedicación</th>
+              <th>Honorarios Estimados (COP)</th>
+              <th>Estado de Gestión</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Comp. 1: Formación (10h)</strong></td>
+              <td>Docente Senior en Biofarmacia y Regulación</td>
+              <td>10h dictadas + memorias</td>
+              <td style="color:var(--accent-emerald); font-weight:700;">$5.000.000 - $6.000.000</td>
+              <td><span class="badge-fit">Cantera Mapeada</span></td>
+            </tr>
+            <tr>
+              <td><strong>Comp. 2: 15 Empresas (150h)</strong></td>
+              <td>Químico Farmacéutico Especialista en Guía INVIMA / BD / BE</td>
+              <td>150 horas (10h/empresa)</td>
+              <td style="color:var(--accent-emerald); font-weight:700;">$19.500.000 - $22.500.000 ($130k-$150k/h)</td>
+              <td><span class="badge-fit">Perfiles en Contacto</span></td>
+            </tr>
+            <tr>
+              <td><strong>Comp. 3: Mapeo de Laboratorios</strong></td>
+              <td>Químico Analista / Asistente BPL / Cromatografía</td>
+              <td>~50h levantamiento fichas</td>
+              <td style="color:var(--accent-emerald); font-weight:700;">$5.000.000 - $6.500.000</td>
+              <td><span class="badge-fit">CROs Identificadas</span></td>
+            </tr>
+            <tr>
+              <td><strong>Logística & Desplazamientos</strong></td>
+              <td>Tiquetes y viáticos Cartagena - Bogotá</td>
+              <td>3 desplazamientos</td>
+              <td style="color:var(--accent-emerald); font-weight:700;">$3.500.000 - $4.000.000</td>
+              <td><span class="badge-fit">Presupuestado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tarjetas de Perfiles / Candidatos Mapeados -->
+      <div style="margin-bottom:1.5rem;">
+        <h3 style="font-family:'Outfit'; font-size:1.3rem; color:#fff; margin-bottom:0.5rem;">
+          📋 Candidatos & Cantera Técnica Especializada
+        </h3>
+        <p style="font-size:0.85rem; color:#94a3b8;">
+          Profesionales de máxima idoneidad académica y regulatoria para vincular formalmente mediante Contrato de Prestación de Servicios (OPS).
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:1.25rem;">
+
+        <!-- Perfil 1 -->
+        <div class="expert-card" style="border-top:3px solid var(--accent-indigo);">
+          <div>
+            <div class="expert-badge badge-prof">🎓 Catedrática Titular — UNAL Bogotá</div>
+            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Dra. Yolima Baena Aristizábal</h4>
+            <div style="font-size:0.8rem; color:var(--accent-indigo); font-weight:600; margin-bottom:0.75rem;">
+              Química Farmacéutica, M.Sc., Ph.D. en Ciencias Farmacéuticas
+            </div>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              Profesora Titular del Departamento de Farmacia de la Universidad Nacional de Colombia. Titular formal de las cátedras de <em>Biodisponibilidad, Bioequivalencia y Biofarmacia</em>. Máxima autoridad pedagógica del país.
+            </p>
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
+              <div><strong>Rol Asignado:</strong> Docente Principal Componente 1 (10 horas)</div>
+              <div style="margin-top:0.25rem;"><strong>Honorarios Sugeridos:</strong> $5.000.000 - $6.000.000 COP</div>
+              <div style="margin-top:0.25rem;"><strong>Canal:</strong> HERMES UNAL / LinkedIn Bogotá</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Yolima%20Baena%22" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
+              Ver en LinkedIn 🌐
+            </a>
+            <button onclick="copiarPitchPersonalizado('Dra. Yolima Baena', this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
+              📋 Copiar Pitch
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfil 2 -->
+        <div class="expert-card" style="border-top:3px solid var(--accent-blue);">
+          <div>
+            <div class="expert-badge badge-prof">🔬 Investigador Senior — UNAL Bogotá</div>
+            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Dr. Néstor Álvaro Ospitia Ferrer</h4>
+            <div style="font-size:0.8rem; color:var(--accent-blue); font-weight:600; margin-bottom:0.75rem;">
+              Químico Farmacéutico, Docente e Investigador en Ciencias Farmacéuticas
+            </div>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              Profesor Asociado de la Universidad Nacional de Colombia. Experto en diseño experimental, perfiles de disolución y aplicación de la normativa de bioequivalencia ante INVIMA.
+            </p>
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
+              <div><strong>Rol Asignado:</strong> Asesor Pedagógico y Validador Curricular</div>
+              <div style="margin-top:0.25rem;"><strong>Honorarios Sugeridos:</strong> $4.000.000 - $5.000.000 COP</div>
+              <div style="margin-top:0.25rem;"><strong>Canal:</strong> Departamento de Farmacia UNAL</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Nestor%20Ospitia%22%20farmacia" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
+              Ver en LinkedIn 🌐
+            </a>
+            <button onclick="copiarPitchPersonalizado('Dr. Néstor Ospitia', this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
+              📋 Copiar Pitch
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfil 3 -->
+        <div class="expert-card" style="border-top:3px solid var(--accent-amber);">
+          <div>
+            <div class="expert-badge badge-invima">🏛️ Ex-Evaluadores INVIMA / Consultoras RA</div>
+            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Consultores Senior Asuntos Regulatorios</h4>
+            <div style="font-size:0.8rem; color:var(--accent-amber); font-weight:600; margin-bottom:0.75rem;">
+              Global Regulatory Affairs (GRA) / RA Asuntos Regulatorios S.A.S.
+            </div>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              Especialistas con experiencia directa en la Sala Especializada de Medicamentos del INVIMA. Expertos en diligenciamiento del formato ASS-RSA-FM079, bioexenciones BCS y perfiles f2.
+            </p>
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
+              <div><strong>Rol Asignado:</strong> Consultoría a las 15 Empresas (150 horas técnicas)</div>
+              <div style="margin-top:0.25rem;"><strong>Tarifa Negociada:</strong> $130.000 - $150.000 COP / hora</div>
+              <div style="margin-top:0.25rem;"><strong>Modelo:</strong> OPS por entregables validados</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Asuntos%20Regulatorios%22%20Bioequivalencia%20Bogota" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
+              Ver en LinkedIn 🌐
+            </a>
+            <button onclick="copiarPitchGenerico(this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
+              📋 Copiar Pitch
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfil 4 -->
+        <div class="expert-card" style="border-top:3px solid var(--accent-emerald);">
+          <div>
+            <div class="expert-badge badge-cro">🏥 Centros Clínicos & CROs Acreditadas</div>
+            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">DominguezLab Colombia / Cecif</h4>
+            <div style="font-size:0.8rem; color:var(--accent-emerald); font-weight:600; margin-bottom:0.75rem;">
+              Centros de Biofarmacia y Estudios Clínicos de BD/BE
+            </div>
+            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              CROs con instalaciones bioanalíticas y clínicas en Colombia y Latinoamérica. Cuentan con cromatografía líquida HPLC-MS/MS validada y camas de internación para estudios in vivo.
+            </p>
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
+              <div><strong>Rol Asignado:</strong> Aliados en Caracterización de Laboratorios (Comp. 3)</div>
+              <div style="margin-top:0.25rem;"><strong>Aporte:</strong> Fichas de capacidades analíticas y tarifarios</div>
+              <div style="margin-top:0.25rem;"><strong>Canal:</strong> Alianza institucional y vinculación de analistas</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="https://www.linkedin.com/search/results/people/?keywords=%22DominguezLab%22" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
+              Ver en LinkedIn 🌐
+            </a>
+            <button onclick="copiarPitchGenerico(this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
+              📋 Copiar Pitch
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Guion de Contacto Copiable con 1 Clic -->
+      <div class="pitch-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <h4 style="font-family:'Outfit'; color:#fff; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>📨 Guion de Contacto Directo / Pitch de LinkedIn y Correo</span>
+          </h4>
+          <button id="btnCopiarGuionFull" onclick="copiarGuionCompleto(this)" class="btn btn-primary" style="padding:0.4rem 0.9rem; font-size:0.8rem;">
+            📋 Copiar Guion Completo
+          </button>
+        </div>
+        <p style="font-size:0.775rem; color:#94a3b8; margin-bottom:0.75rem;">
+          Utilice este mensaje estructurado para invitar a los candidatos a formar parte del equipo técnico con honorarios atractivos y flexibilidad horaria:
+        </p>
+        <div id="guionTexto" style="background:rgba(0,0,0,0.5); padding:1rem; border-radius:6px; font-size:0.8rem; color:#cbd5e1; line-height:1.6; border:1px solid rgba(255,255,255,0.08); font-family:monospace; white-space:pre-wrap;">Asunto: Invitación Consultoría Especializada en Bioequivalencia — Clúster Farmacéutico CCB
+
+Estimado(a) [Nombre del Profesional],
+
+Le saludo muy cordialmente. Desde nuestra firma y bajo la dirección de la Dra. Julia Inés Pardo Carmona (Química Farmacéutica, Auditora Líder HSEQ), hemos estructurado y radicado ante la Cámara de Comercio de Bogotá (CCB) el proyecto de asesoría técnica especializada en Biodisponibilidad, Bioequivalencia (Resolución 1124/2016 y Guía INVIMA ASS-RSA-GU052) y Caracterización de Laboratorios para 15 empresas del Clúster Farmacéutico (Proceso N° 32540).
+
+Conociendo su sólida trayectoria profesional en biofarmacia y regulación sanitaria, nos gustaría invitarle a formar parte del equipo técnico especializado bajo la modalidad de Prestación de Servicios Profesionales por Horas (remoto/híbrido flexible durante 8 meses), con honorarios muy competitivos y soporte en nuestra plataforma digital (https://app.nextlevelsas.com/).
+
+¿Podríamos coordinar una breve llamada de 10 minutos esta semana para compartirle los detalles del alcance y coordinar su vinculación?
+
+Atentamente,
+Dra. Julia Inés Pardo Carmona
+Directora de Proyecto — C.C. 30.759.850 | TP 408
+Contacto Next Level: https://app.nextlevelsas.com/</div>
+      </div>
+
+    </div>
+
   </main>
 
   <!-- Interactive Detail Modal -->
@@ -2997,6 +3688,92 @@
 
     // Initial render
     renderFilteredOpportunities();
+
+    // --- TEMPORIZADOR EN VIVO (LIVE COUNTDOWNS) ---
+    function updateLiveCountdowns() {
+      const now = new Date();
+
+      document.querySelectorAll('.live-cd').forEach(el => {
+        const deadlineAttr = el.getAttribute('data-deadline');
+        if (!deadlineAttr) return;
+
+        const target = new Date(deadlineAttr);
+        const diffMs = target - now;
+
+        if (diffMs <= 0) {
+          el.innerText = '🔒 Plazo de Recepción Cerrado';
+          el.style.color = '#34d399';
+        } else {
+          const totalSecs = Math.floor(diffMs / 1000);
+          const days = Math.floor(totalSecs / 86400);
+          const hours = Math.floor((totalSecs % 86400) / 3600);
+          const mins = Math.floor((totalSecs % 3600) / 60);
+          const secs = totalSecs % 60;
+
+          el.innerText = '⏳ ' + days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's restantes';
+        }
+      });
+
+      // Actualizar también el KPI del header de Bicentenario
+      const elBicTop = document.getElementById('topKpiCountdownBic');
+      if (elBicTop) {
+        const targetBic = new Date('2026-10-06T17:00:00');
+        const diffBic = targetBic - now;
+        if (diffBic > 0) {
+          const d = Math.floor(diffBic / (1000 * 86400));
+          const h = Math.floor((diffBic % (1000 * 86400)) / (1000 * 3600));
+          const m = Math.floor((diffBic % (1000 * 3600)) / (1000 * 60));
+          elBicTop.innerText = d + 'd ' + h + 'h ' + m + 'm Restantes';
+        } else {
+          elBicTop.innerText = 'Cerrado';
+        }
+      }
+    }
+
+    setInterval(updateLiveCountdowns, 1000);
+    updateLiveCountdowns();
+
+    // Funciones para copiar Guiones de Contacto
+    function copiarGuionCompleto(btn) {
+      const texto = document.getElementById('guionTexto').innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Copiado!';
+        btn.style.background = '#10b981';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+        }, 2000);
+      });
+    }
+
+    function copiarPitchPersonalizado(nombre, btn) {
+      let texto = document.getElementById('guionTexto').innerText;
+      texto = texto.replace('[Nombre del Profesional]', nombre);
+      navigator.clipboard.writeText(texto).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Copiado!';
+        btn.style.background = '#10b981';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+        }, 2000);
+      });
+    }
+
+    function copiarPitchGenerico(btn) {
+      const texto = document.getElementById('guionTexto').innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Copiado!';
+        btn.style.background = '#10b981';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+        }, 2000);
+      });
+    }
+
   </script>
 
 </body>
