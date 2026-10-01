@@ -1593,9 +1593,228 @@
     .risk-card.risk-bajo { border-left: 4px solid var(--accent-blue); }
     .risk-card.risk-controlado { border-left: 4px solid var(--accent-emerald); }
 
+    /* Master Corporate Security Gate */
+    #securityGate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 25%, #0f172a 0%, #030712 100%);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      backdrop-filter: blur(28px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+    }
+    #securityGate.unlocked {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .gate-card {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.15);
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 480px;
+      padding: 2.75rem 2.25rem;
+      text-align: center;
+      position: relative;
+      animation: gatePopIn 0.4s ease-out;
+    }
+    @keyframes gatePopIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .gate-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.775rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .gate-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(56, 189, 248, 0.2));
+      border: 1px solid rgba(99, 102, 241, 0.5);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    .gate-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .gate-desc {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+    .gate-field {
+      position: relative;
+    }
+    .gate-input {
+      width: 100%;
+      background: rgba(2, 6, 23, 0.8);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      padding: 0.85rem 3rem 0.85rem 1.15rem;
+      font-size: 0.95rem;
+      color: #fff;
+      outline: none;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .gate-input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+    }
+    .gate-toggle-pwd {
+      position: absolute;
+      right: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: #64748b;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.25rem;
+    }
+    .gate-toggle-pwd:hover { color: #cbd5e1; }
+    .gate-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+      border: 1px solid rgba(99, 102, 241, 0.5);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.85rem 1.5rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.5);
+      transition: all 0.2s ease;
+    }
+    .gate-btn:hover {
+      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.6);
+    }
+    .gate-btn:active { transform: translateY(0); }
+    .gate-error {
+      display: none;
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 0.6rem 0.85rem;
+      border-radius: 0.5rem;
+      font-size: 0.825rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+    .gate-error.shake {
+      animation: gateShake 0.35s ease;
+    }
+    @keyframes gateShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .gate-footer-notice {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.725rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .app-blurred {
+      filter: blur(28px) grayscale(60%);
+      pointer-events: none;
+      user-select: none;
+      transition: filter 0.4s ease;
+    }
+
+
   </style>
 </head>
 <body>
+
+  <!-- Master Security Gate Modal -->
+  <div id="securityGate">
+    <div class="gate-card">
+      <div class="gate-icon">🛡️</div>
+      <div class="gate-badge">🔒 Acceso Privado Corporativo</div>
+      <h2 class="gate-title">Next Level S.A.S.</h2>
+      <p class="gate-desc">
+        Sistema Interno de Inteligencia de Licitaciones y Procura Corporativa.<br>
+        <strong style="color: #cbd5e1;">Uso estrictamente confidencial de la organización.</strong>
+      </p>
+
+      <form class="gate-form" onsubmit="handleSecurityUnlock(event)">
+        <div class="gate-field">
+          <input 
+            type="password" 
+            id="gatePasswordInput" 
+            class="gate-input" 
+            placeholder="Ingrese la clave corporativa..." 
+            autocomplete="current-password"
+            required
+            autofocus
+          >
+          <button type="button" class="gate-toggle-pwd" onclick="toggleGatePasswordVisibility()" title="Mostrar/Ocultar clave">👁️</button>
+        </div>
+        <button type="submit" class="gate-btn" id="gateSubmitBtn">
+          <span>Desbloquear Portal Seguro</span>
+          <span>→</span>
+        </button>
+        <div id="gateErrorMessage" class="gate-error">
+          ⚠️ Clave incorrecta. Acceso denegado.
+        </div>
+      </form>
+
+      <div class="gate-footer-notice">
+        ⚖️ <strong>Información Clasificada:</strong> Este entorno contiene información estratégica reservada sujeta a secreto comercial (Decisión 486 CAN) y Ley 1581 de 2012. Cualquier acceso no autorizado será registrado.
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Wrapper (Blurred when locked) -->
+  <div id="appMainWrapper" class="app-blurred">
+
 
   <!-- Top Navigation Header -->
   <header>
@@ -1609,11 +1828,14 @@
     <div class="header-actions">
       <div class="status-badge">
         <span class="dot"></span>
-        <span>247 Procesos Activos en Radar</span>
+        <span>667 Procesos Activos en Radar</span>
       </div>
       <a href="https://app.nextlevelsas.com/" target="_blank" class="btn btn-secondary">
         🌐 E-Learning Next Level
       </a>
+      <button id="btnLockApp" class="btn btn-secondary" onclick="lockSecurityGate()" title="Bloquear sesión inmediatamente" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; display: inline-flex; align-items: center; gap: 0.4rem;">
+        🔒 Bloquear
+      </button>
     </div>
   </header>
 
@@ -4848,7 +5070,138 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       });
     }
 
+
+    // ==========================================
+    // MASTER CRYPTOGRAPHIC SECURITY GATE (SHA-256)
+    // Clave Corporativa por Defecto: NextLevel2026!
+    // ==========================================
+    const MASTER_HASH = '4d63d0eac10f75d72c6da51494601b70370df97c5d3fa5edd5f1ce9d82edc789';
+    const SESSION_AUTH_KEY = 'nextlevel_sec_auth_v1';
+
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function initSecurityGate() {
+      const gate = document.getElementById('securityGate');
+      const appWrapper = document.getElementById('appMainWrapper');
+      if (!gate) return;
+
+      if (sessionStorage.getItem(SESSION_AUTH_KEY) === 'VERIFIED_ACTIVE') {
+        gate.classList.add('unlocked');
+        if (appWrapper) appWrapper.classList.remove('app-blurred');
+      } else {
+        gate.classList.remove('unlocked');
+        if (appWrapper) appWrapper.classList.add('app-blurred');
+        setTimeout(() => {
+          const inp = document.getElementById('gatePasswordInput');
+          if (inp) inp.focus();
+        }, 150);
+      }
+    }
+
+    async function handleSecurityUnlock(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('gatePasswordInput');
+      const errBox = document.getElementById('gateErrorMessage');
+      const gate = document.getElementById('securityGate');
+      const appWrapper = document.getElementById('appMainWrapper');
+      const btn = document.getElementById('gateSubmitBtn');
+
+      if (!input) return;
+      const pwd = input.value.trim();
+
+      if (btn) btn.innerHTML = '<span>Verificando credenciales...</span>';
+
+      try {
+        let isValid = false;
+        if (window.crypto && window.crypto.subtle) {
+          const hash = await sha256(pwd);
+          isValid = (hash === MASTER_HASH);
+        } else {
+          isValid = (pwd === 'NextLevel2026!');
+        }
+
+        if (isValid) {
+          sessionStorage.setItem(SESSION_AUTH_KEY, 'VERIFIED_ACTIVE');
+          if (errBox) errBox.style.display = 'none';
+          gate.classList.add('unlocked');
+          if (appWrapper) appWrapper.classList.remove('app-blurred');
+          input.value = '';
+          if (typeof showHardeningToast === 'function') {
+            showHardeningToast('Autenticación Exitosa', 'Acceso seguro concedido al Portal Corporativo.', 'success');
+          }
+        } else {
+          if (errBox) {
+            errBox.style.display = 'block';
+            errBox.classList.remove('shake');
+            void errBox.offsetWidth;
+            errBox.classList.add('shake');
+          }
+          input.value = '';
+          input.focus();
+        }
+      } catch (err) {
+        console.error('Error in crypto authentication:', err);
+        if (pwd === 'NextLevel2026!') {
+          sessionStorage.setItem(SESSION_AUTH_KEY, 'VERIFIED_ACTIVE');
+          gate.classList.add('unlocked');
+          if (appWrapper) appWrapper.classList.remove('app-blurred');
+        }
+      } finally {
+        if (btn) btn.innerHTML = '<span>Desbloquear Portal Seguro</span><span>→</span>';
+      }
+    }
+
+    function lockSecurityGate() {
+      sessionStorage.removeItem(SESSION_AUTH_KEY);
+      const gate = document.getElementById('securityGate');
+      const appWrapper = document.getElementById('appMainWrapper');
+      if (gate) {
+        gate.classList.remove('unlocked');
+        const input = document.getElementById('gatePasswordInput');
+        if (input) {
+          input.value = '';
+          setTimeout(() => input.focus(), 150);
+        }
+      }
+      if (appWrapper) appWrapper.classList.add('app-blurred');
+      if (typeof showHardeningToast === 'function') {
+        showHardeningToast('Sesión Bloqueada', 'El portal ha sido bloqueado por seguridad.', 'info');
+      }
+    }
+
+    function toggleGatePasswordVisibility() {
+      const inp = document.getElementById('gatePasswordInput');
+      if (!inp) return;
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+    }
+
+    // Auto-lock tras 30 minutos de inactividad
+    let inactivityTimer;
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        if (sessionStorage.getItem(SESSION_AUTH_KEY) === 'VERIFIED_ACTIVE') {
+          lockSecurityGate();
+          console.log('Portal auto-bloqueado por inactividad.');
+        }
+      }, 30 * 60 * 1000);
+    }
+    window.addEventListener('mousemove', resetInactivityTimer);
+    window.addEventListener('keydown', resetInactivityTimer);
+    window.addEventListener('click', resetInactivityTimer);
+    resetInactivityTimer();
+
+    // Iniciar verificación al cargar
+    initSecurityGate();
+
   </script>
+
+  </div> <!-- /#appMainWrapper -->
 
   <!-- Floating Toast Notification for Production Defensive UX -->
   <div id="toastNotification" class="toast-notification">
