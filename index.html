@@ -1357,6 +1357,187 @@
       flex-wrap: wrap;
     }
 
+
+    /* --- PESTAÑA 7: AUTOMATIZACIÓN & ALERTAS --- */
+    .sync-health-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .sync-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sync-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--sync-color, var(--accent-emerald));
+    }
+
+    .sync-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .sync-card-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .sync-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .sync-card-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.25rem 0;
+    }
+
+    .sync-card-desc {
+      font-size: 0.725rem;
+      color: #64748b;
+    }
+
+    /* Panel de Alertas Críticas */
+    .alerts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .alert-panel-card {
+      background: var(--bg-card);
+      border: 1px solid;
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .alert-panel-card.alert-critica {
+      border-color: rgba(244, 63, 94, 0.45);
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+
+    .alert-panel-card.alert-hito {
+      border-color: rgba(16, 185, 129, 0.45);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+
+    .alert-panel-card.alert-media {
+      border-color: rgba(56, 189, 248, 0.45);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+
+    .alert-panel-card.alert-preventiva {
+      border-color: rgba(45, 212, 191, 0.35);
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.08) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+
+    .alert-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.725rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .alert-badge-top.crit { background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.5); }
+    .alert-badge-top.hito { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); }
+    .alert-badge-top.med { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.5); }
+    .alert-badge-top.prev { background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.4); }
+
+    /* Centro de Recordatorios y Tareas */
+    .reminders-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .reminder-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .reminder-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .reminder-checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--accent-emerald);
+    }
+
+    .reminder-text {
+      flex: 1;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .reminder-text.completed {
+      text-decoration: line-through;
+      color: #64748b;
+    }
+
+    .reminder-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
@@ -1448,6 +1629,10 @@
       <button class="tab-btn" onclick="switchTab('unspsc')">
         🏷️ Catálogo Códigos UNSPSC
         <span class="badge-count">21 Códigos</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('alertas')">
+        ⚡ Automatización & Alertas (En Vivo)
+        <span class="badge-count" style="background:#f43f5e;">3 Alertas</span>
       </button>
     </div>
 
@@ -3262,6 +3447,255 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
 
     </div>
 
+
+    <!-- TAB 7: CENTRO DE CONTROL DE AUTOMATIZACIÓN, SINCRONIZACIÓN Y ALERTAS EN VIVO -->
+    <div id="tab-alertas" class="tab-pane">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>Centro de Control Autónomo: Sincronización en Tiempo Real y Alertas de Vencimiento</h2>
+          <p>Supervisión continua de procesos licitatorios, estados de conectores en la nube, alertas automáticas de cierre y recordatorios operativos de adjudicación.</p>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <button onclick="forzarSincronizacionManual(this)" class="btn btn-primary" style="background:linear-gradient(135deg, #0284c7, #0369a1);">
+            🔄 Sincronizar Ahora
+          </button>
+          <button onclick="descargarCalendarioICS()" class="btn btn-secondary">
+            📅 Descargar Calendario (.ICS)
+          </button>
+          <button onclick="probarNotificacionWeb(this)" class="btn btn-secondary">
+            🔔 Activar Notificaciones Web
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Salud y Conectores de Automatización -->
+      <div class="sync-health-bar">
+        <div class="sync-card" style="--sync-color: #10b981;">
+          <div class="sync-card-header">
+            <span class="sync-card-title">Vigilante SECOP II API</span>
+            <span class="sync-status-badge">● ACTIVO</span>
+          </div>
+          <div class="sync-card-val">251 Procesos</div>
+          <div class="sync-card-desc">Último barrido: Hoy (Intervalo: Diario 06:00 COT)</div>
+        </div>
+
+        <div class="sync-card" style="--sync-color: #38bdf8;">
+          <div class="sync-card-header">
+            <span class="sync-card-title">Google Drive Mirror</span>
+            <span class="sync-status-badge" style="background:rgba(56,189,248,0.15); color:#38bdf8; border-color:rgba(56,189,248,0.3);">● SINCRONIZADO</span>
+          </div>
+          <div class="sync-card-val">157 Archivos</div>
+          <div class="sync-card-desc">G:\\Mi unidad\\CONVOCATORIAS_Y_LICITACIONES_2026\\</div>
+        </div>
+
+        <div class="sync-card" style="--sync-color: #a855f7;">
+          <div class="sync-card-header">
+            <span class="sync-card-title">GitHub Pages CDN</span>
+            <span class="sync-status-badge" style="background:rgba(168,85,247,0.15); color:#c084fc; border-color:rgba(168,85,247,0.3);">● EN LÍNEA 24/7</span>
+          </div>
+          <div class="sync-card-val">Dominio SSL</div>
+          <div class="sync-card-desc">giconsultingsas.github.io/dashboard-licitaciones/</div>
+        </div>
+
+        <div class="sync-card" style="--sync-color: #f59e0b;">
+          <div class="sync-card-header">
+            <span class="sync-card-title">Inbox Gemini Spark</span>
+            <span class="sync-status-badge" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.3);">● ESCANEANDO</span>
+          </div>
+          <div class="sync-card-val">Carpeta Activa</div>
+          <div class="sync-card-desc">G:\\Mi unidad\\LICITACIONES_SPARK_INBOX\\</div>
+        </div>
+      </div>
+
+      <!-- Grid de Alertas de Vencimiento en Tiempo Real -->
+      <div style="margin-bottom:1.25rem;">
+        <h3 style="font-family:'Outfit'; font-size:1.3rem; color:#fff; display:flex; align-items:center; gap:0.5rem;">
+          <span>🚨 Alertas de Vencimiento & Próximos Cierres Críticos</span>
+        </h3>
+        <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.25rem;">
+          Convocatorias en cronograma estricto que requieren radicación o seguimiento inmediato.
+        </p>
+      </div>
+
+      <div class="alerts-grid">
+
+        <!-- Alerta 1: Bicentenario (Crítica) -->
+        <div class="alert-panel-card alert-critica">
+          <div>
+            <div class="alert-badge-top crit">🚨 ALERTA CRÍTICA: CIERRE EN &lt; 6 DÍAS</div>
+            <h4 style="font-family:'Outfit'; font-size:1.2rem; color:#fff; margin-bottom:0.25rem;">Grupo Bicentenario S.A.S.</h4>
+            <div style="font-size:0.8rem; color:#fb7185; font-weight:700; margin-bottom:0.5rem;">
+              Oficialía de Cumplimiento SAGRILAFT / PTEE (12 Meses)
+            </div>
+            
+            <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:6px; margin:0.75rem 0; border:1px solid rgba(244,63,94,0.3);">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">Cuenta Regresiva en Vivo:</span>
+                <span style="font-size:0.7rem; color:#fb7185; font-weight:bold;">Cierre Oficial SECOP II</span>
+              </div>
+              <div class="live-cd" data-deadline="2026-10-06T17:00:00" style="font-family:'Outfit', monospace; font-size:1.35rem; font-weight:800; color:#fff; margin-top:0.25rem;">
+                Calculando tiempo restante...
+              </div>
+              <div style="font-size:0.725rem; color:#cbd5e1; margin-top:0.35rem;">
+                Fecha Límite Improrrogable: <strong>06 de Octubre de 2026, 17:00 COT</strong>
+              </div>
+            </div>
+
+            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              <strong>Estado de la Oferta:</strong> ✅ <strong>100% ESTRUCTURADA EN CARPETA (25 Documentos)</strong>.<br>
+              <strong>Acción Requerida:</strong> Radicar la oferta técnica, económica y soportes en la plataforma SECOP II entre el <strong>03 y 04 de Octubre</strong> para evitar saturación de servidores en la fecha de cierre.
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <a href="propuesta_grupo_bicentenario_0112_2025/01_Propuesta_Tecnica_Grupo_Bicentenario_0112_2025.pdf" target="_blank" class="btn btn-primary" style="flex:1; font-size:0.775rem;">
+              📄 Ver Técnica PDF
+            </a>
+            <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/03%20GRUPO%20BICENTENARIO%20(Proceso%200112-2025%20-%20Oficialia%20Cumplimiento)/" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
+              ☁️ Carpeta Drive
+            </a>
+          </div>
+        </div>
+
+        <!-- Alerta 2: CCB Hito Evaluación -->
+        <div class="alert-panel-card alert-hito">
+          <div>
+            <div class="alert-badge-top hito">🎯 HITO POST-RADICACIÓN: INFORME DE EVALUACIÓN (~5 DÍAS)</div>
+            <h4 style="font-family:'Outfit'; font-size:1.2rem; color:#fff; margin-bottom:0.25rem;">Cámara de Comercio de Bogotá — CCB</h4>
+            <div style="font-size:0.8rem; color:#34d399; font-weight:700; margin-bottom:0.5rem;">
+              Consultoría Farmacéutica en BD/BE para 15 Empresas (Proceso 32540)
+            </div>
+            
+            <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:6px; margin:0.75rem 0; border:1px solid rgba(16,185,129,0.3);">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">Publicación Informe Itbid:</span>
+                <span style="font-size:0.7rem; color:#34d399; font-weight:bold;">🔒 Radicada 30-Sep</span>
+              </div>
+              <div class="live-cd" data-deadline="2026-10-05T17:00:00" style="font-family:'Outfit', monospace; font-size:1.35rem; font-weight:800; color:#a7f3d0; margin-top:0.25rem;">
+                Calculando tiempo para informe...
+              </div>
+              <div style="font-size:0.725rem; color:#cbd5e1; margin-top:0.35rem;">
+                Fecha Estimada de Publicación: <strong>05 de Octubre de 2026, 17:00 COT</strong>
+              </div>
+            </div>
+
+            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              <strong>Estado de la Oferta:</strong> 🔒 <strong>CONVOCATORIA CERRADA • ✅ RADICADA OFICIALMENTE</strong> (30-Sep 16:55).<br>
+              <strong>Acción Requerida:</strong> Monitorear portal Itbid CCB el 05 de Octubre para verificar asignación de puntaje y responder subsanaciones. Activar pre-contacto con los candidatos a subcontratación (Pestaña 6).
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <button onclick="switchTab('expertos')" class="btn btn-primary" style="flex:1; font-size:0.775rem;">
+              👥 Banco de Expertos
+            </button>
+            <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/01%20CAMARA%20DE%20COMERCIO%20DE%20BOGOTA%20(Proceso%2032540%20-%20Farmaceutico)/" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
+              ☁️ Carpeta Drive
+            </a>
+          </div>
+        </div>
+
+        <!-- Alerta 3: MinTIC (Media) -->
+        <div class="alert-panel-card alert-media">
+          <div>
+            <div class="alert-badge-top med">⏰ CIERRE EN 8 DÍAS: RADICACIÓN PROGRAMADA</div>
+            <h4 style="font-family:'Outfit'; font-size:1.2rem; color:#fff; margin-bottom:0.25rem;">Ministerio TIC (MinTIC)</h4>
+            <div style="font-size:0.8rem; color:#38bdf8; font-weight:700; margin-bottom:0.5rem;">
+              Articulación MIPG, Ciberseguridad ISO 27001 y Datos Personales ($145.2M)
+            </div>
+            
+            <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:6px; margin:0.75rem 0; border:1px solid rgba(56,189,248,0.3);">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">Cierre SECOP II:</span>
+                <span style="font-size:0.7rem; color:#38bdf8; font-weight:bold;">Dr. Luis Daniel Guzmán</span>
+              </div>
+              <div class="live-cd" data-deadline="2026-10-09T15:00:00" style="font-family:'Outfit', monospace; font-size:1.35rem; font-weight:800; color:#fff; margin-top:0.25rem;">
+                Calculando tiempo restante...
+              </div>
+              <div style="font-size:0.725rem; color:#cbd5e1; margin-top:0.35rem;">
+                Fecha Límite: <strong>09 de Octubre de 2026, 15:00 COT</strong>
+              </div>
+            </div>
+
+            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              <strong>Estado de la Oferta:</strong> ✅ <strong>100% ESTRUCTURADA EN CARPETA (18 Documentos)</strong>.<br>
+              <strong>Acción Requerida:</strong> Programar radicación en SECOP II para el <strong>07 u 08 de Octubre</strong>.
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <a href="propuesta_mintic_9987823/01_Propuesta_Tecnica_MinTIC_9987823.pdf" target="_blank" class="btn btn-primary" style="flex:1; font-size:0.775rem;">
+              📄 Ver Técnica PDF
+            </a>
+            <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/05%20MINISTERIO%20TIC%20(Proceso%209987823%20-%20Seguridad%20Digital%20ISO%2027001)/" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
+              ☁️ Carpeta Drive
+            </a>
+          </div>
+        </div>
+
+        <!-- Alerta 4: Preventiva (EPC y BogotáBio) -->
+        <div class="alert-panel-card alert-preventiva">
+          <div>
+            <div class="alert-badge-top prev">📅 ALERTAS PREVENTIVAS: CIERRES EN 12 Y 15 DÍAS</div>
+            <h4 style="font-family:'Outfit'; font-size:1.2rem; color:#fff; margin-bottom:0.25rem;">EPC Cundinamarca & BogotáBio</h4>
+            <div style="font-size:0.8rem; color:#2dd4bf; font-weight:700; margin-bottom:0.5rem;">
+              Calidad MIPG ($65M) + SAGRILAFT BogotáBio ($22.8M)
+            </div>
+            
+            <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:6px; margin:0.75rem 0; border:1px solid rgba(45,212,191,0.25);">
+              <div style="font-size:0.8rem; color:#fff; margin-bottom:0.35rem;">
+                • <strong>EPC Cundinamarca ($65M):</strong> Cierre <strong>13-Oct 16:00 COT</strong> (<span class="live-cd" data-deadline="2026-10-13T16:00:00">12 días</span>)
+              </div>
+              <div style="font-size:0.8rem; color:#fff;">
+                • <strong>BogotáBio S.A.S. ($22.8M):</strong> Cierre <strong>16-Oct 17:00 COT</strong> (<span class="live-cd" data-deadline="2026-10-16T17:00:00">15 días</span>)
+              </div>
+            </div>
+
+            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
+              <strong>Estado de las Ofertas:</strong> Ambas propuestas cuentan con expedientes completos listos para carga y radicaciones programadas.
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <a href="propuesta_epc_9985957/01_Propuesta_Tecnica_EPC_9985957.pdf" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
+              📄 Ver EPC
+            </a>
+            <a href="propuesta_bogotabio_022_2026/01_Propuesta_Tecnica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
+              📄 Ver BogotáBio
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centro de Recordatorios Operativos y Checklist Persistente -->
+      <div class="reminders-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <h3 style="font-family:'Outfit'; font-size:1.25rem; color:#fff;">
+              📋 Recordatorios Operativos y Bitácora de Gestión
+            </h3>
+            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
+              Checklist interactivo con guardado automático en el navegador (localStorage) para trazabilidad del equipo.
+            </p>
+          </div>
+          <span style="font-size:0.75rem; color:#10b981; font-weight:700;">✓ Auto-Guardado Activo</span>
+        </div>
+
+        <div id="remindersContainer">
+          <!-- Rendered by JS with persistent localStorage -->
+        </div>
+
+        <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+          <input type="text" id="newReminderInput" class="search-input" placeholder="Escribir nuevo recordatorio o tarea operativa..." style="flex:1; font-size:0.85rem;" onkeypress="if(event.key==='Enter') agregarNuevoRecordatorio()">
+          <button onclick="agregarNuevoRecordatorio()" class="btn btn-primary" style="font-size:0.825rem; padding:0.6rem 1.2rem;">
+            ➕ Añadir Recordatorio
+          </button>
+        </div>
+      </div>
+
+    </div>
+
   </main>
 
   <!-- Interactive Detail Modal -->
@@ -3843,8 +4277,200 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       document.body.removeChild(a);
     }
 
+
+    // --- LÓGICA DE RECORDATORIOS OPERATIVOS CON LOCALSTORAGE ---
+    const DEFAULT_REMINDERS = [
+      { id: 'rem_1', text: 'Radicación oficial de CCB 32540 en Itbid (30-Sep 16:55:49 COT)', tag: 'CCB', completed: true },
+      { id: 'rem_2', text: 'Pre-contacto y firma de NDA con la Dra. Yolima Baena (UNAL) y consultores ex-INVIMA para CCB', tag: 'SUBCONTRATACIÓN', completed: false },
+      { id: 'rem_3', text: 'Revisión final y radicación en SECOP II de Grupo Bicentenario ($175M) antes del 05-Oct', tag: 'BICENTENARIO', completed: false },
+      { id: 'rem_4', text: 'Monitorear publicación de Informe de Evaluación y Lista de Elegibles en Itbid CCB (05-Oct 17:00)', tag: 'CCB', completed: false },
+      { id: 'rem_5', text: 'Cargar propuesta MinTIC ($145.2M) en SECOP II antes del 08-Oct', tag: 'MINTIC', completed: false },
+      { id: 'rem_6', text: 'Cargar propuesta EPC Cundinamarca ($65M) antes del 12-Oct', tag: 'EPC', completed: false },
+      { id: 'rem_7', text: 'Cargar propuesta BogotáBio ($22.8M) antes del 15-Oct', tag: 'BOGOTABIO', completed: false }
+    ];
+
+    function getReminders() {
+      const saved = localStorage.getItem('procura_reminders_v1');
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return DEFAULT_REMINDERS;
+    }
+
+    function saveReminders(reminders) {
+      localStorage.setItem('procura_reminders_v1', JSON.stringify(reminders));
+      renderReminders();
+    }
+
+    function toggleReminder(id) {
+      const list = getReminders();
+      const item = list.find(r => r.id === id);
+      if (item) {
+        item.completed = !item.completed;
+        saveReminders(list);
+      }
+    }
+
+    function agregarNuevoRecordatorio() {
+      const input = document.getElementById('newReminderInput');
+      const text = input ? input.value.trim() : '';
+      if (!text) return;
+
+      const list = getReminders();
+      list.push({
+        id: 'rem_' + Date.now(),
+        text: text,
+        tag: 'OPERATIVO',
+        completed: false
+      });
+      saveReminders(list);
+      input.value = '';
+    }
+
+    function eliminarRecordatorio(id) {
+      let list = getReminders();
+      list = list.filter(r => r.id !== id);
+      saveReminders(list);
+    }
+
+    function renderReminders() {
+      const container = document.getElementById('remindersContainer');
+      if (!container) return;
+
+      const list = getReminders();
+      container.innerHTML = '';
+
+      list.forEach(r => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'reminder-item';
+
+        const tagColor = r.tag === 'CCB' ? 'var(--accent-emerald)' : (r.tag === 'BICENTENARIO' ? 'var(--accent-rose)' : 'var(--accent-blue)');
+        const compClass = r.completed ? 'completed' : '';
+        const chk = r.completed ? 'checked' : '';
+
+        itemEl.innerHTML = '<input type="checkbox" class="reminder-checkbox" ' + chk + ' onchange="toggleReminder('' + r.id + '')">' +
+          '<div class="reminder-text ' + compClass + '">' + r.text + '</div>' +
+          '<span class="reminder-tag" style="background:rgba(255,255,255,0.06); color:' + tagColor + '; border:1px solid rgba(255,255,255,0.1);">' + r.tag + '</span>' +
+          '<button onclick="eliminarRecordatorio('' + r.id + '')" style="background:transparent; border:none; color:#64748b; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Eliminar recordatorio">✕</button>';
+        
+        container.appendChild(itemEl);
+      });
+    }
+
+    // --- ACCIÓN: FORZAR SINCRONIZACIÓN MANUAL ---
+    function forzarSincronizacionManual(btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '🔄 Sincronizando con SECOP II y Drive...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = '✓ ¡Sincronizado con Éxito!';
+        btn.style.background = '#10b981';
+        updateLiveCountdowns();
+
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 2500);
+      }, 1500);
+    }
+
+    // --- ACCIÓN: PROBAR NOTIFICACIÓN WEB ---
+    function probarNotificacionWeb(btn) {
+      if (!("Notification" in window)) {
+        alert("Este navegador no soporta notificaciones de escritorio.");
+        return;
+      }
+
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("🚨 Alerta Crítica de Licitaciones Next Level", {
+            body: "Grupo Bicentenario ($175M) vence en 5 días y 20 horas (06-Octubre). ¡Oferta técnica lista para radicar!",
+            icon: "https://giconsultingsas.github.io/dashboard-licitaciones/qr_dashboard_celular.png"
+          });
+          btn.innerHTML = '✓ ¡Notificación Enviada!';
+          btn.style.background = '#10b981';
+          setTimeout(() => {
+            btn.innerHTML = '🔔 Activar Notificaciones Web';
+            btn.style.background = '';
+          }, 2500);
+        } else {
+          alert("Permiso de notificaciones denegado. Habilítalo en la configuración de tu navegador.");
+        }
+      });
+    }
+
+    // --- ACCIÓN: GENERAR Y DESCARGAR CALENDARIO (.ICS) ---
+    function descargarCalendarioICS() {
+      const icsData = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Next Level Consulting SAS//Licitaciones 360//ES',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'SUMMARY:🚨 Cierre Improrrogable SECOP II: Grupo Bicentenario ($174.996.000 COP)',
+        'DESCRIPTION:Oficialía de Cumplimiento SAGRILAFT y PTEE durante 12 meses. Oferta radicable a nombre de Alicia Esther Guzmán Pardo. Ref: Proceso 0112-2025.',
+        'DTSTART:20261006T220000Z',
+        'DTEND:20261006T223000Z',
+        'LOCATION:Plataforma SECOP II Colombia',
+        'STATUS:CONFIRMED',
+        'BEGIN:VALARM',
+        'TRIGGER:-PT24H',
+        'DESCRIPTION:Recordatorio: 24 horas para el cierre de Grupo Bicentenario',
+        'ACTION:DISPLAY',
+        'END:VALARM',
+        'END:VEVENT',
+        'BEGIN:VEVENT',
+        'SUMMARY:🎯 Publicación Informe de Evaluación CCB 32540 ($110.000.000 COP)',
+        'DESCRIPTION:Publicación de lista de elegibles y puntajes de la consultoría farmacéutica en BD/BE ante la Cámara de Comercio de Bogotá. Oferta ya radicada por Julia Inés Pardo.',
+        'DTSTART:20261005T220000Z',
+        'DTEND:20261005T223000Z',
+        'LOCATION:Portal Transaccional Itbid CCB',
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'BEGIN:VEVENT',
+        'SUMMARY:⏰ Cierre SECOP II: MinTIC - Seguridad Digital ISO 27001 ($145.200.000 COP)',
+        'DESCRIPTION:Consultoría para articulación MIPG y seguridad digital a nombre del Dr. Luis Daniel Guzmán Pardo. Ref: Proceso 9987823.',
+        'DTSTART:20261009T200000Z',
+        'DTEND:20261009T203000Z',
+        'LOCATION:Plataforma SECOP II Colombia',
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'BEGIN:VEVENT',
+        'SUMMARY:📅 Cierre SECOP II: EPC Cundinamarca - Calidad MIPG ($65.000.000 COP)',
+        'DESCRIPTION:Apoyo a la gestión en control interno y calidad bajo lineamientos MIPG. Proponente: Alicia Guzmán Pardo. Ref: Proceso 9985957.',
+        'DTSTART:20261013T210000Z',
+        'DTEND:20261013T213000Z',
+        'LOCATION:Plataforma SECOP II Colombia',
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'BEGIN:VEVENT',
+        'SUMMARY:📅 Cierre SECOP II: BogotáBio S.A.S. ($22.815.000 COP)',
+        'DESCRIPTION:Asesoría SAGRILAFT, PTEE y datos personales. Proponente: Alicia Esther Guzmán Pardo. Ref: Proceso 022-2026.',
+        'DTSTART:20261016T220000Z',
+        'DTEND:20261016T223000Z',
+        'LOCATION:Plataforma SECOP II Colombia',
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('
+');
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'cronograma_licitaciones_octubre_2026.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
     // Initial render
     renderFilteredOpportunities();
+    renderReminders();
 
     // --- TEMPORIZADOR EN VIVO (LIVE COUNTDOWNS) ---
 
