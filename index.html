@@ -1315,6 +1315,48 @@
       position: relative;
     }
 
+
+    /* Caja de Repositorio en Google Drive */
+    .drive-repo-box {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.12) 0%, rgba(14, 165, 233, 0.05) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .drive-repo-title {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .drive-repo-path {
+      font-size: 0.725rem;
+      color: #e2e8f0;
+      font-family: monospace;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .drive-repo-actions {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
   </style>
 </head>
 <body>
@@ -1539,6 +1581,7 @@
               <div class="term">8 Meses (A todo costo antes de IVA - No Responsable de IVA)</div>
             </div>
 
+            <!-- ACCIONES DOCUMENTALES LOCALES -->
             <div class="card-actions">
               <a href="propuesta ccb 32540/01 Propuesta Tecnica CCB 32540.pdf" target="_blank" class="btn btn-primary">
                 📄 Propuesta Técnica PDF
@@ -1552,6 +1595,28 @@
               <a href="propuesta ccb 32540/03 Checklist Radicacion CCB 32540.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (18 Docs)
               </a>
+            </div>
+
+            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
+            <div class="drive-repo-box">
+              <div class="drive-repo-title">
+                <span>☁️ Repositorio Oficial en Google Drive</span>
+                <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal;">32 Docs • Sincronizado</span>
+              </div>
+              <div class="drive-repo-path">
+                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\01 CAMARA DE COMERCIO DE BOGOTA (Proceso 32540 - Farmaceutico)
+              </div>
+              <div class="drive-repo-actions">
+                <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/01%20CAMARA%20DE%20COMERCIO%20DE%20BOGOTA%20(Proceso%2032540%20-%20Farmaceutico)/" target="_blank" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
+                  ☁️ Abrir Carpeta Drive
+                </a>
+                <button onclick="copiarRutaDrive(this, 'G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\01 CAMARA DE COMERCIO DE BOGOTA (Proceso 32540 - Farmaceutico)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📋 Copiar Ruta
+                </button>
+                <a href="CONVOCATORIAS_ORGANIZADAS_DRIVE/01 CAMARA DE COMERCIO DE BOGOTA.zip" download class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📦 Bajar ZIP (7.40 MB)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1605,6 +1670,7 @@
               <div class="term">12 Meses (360 días a $14.583.000 COP/mes)</div>
             </div>
 
+            <!-- ACCIONES DOCUMENTALES LOCALES -->
             <div class="card-actions">
               <a href="propuesta_grupo_bicentenario_0112_2025/01_Propuesta_Tecnica_Grupo_Bicentenario_0112_2025.pdf" target="_blank" class="btn btn-primary">
                 📄 Propuesta Técnica PDF
@@ -1618,6 +1684,28 @@
               <a href="propuesta_grupo_bicentenario_0112_2025/04_Checklist_Radicacion_SECOP_Grupo_Bicentenario.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (22 Docs)
               </a>
+            </div>
+
+            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
+            <div class="drive-repo-box">
+              <div class="drive-repo-title">
+                <span>☁️ Repositorio Oficial en Google Drive</span>
+                <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal;">25 Docs • Sincronizado</span>
+              </div>
+              <div class="drive-repo-path">
+                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\03 GRUPO BICENTENARIO (Proceso 0112-2025 - Oficialia Cumplimiento)
+              </div>
+              <div class="drive-repo-actions">
+                <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/03%20GRUPO%20BICENTENARIO%20(Proceso%200112-2025%20-%20Oficialia%20Cumplimiento)/" target="_blank" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
+                  ☁️ Abrir Carpeta Drive
+                </a>
+                <button onclick="copiarRutaDrive(this, 'G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\03 GRUPO BICENTENARIO (Proceso 0112-2025 - Oficialia Cumplimiento)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📋 Copiar Ruta
+                </button>
+                <a href="CONVOCATORIAS_ORGANIZADAS_DRIVE/03 GRUPO BICENTENARIO.zip" download class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📦 Bajar ZIP (5.91 MB)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1671,6 +1759,7 @@
               <div class="term">11 Meses (330 días a $13.200.000 COP/mes)</div>
             </div>
 
+            <!-- ACCIONES DOCUMENTALES LOCALES -->
             <div class="card-actions">
               <a href="propuesta_mintic_9987823/01_Propuesta_Tecnica_MinTIC_9987823.pdf" target="_blank" class="btn btn-primary">
                 📄 Propuesta Técnica PDF
@@ -1684,6 +1773,28 @@
               <a href="propuesta_mintic_9987823/04_Checklist_Radicacion_SECOP_MinTIC.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (21 Docs)
               </a>
+            </div>
+
+            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
+            <div class="drive-repo-box">
+              <div class="drive-repo-title">
+                <span>☁️ Repositorio Oficial en Google Drive</span>
+                <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal;">18 Docs • Sincronizado</span>
+              </div>
+              <div class="drive-repo-path">
+                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\05 MINISTERIO TIC (Proceso 9987823 - Seguridad Digital ISO 27001)
+              </div>
+              <div class="drive-repo-actions">
+                <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/05%20MINISTERIO%20TIC%20(Proceso%209987823%20-%20Seguridad%20Digital%20ISO%2027001)/" target="_blank" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
+                  ☁️ Abrir Carpeta Drive
+                </a>
+                <button onclick="copiarRutaDrive(this, 'G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\05 MINISTERIO TIC (Proceso 9987823 - Seguridad Digital ISO 27001)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📋 Copiar Ruta
+                </button>
+                <a href="CONVOCATORIAS_ORGANIZADAS_DRIVE/05 MINISTERIO TIC.zip" download class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📦 Bajar ZIP (4.99 MB)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1737,6 +1848,7 @@
               <div class="term">6 Meses (180 días a $10.833.333 COP/mes)</div>
             </div>
 
+            <!-- ACCIONES DOCUMENTALES LOCALES -->
             <div class="card-actions">
               <a href="propuesta_epc_9985957/01_Propuesta_Tecnica_EPC_9985957.pdf" target="_blank" class="btn btn-primary">
                 📄 Propuesta Técnica PDF
@@ -1750,6 +1862,28 @@
               <a href="propuesta_epc_9985957/04_Checklist_Radicacion_SECOP_EPC.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (15 Docs)
               </a>
+            </div>
+
+            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
+            <div class="drive-repo-box">
+              <div class="drive-repo-title">
+                <span>☁️ Repositorio Oficial en Google Drive</span>
+                <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal;">18 Docs • Sincronizado</span>
+              </div>
+              <div class="drive-repo-path">
+                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\04 EMPRESAS PUBLICAS DE CUNDINAMARCA (Proceso 9985957 - Calidad MIPG)
+              </div>
+              <div class="drive-repo-actions">
+                <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/04%20EMPRESAS%20PUBLICAS%20DE%20CUNDINAMARCA%20(Proceso%209985957%20-%20Calidad%20MIPG)/" target="_blank" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
+                  ☁️ Abrir Carpeta Drive
+                </a>
+                <button onclick="copiarRutaDrive(this, 'G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\04 EMPRESAS PUBLICAS DE CUNDINAMARCA (Proceso 9985957 - Calidad MIPG)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📋 Copiar Ruta
+                </button>
+                <a href="CONVOCATORIAS_ORGANIZADAS_DRIVE/04 EMPRESAS PUBLICAS DE CUNDINAMARCA.zip" download class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📦 Bajar ZIP (2.99 MB)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1803,6 +1937,7 @@
               <div class="term">3 Meses (Forma de pago por 3 entregables)</div>
             </div>
 
+            <!-- ACCIONES DOCUMENTALES LOCALES -->
             <div class="card-actions">
               <a href="propuesta_bogotabio_022_2026/01_Propuesta_Tecnica_BogotaBio_022_2026.pdf" target="_blank" class="btn btn-primary">
                 📄 Propuesta Técnica PDF
@@ -1816,6 +1951,28 @@
               <a href="propuesta_bogotabio_022_2026/04_Checklist_Radicacion_SECOP_BogotaBio.pdf" target="_blank" class="btn btn-secondary">
                 ✅ Checklist (22 Docs)
               </a>
+            </div>
+
+            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
+            <div class="drive-repo-box">
+              <div class="drive-repo-title">
+                <span>☁️ Repositorio Oficial en Google Drive</span>
+                <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal;">25 Docs • Sincronizado</span>
+              </div>
+              <div class="drive-repo-path">
+                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\02 BOGOTABIO SAS (Proceso 022-2026 - SAGRILAFT y PTEE)
+              </div>
+              <div class="drive-repo-actions">
+                <a href="file:///G:/Mi%20unidad/CONVOCATORIAS_Y_LICITACIONES_2026/02%20BOGOTABIO%20SAS%20(Proceso%20022-2026%20-%20SAGRILAFT%20y%20PTEE)/" target="_blank" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
+                  ☁️ Abrir Carpeta Drive
+                </a>
+                <button onclick="copiarRutaDrive(this, 'G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\02 BOGOTABIO SAS (Proceso 022-2026 - SAGRILAFT y PTEE)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📋 Copiar Ruta
+                </button>
+                <a href="CONVOCATORIAS_ORGANIZADAS_DRIVE/02 BOGOTABIO SAS.zip" download class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
+                  📦 Bajar ZIP (5.91 MB)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -3690,6 +3847,42 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
     renderFilteredOpportunities();
 
     // --- TEMPORIZADOR EN VIVO (LIVE COUNTDOWNS) ---
+
+    function copiarRutaDrive(btn, ruta) {
+      if (!ruta) return;
+      navigator.clipboard.writeText(ruta).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Ruta Copiada!';
+        btn.style.background = '#10b981';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2000);
+      }).catch(err => {
+        prompt('Copia la ruta de la carpeta en Google Drive:', ruta);
+      });
+    }
+
+
+    function copiarRutaDrive(btn, ruta) {
+      if (!ruta) return;
+      navigator.clipboard.writeText(ruta).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ ¡Ruta Copiada!';
+        btn.style.background = '#10b981';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2000);
+      }).catch(err => {
+        prompt('Copia la ruta de la carpeta en Google Drive:', ruta);
+      });
+    }
+
     function updateLiveCountdowns() {
       const now = new Date();
 
