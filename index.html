@@ -4345,14 +4345,26 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         itemEl.className = 'reminder-item';
 
         const tagColor = r.tag === 'CCB' ? 'var(--accent-emerald)' : (r.tag === 'BICENTENARIO' ? 'var(--accent-rose)' : 'var(--accent-blue)');
-        const compClass = r.completed ? 'completed' : '';
-        const chk = r.completed ? 'checked' : '';
 
-        itemEl.innerHTML = '<input type="checkbox" class="reminder-checkbox" ' + chk + ' onchange="toggleReminder('' + r.id + '')">' +
-          '<div class="reminder-text ' + compClass + '">' + r.text + '</div>' +
+        itemEl.innerHTML = '<input type="checkbox" class="reminder-checkbox">' +
+          '<div class="reminder-text">' + r.text + '</div>' +
           '<span class="reminder-tag" style="background:rgba(255,255,255,0.06); color:' + tagColor + '; border:1px solid rgba(255,255,255,0.1);">' + r.tag + '</span>' +
-          '<button onclick="eliminarRecordatorio('' + r.id + '')" style="background:transparent; border:none; color:#64748b; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Eliminar recordatorio">✕</button>';
-        
+          '<button class="del-btn" style="background:transparent; border:none; color:#64748b; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Eliminar recordatorio">✕</button>';
+
+        const chkBox = itemEl.querySelector('.reminder-checkbox');
+        if (chkBox) {
+          chkBox.checked = r.completed;
+          chkBox.onchange = function() { toggleReminder(r.id); };
+        }
+        const textDiv = itemEl.querySelector('.reminder-text');
+        if (textDiv && r.completed) {
+          textDiv.classList.add('completed');
+        }
+        const delBtn = itemEl.querySelector('.del-btn');
+        if (delBtn) {
+          delBtn.onclick = function() { eliminarRecordatorio(r.id); };
+        }
+
         container.appendChild(itemEl);
       });
     }
@@ -4455,8 +4467,7 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         'STATUS:CONFIRMED',
         'END:VEVENT',
         'END:VCALENDAR'
-      ].join('
-');
+      ].join(String.fromCharCode(13, 10));
 
       const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
