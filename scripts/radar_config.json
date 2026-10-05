@@ -1,0 +1,67 @@
+{
+  "fuente": "https://www.datos.gov.co/resource/p6dx-8zbt.json",
+  "presupuesto_minimo_cop": 20000000,
+  "dias_nueva": 3,
+  "perfiles": [
+    {
+      "nombre": "Dra. Julia Inés Pardo Carmona (Química Farmacéutica / HSEQ)",
+      "sector": "FARMACEUTICO / SALUD",
+      "palabras_clave": [
+        "farmaceutic", "dispositivo medico", "registro sanitario", "asuntos regulatorios", "buenas practicas de manufactura",
+        "buenas practicas de elaboracion", "bioequivalencia", "biodisponibilidad", "bioexencion",
+        "farmacia hospitalaria", "farmacovigilancia", "tecnovigilancia", "toxicolog",
+        "hseq", "sg-sst", "sistema de gestion de la seguridad y salud", "salud ocupacional", "iso 45001",
+        "iso 14001", "sistema unico de habilitacion", "habilitacion de servicios de salud",
+        "acreditacion en salud", "iso 17025", "iso/iec 17025"
+      ]
+    },
+    {
+      "nombre": "Ing. Alicia Esther Guzmán Pardo (Cumplimiento / Calidad)",
+      "sector": "CUMPLIMIENTO / CALIDAD",
+      "palabras_clave": [
+        "sagrilaft", "sarlaft", "ptee", "ptep", "oficial de cumplimiento", "lavado de activos",
+        "soborno transnacional", "debida diligencia", "antifraude", "linea etica", "control interno",
+        "mipg", "modelo integrado de planeacion", "sistema de gestion de calidad", "iso 9001",
+        "gestion de calidad", "gestion del riesgo", "mapa de riesgos", "administracion del riesgo",
+        "gestion por procesos", "mejora continua", "basc", "sistema integrado de gestion",
+        "auditoria interna", "pmo", "gerencia de proyectos"
+      ]
+    },
+    {
+      "nombre": "Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)",
+      "sector": "LEGAL / ISO 27001",
+      "palabras_clave": [
+        "iso 27001", "iso/iec 27001", "seguridad de la informacion", "seguridad digital",
+        "ciberseguridad", "datos personales", "habeas data", "ley 1581", "ley 2195",
+        "anticorrupcion", "acoso laboral", "contratacion estatal", "asesoria juridica",
+        "apoyo juridico", "defensa judicial", "control fiscal", "regimen disciplinario",
+        "derecho administrativo"
+      ]
+    }
+  ],
+  "palabras_servicio": [
+    "consultor", "asesor", "auditor", "capacitac", "formacion", "diagnostic", "implementa",
+    "acompanamiento", "asistencia tecnica", "interventor", "certificac", "actualizacion",
+    "fortalecimiento", "diseno", "elaboracion", "evaluacion", "estudio", "apoyo a la gestion",
+    "servicios profesionales", "prestacion de servicio", "prestar servicio", "prestar los servicios",
+    "prestar el servicio", "servicio especializado", "sensibilizacion", "apropiacion", "pruebas de",
+    "desarrollar acciones", "outsourcing"
+  ],
+  "unspsc_servicio": ["8010", "8011", "8012", "8016", "7710", "8610", "8611", "8117", "8411", "9312"],
+  "excluir": [
+    "suministro", "obra", "construccion", "pavimenta", "malla vial", "acueducto", "alcantarillado",
+    "mantenimiento preventivo", "mantenimiento correctivo", "mantenimiento de vias", "reparacion",
+    "dotacion", "alimentacion", "refrigerio", "transporte", "combustible", "vigilancia y seguridad privada",
+    "aseo y cafeteria", "prestacion de servicios de salud", "servicios de salud de", "atencion integral en salud",
+    "arrendamiento", "alquiler", "compraventa", "poliza", "seguro de", "interventoria de obra",
+    "interventoria", "estudios y disenos", "estudios basicos", "topografic", "geotecn",
+    "adquisicion", "adquirir", "compra de", "licenciamiento", "kits", "reactivos", "insumos",
+    "equipos", "apoyo logistico", "examenes medicos", "evaluaciones medico", "imagenologia",
+    "radiologia", "riesgo de desastres", "vulnerabilidad", "restauracion ecologica",
+    "telecomunicaciones", "red corporativa", "centro de datos", "centro de operaciones de seguridad"
+  ],
+  "departamentos_caribe": [
+    "bolivar", "atlantico", "magdalena", "sucre", "cordoba", "cesar", "la guajira",
+    "san andres"
+  ]
+}
