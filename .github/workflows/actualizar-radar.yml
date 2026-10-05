@@ -59,7 +59,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for n in $(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$AVISO_TITULO\" in:title" --json number --jq '.[].number'); do
+          # Se filtra por título exacto con la API de listado (el índice de búsqueda tarda en reflejar issues nuevos).
+          for n in $(gh issue list -R "$GITHUB_REPOSITORY" --state open --limit 200 --json number,title --jq '.[] | select(.title == env.AVISO_TITULO) | .number'); do
             gh issue close "$n" -R "$GITHUB_REPOSITORY" --comment "Radar actualizado de nuevo: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           done
 
@@ -69,7 +70,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cuerpo="La actualización diaria del radar falló: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. El portal sigue mostrando el último corte válido, con aviso de datos desactualizados después de 36 horas."
-          n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$AVISO_TITULO\" in:title" --json number --jq '.[0].number // empty')
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --limit 200 --json number,title --jq '[.[] | select(.title == env.AVISO_TITULO)][0].number // empty')
           if [ -n "$n" ]; then
             gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$cuerpo"
           else
