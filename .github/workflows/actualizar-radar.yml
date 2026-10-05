@@ -6,23 +6,33 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
+  issues: write
 
 concurrency:
   group: actualizar-radar
   cancel-in-progress: false
+
+env:
+  AVISO_TITULO: Radar SECOP sin actualizar
 
 jobs:
   radar:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      # La llave de despliegue es la única con permiso para empujar directo a main (ruleset de la rama).
       - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.RADAR_DEPLOY_KEY }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+
+      - name: Probar el filtro del radar
+        run: node --test "scripts/*.test.mjs"
 
       - name: Consultar SECOP II y regenerar el radar
         run: node scripts/actualizar_radar.mjs
@@ -43,3 +53,25 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent
+
+      - name: Cerrar el aviso de falla si estaba abierto
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$AVISO_TITULO\" in:title" --json number --jq '.[].number'); do
+            gh issue close "$n" -R "$GITHUB_REPOSITORY" --comment "Radar actualizado de nuevo: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          done
+
+      - name: Avisar que el radar no se actualizó
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cuerpo="La actualización diaria del radar falló: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. El portal sigue mostrando el último corte válido, con aviso de datos desactualizados después de 36 horas."
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$AVISO_TITULO\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$cuerpo"
+          else
+            gh issue create -R "$GITHUB_REPOSITORY" --title "$AVISO_TITULO" --body "$cuerpo"
+          fi

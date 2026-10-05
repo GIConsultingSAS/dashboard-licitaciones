@@ -1,33 +1,32 @@
-# Portal Ejecutivo de Licitaciones y Homologación de Proveedores
+# Radar de Licitaciones SECOP II
 ### Next Level S.A.S.
 
-Portal publicado en GitHub Pages con:
-- Cartera de propuestas reales: CCB 2807-2026 (radicada) y Contraloría Distrital de Cartagena (propuesta 2027 en preparación).
-- Radar de procesos de SECOP II que hoy reciben ofertas y encajan con el perfil de Next Level.
-- Directorio de homologación de proveedores para grandes compradores.
+Portal público en GitHub Pages que muestra **solo información pública**: los procesos de SECOP II que hoy reciben ofertas y encajan por tema con los servicios de Next Level, más un catálogo de códigos UNSPSC.
 
-## Cómo se actualiza el radar
+No contiene cartera de propuestas, valores ofertados, documentos, nombres de proponentes ni enlaces privados. La cartera vive en el SaaS privado (spec 005 del repositorio `licitaciones-nextlevel`, `contracts/portal-publico.md`).
 
-`scripts/actualizar_radar.mjs` consulta los datos abiertos de SECOP II (datos.gov.co, conjunto `p6dx-8zbt`) y reescribe en `index.html` las líneas `const OPORTUNIDADES` y `const RADAR_META`.
+## Cómo se actualiza
 
-Solo deja procesos que cumplen todo esto:
-- están en estado "Publicado";
-- no están adjudicados;
-- su fecha de recepción de ofertas es hoy o posterior;
-- describen un servicio de consultoría, asesoría, auditoría o capacitación;
-- coinciden con las palabras clave de algún perfil.
+- `scripts/radar_filtro.mjs` tiene las reglas. Un proceso entra si cumple todo esto:
+  - está publicado y sin adjudicar;
+  - su recepción de ofertas está vigente;
+  - su modalidad admite ofertas;
+  - es un servicio de consultoría, asesoría, auditoría o capacitación;
+  - coincide con las palabras clave de `scripts/radar_config.json`.
+- `scripts/actualizar_radar.mjs` consulta SECOP II (datos.gov.co, conjunto `p6dx-8zbt`) y reescribe las líneas `const OPORTUNIDADES` y `const RADAR_META` de `index.html`.
+- `.github/workflows/actualizar-radar.yml` corre todos los días a las 06:00 (hora de Colombia): prueba el filtro, regenera el radar, publica con una llave de despliegue y abre el issue **"Radar SECOP sin actualizar"** si algo falla. El portal muestra un aviso si el último corte tiene más de 36 horas.
+- `.github/workflows/guardia-contenido.yml` falla, y abre un issue, si reaparece en el portal contenido no público.
 
-Las palabras clave, las exclusiones y el presupuesto mínimo están en `scripts/radar_config.json`.
+## Protección de `main`
 
-El flujo `.github/workflows/actualizar-radar.yml` lo ejecuta todos los días a las 06:00 (hora de Colombia) y publica el resultado. También se puede lanzar a mano desde la pestaña *Actions* ("Run workflow") o en local:
+Un ruleset exige PR para cambiar `main` y bloquea force-push. Solo la llave de despliegue del workflow diario puede empujar directo. Así ningún script antiguo puede republicar el portal sin revisión.
+
+## En local
 
 ```
+node --test "scripts/*.test.mjs"             # pruebas del filtro
 node scripts/actualizar_radar.mjs --dry-run   # muestra el resultado sin escribir
 node scripts/actualizar_radar.mjs             # actualiza index.html
 ```
 
 Requiere Node 18 o superior, sin dependencias.
-
-## Lo que no entra al radar
-
-Las invitaciones privadas, como las de la CCB por Itbid, no están en SECOP. Llegan al correo desde `messages-noreply@itbid.org`.
