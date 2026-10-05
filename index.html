@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Ejecutivo de Licitaciones y Homologación de Proveedores | Next Level</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Procesos de SECOP II que hoy reciben ofertas, filtrados por afinidad temática.">
+  <title>Radar de Licitaciones SECOP II | Next Level</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -294,130 +296,6 @@
       margin-top: 0.25rem;
     }
 
-    .cartera-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .cartera-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      transition: var(--transition);
-      backdrop-filter: blur(16px);
-    }
-
-    .cartera-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
-    }
-
-    .cartera-tag {
-      display: inline-block;
-      font-size: 0.725rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      margin-bottom: 1rem;
-    }
-
-    .tag-emerald { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
-    .tag-blue { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
-    .tag-amber { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
-    .tag-cyan { background: rgba(2, 132, 199, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
-    .tag-teal { background: rgba(13, 148, 136, 0.18); color: #2dd4bf; border: 1px solid rgba(13, 148, 136, 0.4); }
-    .tag-indigo { background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo); border: 1px solid rgba(99, 102, 241, 0.3); }
-
-    .cartera-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-    }
-
-    .cartera-card .proc-code {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent-indigo);
-      margin-bottom: 1rem;
-    }
-
-    .cartera-desc {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 1.25rem;
-    }
-
-    .proponent-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: var(--radius-sm);
-      padding: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .proponent-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .proponent-name span {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent-amber);
-    }
-
-    .proponent-detail {
-      font-size: 0.775rem;
-      color: var(--text-dim);
-      margin-top: 0.25rem;
-      line-height: 1.4;
-    }
-
-    .cartera-financials {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-subtle);
-      margin-bottom: 1.25rem;
-    }
-
-    .cartera-financials .price {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .cartera-financials .term {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
-    .card-actions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.6rem;
-    }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -452,17 +330,6 @@
 
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-
-    .btn-success {
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
-      border-color: rgba(16, 185, 129, 0.3);
-    }
-
-    .btn-success:hover {
-      background: var(--accent-emerald);
       color: #fff;
     }
 
@@ -650,16 +517,19 @@
       align-items: center;
       gap: 0.25rem;
     }
+
     .badge-sector-farmacia { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+
     .badge-sector-cumplimiento { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+
     .badge-sector-legal { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
-    .badge-sector-industrial { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
 
     .load-more-container {
       display: flex;
       justify-content: center;
       margin: 2rem 0 1rem 0;
     }
+
     .btn-load-more {
       background: linear-gradient(135deg, #1e3a8a, #0284c7);
       color: #fff;
@@ -672,6 +542,7 @@
       transition: var(--transition);
       box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
     }
+
     .btn-load-more:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
@@ -720,6 +591,7 @@
     }
 
     .badge-caribe { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
+
     .badge-nacional { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.25); }
 
     .badge-fit {
@@ -781,15 +653,6 @@
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--accent-emerald);
-    }
-
-    .opp-profile {
-      font-size: 0.725rem;
-      font-weight: 600;
-      color: var(--accent-amber);
-      background: rgba(245, 158, 11, 0.1);
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--radius-sm);
     }
 
     /* Table View for Opportunities */
@@ -864,30 +727,6 @@
       margin-bottom: 0.75rem;
     }
 
-    .dir-platform {
-      font-size: 0.725rem;
-      font-weight: 700;
-      color: var(--accent-indigo);
-      background: rgba(99, 102, 241, 0.15);
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(99, 102, 241, 0.3);
-    }
-
-    .dir-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.25rem;
-    }
-
-    .dir-location {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-    }
-
     .dir-categories {
       margin-bottom: 1.25rem;
     }
@@ -898,20 +737,6 @@
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 0.4rem;
-    }
-
-    .dir-cats-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .dir-cat-tag {
-      font-size: 0.725rem;
-      background: rgba(255, 255, 255, 0.04);
-      color: #cbd5e1;
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-sm);
     }
 
     /* Modal */
@@ -1015,529 +840,15 @@
     }
 
     @media (max-width: 768px) {
-      header { padding: 1rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
-      main { padding: 1rem; }
-      .metrics-grid { grid-template-columns: 1fr; }
-      .cartera-grid { grid-template-columns: 1fr; }
-      .opps-grid { grid-template-columns: 1fr; }
-      .card-actions { grid-template-columns: 1fr; }
-    }
-
-    /* --- COMPONENTES ESPECIALES: RADICACIÓN, TIMELINE Y COUNTDOWNS --- */
-    .banner-radicada {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(6, 78, 59, 0.4) 100%);
-      border: 1px solid rgba(16, 185, 129, 0.5);
-      border-radius: var(--radius-sm);
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.25rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
-    }
-
-    .banner-radicada-top {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: #34d399;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .pulse-dot-green {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 12px #10b981;
-      display: inline-block;
-      animation: pulseGreen 1.6s infinite ease-in-out;
-    }
-
-    @keyframes pulseGreen {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.4); opacity: 0.6; }
-    }
-
-    .banner-radicada-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.6rem;
-      font-size: 0.775rem;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      border: 1px solid rgba(16, 185, 129, 0.2);
-    }
-
-    .banner-radicada-grid div span {
-      color: #94a3b8;
-      font-weight: 500;
-      margin-right: 0.35rem;
-    }
-
-    .banner-radicada-grid div strong {
-      color: #f1f5f9;
-      font-weight: 700;
-    }
-
-    /* Timeline de Fases Post-Radicación */
-    .timeline-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem;
-      margin: 1rem 0;
-      padding: 0.75rem 0.5rem;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .t-step {
-      text-align: center;
-      position: relative;
-      padding: 0.4rem 0.2rem;
-    }
-
-    .t-step-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 0.4rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-
-    .t-step.done .t-step-icon {
-      background: #10b981;
-      color: #064e3b;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
-    }
-
-    .t-step.active .t-step-icon {
-      background: #f59e0b;
-      color: #78350f;
-      box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
-      animation: pulseAmber 1.8s infinite ease-in-out;
-    }
-
-    @keyframes pulseAmber {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
-    }
-
-    .t-step.pending .t-step-icon {
-      background: rgba(255, 255, 255, 0.08);
-      color: #64748b;
-      border: 1px dashed rgba(255, 255, 255, 0.2);
-    }
-
-    .t-step-title {
-      font-size: 0.725rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-    }
-
-    .t-step-date {
-      font-size: 0.675rem;
-      color: #94a3b8;
-      margin-top: 0.2rem;
-    }
-
-    /* Caja de Cuenta Regresiva (Countdown Box) */
-    .countdown-box {
-      border-radius: var(--radius-sm);
-      padding: 0.85rem 1rem;
-      margin-bottom: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      border: 1px solid;
-    }
-
-    .countdown-urgent {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(159, 18, 57, 0.25) 100%);
-      border-color: rgba(244, 63, 94, 0.4);
-    }
-
-    .countdown-warning {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(3, 105, 161, 0.22) 100%);
-      border-color: rgba(56, 189, 248, 0.35);
-    }
-
-    .countdown-normal {
-      background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(15, 118, 110, 0.2) 100%);
-      border-color: rgba(45, 212, 191, 0.3);
-    }
-
-    .countdown-closed {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 95, 70, 0.2) 100%);
-      border-color: rgba(16, 185, 129, 0.3);
-    }
-
-    .countdown-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.725rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .countdown-timer {
-      font-family: 'Outfit', monospace, sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .countdown-footer {
-      font-size: 0.725rem;
-      color: #94a3b8;
-    }
-
-    /* Panel Maestro de Rendimiento Financiero del Portafolio */
-    .portfolio-financial-panel {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .p-fin-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 0.75rem;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .p-fin-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .p-fin-item {
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-sm);
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .p-fin-item.highlight {
-      background: rgba(16, 185, 129, 0.12);
-      border-color: rgba(16, 185, 129, 0.4);
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
-    }
-
-    .p-fin-item .lbl {
-      font-size: 0.725rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #94a3b8;
-      margin-bottom: 0.25rem;
-    }
-
-    .p-fin-item .val {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: #fff;
-    }
+    header { padding: 1rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
 
-    .p-fin-item.highlight .val {
-      color: #34d399;
-    }
-
-    .p-fin-item .sub {
-      font-size: 0.7rem;
-      color: #64748b;
-      margin-top: 0.25rem;
-    }
-
-    /* Tab 6: Banco de Expertos */
-    .expert-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition);
-    }
-
-    .expert-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .expert-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      display: inline-block;
-      margin-bottom: 0.75rem;
-    }
-
-    .badge-prof { background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.4); }
-    .badge-cro { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
-    .badge-invima { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
-
-    .pitch-box {
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem;
-      margin-top: 1.5rem;
-      position: relative;
-    }
-
-
-    /* Caja de Repositorio en Google Drive */
-    .drive-repo-box {
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.12) 0%, rgba(14, 165, 233, 0.05) 100%);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: var(--radius-sm);
-      padding: 0.9rem 1rem;
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .drive-repo-title {
-      font-size: 0.775rem;
-      font-weight: 700;
-      color: #38bdf8;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .drive-repo-path {
-      font-size: 0.725rem;
-      color: #e2e8f0;
-      font-family: monospace;
-      background: rgba(0, 0, 0, 0.45);
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
-    .drive-repo-actions {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-
-    /* --- PESTAÑA 7: AUTOMATIZACIÓN & ALERTAS --- */
-    .sync-health-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .sync-card {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sync-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--sync-color, var(--accent-emerald));
-    }
-
-    .sync-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .sync-card-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
+    main { padding: 1rem; }
 
-    .sync-status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.2rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .sync-card-val {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fff;
-      margin: 0.25rem 0;
-    }
-
-    .sync-card-desc {
-      font-size: 0.725rem;
-      color: #64748b;
-    }
-
-    /* Panel de Alertas Críticas */
-    .alerts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .alert-panel-card {
-      background: var(--bg-card);
-      border: 1px solid;
-      border-radius: var(--radius-md);
-      padding: 1.4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .alert-panel-card.alert-critica {
-      border-color: rgba(244, 63, 94, 0.45);
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
-    }
-
-    .alert-panel-card.alert-hito {
-      border-color: rgba(16, 185, 129, 0.45);
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
-    }
-
-    .alert-panel-card.alert-media {
-      border-color: rgba(56, 189, 248, 0.45);
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
-    }
-
-    .alert-panel-card.alert-preventiva {
-      border-color: rgba(45, 212, 191, 0.35);
-      background: linear-gradient(135deg, rgba(45, 212, 191, 0.08) 0%, rgba(15, 23, 42, 0.9) 100%);
-    }
-
-    .alert-badge-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.725rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      margin-bottom: 0.75rem;
-    }
-
-    .alert-badge-top.crit { background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.5); }
-    .alert-badge-top.hito { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); }
-    .alert-badge-top.med { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.5); }
-    .alert-badge-top.prev { background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.4); }
-
-    /* Centro de Recordatorios y Tareas */
-    .reminders-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .reminder-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: var(--radius-sm);
-      margin-bottom: 0.5rem;
-      transition: var(--transition);
-    }
+    .metrics-grid { grid-template-columns: 1fr; }
 
-    .reminder-item:hover {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .reminder-checkbox {
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-      accent-color: var(--accent-emerald);
-    }
-
-    .reminder-text {
-      flex: 1;
-      font-size: 0.85rem;
-      color: #e2e8f0;
-      line-height: 1.4;
-    }
-
-    .reminder-text.completed {
-      text-decoration: line-through;
-      color: #64748b;
-    }
+    .opps-grid { grid-template-columns: 1fr; }
 
-    .reminder-tag {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-weight: 600;
     }
-
 
     /* --- TOAST NOTIFICATIONS & BLINDAJE DE PRODUCCIÓN --- */
     .toast-notification {
@@ -1569,293 +880,73 @@
       pointer-events: auto;
     }
 
-    .risk-matrix-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
 
-    .risk-card {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
 
-    .risk-card.risk-critico { border-left: 4px solid var(--accent-rose); }
-    .risk-card.risk-medio { border-left: 4px solid var(--accent-amber); }
-    .risk-card.risk-bajo { border-left: 4px solid var(--accent-blue); }
-    .risk-card.risk-controlado { border-left: 4px solid var(--accent-emerald); }
 
-    /* Master Corporate Security Gate */
-    #securityGate {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(circle at 50% 25%, #0f172a 0%, #030712 100%);
-      z-index: 999999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      backdrop-filter: blur(28px);
-      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
-    }
-    #securityGate.unlocked {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .gate-card {
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(99, 102, 241, 0.35);
-      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.15);
-      border-radius: 1.5rem;
-      width: 100%;
-      max-width: 480px;
-      padding: 2.75rem 2.25rem;
-      text-align: center;
-      position: relative;
-      animation: gatePopIn 0.4s ease-out;
-    }
-    @keyframes gatePopIn {
-      from { transform: scale(0.92); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .gate-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(99, 102, 241, 0.15);
-      border: 1px solid rgba(99, 102, 241, 0.4);
-      color: #a5b4fc;
-      padding: 0.4rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.775rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .aviso-corte {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.2rem;
       margin-bottom: 1.5rem;
+      font-size: 0.9rem;
     }
-    .gate-icon {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(56, 189, 248, 0.2));
-      border: 1px solid rgba(99, 102, 241, 0.5);
-      border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin: 0 auto 1.25rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    .gate-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-    .gate-desc {
-      color: #94a3b8;
-      font-size: 0.875rem;
+
+    .portal-footer {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 2.5rem;
+      color: var(--text-dim);
+      font-size: 0.78rem;
       line-height: 1.5;
-      margin-bottom: 2rem;
-    }
-    .gate-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      text-align: left;
-    }
-    .gate-field {
-      position: relative;
-    }
-    .gate-input {
-      width: 100%;
-      background: rgba(2, 6, 23, 0.8);
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 0.75rem;
-      padding: 0.85rem 3rem 0.85rem 1.15rem;
-      font-size: 0.95rem;
-      color: #fff;
-      outline: none;
-      transition: all 0.2s ease;
-      box-sizing: border-box;
-    }
-    .gate-input:focus {
-      border-color: #6366f1;
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
-    }
-    .gate-toggle-pwd {
-      position: absolute;
-      right: 0.85rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
-      color: #64748b;
-      cursor: pointer;
-      font-size: 1.1rem;
-      padding: 0.25rem;
-    }
-    .gate-toggle-pwd:hover { color: #cbd5e1; }
-    .gate-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-      border: 1px solid rgba(99, 102, 241, 0.5);
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.85rem 1.5rem;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.5);
-      transition: all 0.2s ease;
-    }
-    .gate-btn:hover {
-      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.6);
-    }
-    .gate-btn:active { transform: translateY(0); }
-    .gate-error {
-      display: none;
-      color: #f87171;
-      background: rgba(239, 68, 68, 0.12);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      padding: 0.6rem 0.85rem;
-      border-radius: 0.5rem;
-      font-size: 0.825rem;
-      margin-top: 0.75rem;
       text-align: center;
     }
-    .gate-error.shake {
-      animation: gateShake 0.35s ease;
-    }
-    @keyframes gateShake {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-8px); }
-      40%, 80% { transform: translateX(8px); }
-    }
-    .gate-footer-notice {
-      margin-top: 1.75rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.725rem;
-      color: #64748b;
-      line-height: 1.4;
-    }
-    .app-blurred {
-      filter: blur(28px) grayscale(60%);
-      pointer-events: none;
-      user-select: none;
-      transition: filter 0.4s ease;
-    }
-
-
   </style>
 </head>
 <body>
-
-  <!-- Master Security Gate Modal -->
-  <div id="securityGate">
-    <div class="gate-card">
-      <div class="gate-icon">🛡️</div>
-      <div class="gate-badge">🔒 Acceso Privado Corporativo</div>
-      <h2 class="gate-title">Next Level S.A.S.</h2>
-      <p class="gate-desc">
-        Sistema Interno de Inteligencia de Licitaciones y Procura Corporativa.<br>
-        <strong style="color: #cbd5e1;">Uso estrictamente confidencial de la organización.</strong>
-      </p>
-
-      <form class="gate-form" onsubmit="handleSecurityUnlock(event)">
-        <div class="gate-field">
-          <input 
-            type="password" 
-            id="gatePasswordInput" 
-            class="gate-input" 
-            placeholder="Ingrese la clave corporativa..." 
-            autocomplete="current-password"
-            required
-            autofocus
-          >
-          <button type="button" class="gate-toggle-pwd" onclick="toggleGatePasswordVisibility()" title="Mostrar/Ocultar clave">👁️</button>
-        </div>
-        <button type="submit" class="gate-btn" id="gateSubmitBtn">
-          <span>Desbloquear Portal Seguro</span>
-          <span>→</span>
-        </button>
-        <div id="gateErrorMessage" class="gate-error">
-          ⚠️ Clave incorrecta. Acceso denegado.
-        </div>
-      </form>
-
-      <div class="gate-footer-notice">
-        ⚖️ <strong>Información Clasificada:</strong> Este entorno contiene información estratégica reservada sujeta a secreto comercial (Decisión 486 CAN) y Ley 1581 de 2012. Cualquier acceso no autorizado será registrado.
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Application Wrapper (Blurred when locked) -->
-  <div id="appMainWrapper" class="app-blurred">
-
 
   <!-- Top Navigation Header -->
   <header>
     <div class="brand">
       <div class="brand-logo">NL</div>
       <div class="brand-info">
-        <h1>PROCURA & LICITACIONES 360</h1>
-        <p>Mamonal • Cartagena • Región Caribe • Plataformas Corporativas</p>
+        <h1>RADAR DE LICITACIONES</h1>
+        <p>Procesos de SECOP II que hoy reciben ofertas • Next Level S.A.S.</p>
       </div>
     </div>
     <div class="header-actions">
       <div class="status-badge">
         <span class="dot"></span>
-        <span><span class="radar-total">0</span> Procesos Abiertos en el Radar</span>
+        <span><span class="radar-total">0</span> Procesos Abiertos</span>
       </div>
-      <a href="https://app.nextlevelsas.com/" target="_blank" class="btn btn-secondary">
+      <a href="https://app.nextlevelsas.com/" target="_blank" rel="noopener" class="btn btn-secondary">
         🌐 E-Learning Next Level
       </a>
-      <button id="btnLockApp" class="btn btn-secondary" onclick="lockSecurityGate()" title="Bloquear sesión inmediatamente" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; display: inline-flex; align-items: center; gap: 0.4rem;">
-        🔒 Bloquear
-      </button>
     </div>
   </header>
 
-  <!-- Main Workspace -->
   <main>
 
-    <!-- Top KPI Metrics -->
+    <!-- Aviso de datos desactualizados (se muestra si el último corte tiene más de 36 h) -->
+    <div id="avisoCorte" class="aviso-corte" style="display:none;">
+      ⚠️ Datos desactualizados: el último corte válido es del <strong id="avisoCorteFecha">—</strong>. La actualización diaria no se ha completado; verifica cada proceso en SECOP II.
+    </div>
+
+    <!-- Indicadores del radar -->
     <div class="metrics-grid">
       <div class="metric-card" style="--card-color: var(--accent-emerald);">
         <div class="metric-label">
-          <span>Oferta Radicada en CCB 32540</span>
-          <span style="color: var(--accent-emerald);">● RADICADA & CERRADA</span>
+          <span>Procesos Abiertos en el Radar</span>
+          <span style="color: var(--accent-emerald);">● Recepción vigente</span>
         </div>
-        <div class="metric-value" style="color:#34d399;">$110.000.000</div>
-        <div class="metric-subtext">🔒 Recepción cerrada el 30-sep • En evaluación (la CCB no publicó fecha de resultados)</div>
+        <div class="metric-value radar-total" style="color:#34d399;">0</div>
+        <div class="metric-subtext" id="kpiAbiertosSecop">—</div>
       </div>
 
       <div class="metric-card" style="--card-color: var(--accent-rose);">
         <div class="metric-label">
-          <span>Próximo Cierre en el Radar</span>
+          <span>Próximo Cierre</span>
           <span style="color: var(--accent-rose);">● SECOP II</span>
         </div>
         <div class="metric-value" id="topKpiProximoCierre" style="font-size:1.7rem; color:#fb7185;">—</div>
@@ -1864,304 +955,28 @@
 
       <div class="metric-card" style="--card-color: var(--accent-blue);">
         <div class="metric-label">
-          <span>Cartera de Propuestas</span>
-          <span style="color: var(--accent-blue);">● 2 Propuestas</span>
+          <span>Corte de Datos</span>
+          <span style="color: var(--accent-blue);">● Diario 06:00 COT</span>
         </div>
-        <div class="metric-value">$110.000.000</div>
-        <div class="metric-subtext">CCB radicada • Contraloría 2027: valor por confirmar</div>
-      </div>
-
-      <div class="metric-card" style="--card-color: var(--accent-amber);">
-        <div class="metric-label">
-          <span>Oportunidades Abiertas</span>
-          <span style="color: var(--accent-amber);">● Recepción vigente</span>
-        </div>
-        <div class="metric-value radar-total" style="color:#fbbf24;">0</div>
-        <div class="metric-subtext" id="radarCorteTexto">Procesos de SECOP II que hoy reciben ofertas y encajan con el perfil</div>
+        <div class="metric-value" id="kpiCorte" style="font-size:1.7rem;">—</div>
+        <div class="metric-subtext">Fuente: SECOP II, datos abiertos (datos.gov.co)</div>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('cartera')">
-        ⭐ Cartera y Ofertas
-        <span class="badge-count" style="background:var(--accent-emerald);">1 Radicada • 1 En preparación</span>
-      </button>
-      <button class="tab-btn" onclick="switchTab('radar')">
+      <button class="tab-btn active" onclick="switchTab('radar', this)">
         📡 Radar SECOP II (Abiertas Hoy)
         <span class="badge-count"><span class="radar-total">0</span> Procesos</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('expertos')">
-        👥 Banco de Expertos (Bioequivalencia CCB)
-        <span class="badge-count" style="background:var(--accent-indigo);">5 Aliados</span>
-      </button>
-      <button class="tab-btn" onclick="switchTab('homologacion')">
-        🏢 Homologación de Proveedores (Suplos / Ariba / Exiros)
-        <span class="badge-count">11</span>
-      </button>
-      <button class="tab-btn" onclick="switchTab('dossiers')">
-        📑 Dossiers y Paquetes ZIP
-        <span class="badge-count">3 ZIPs</span>
-      </button>
-      <button class="tab-btn" onclick="switchTab('unspsc')">
+      <button class="tab-btn" onclick="switchTab('unspsc', this)">
         🏷️ Catálogo Códigos UNSPSC
-        <span class="badge-count">21 Códigos</span>
+        <span class="badge-count">20 Códigos</span>
       </button>
-      <button class="tab-btn" onclick="switchTab('alertas')">
-        ⚡ Automatización & Alertas
-        <span class="badge-count" style="background:#f43f5e;"><span id="alertasCount">0</span> Alertas</span>
-      </button>
-    </div>
-
-    <!-- TAB 1: CARTERA ESTRUCTURADA Y LISTA -->
-    <div id="tab-cartera" class="tab-pane active">
-      <div class="section-header">
-        <div class="section-title">
-          <h2>Cartera de Propuestas</h2>
-          <p>Solo propuestas reales: radicadas ante la entidad o en preparación por gestión directa.</p>
-        </div>
-      </div>
-
-      <!-- Cartera Filter Toolbar -->
-      <div class="filter-toolbar" style="margin-bottom: 1.5rem;">
-        <div class="search-row">
-          <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchCarteraInput" class="search-input" placeholder="Buscar en propuestas por entidad, proceso, objeto o proponente..." oninput="filterCartera()">
-          </div>
-          <div class="btn-reset-filters" style="cursor:default; background:rgba(56,189,248,0.12); border-color:rgba(56,189,248,0.3); color:#38bdf8;">
-            Mostrando <strong id="carteraVisibleCount" style="margin:0 4px;">2</strong> de 2 propuestas • <strong id="carteraVisibleAmount" style="margin-left:4px;">$110.000.000 COP</strong>
-          </div>
-        </div>
-
-        <div style="display:flex; flex-wrap:wrap; gap:1.25rem; align-items:center;">
-          <div class="filter-chips">
-            <span class="chip-label">Estado de la Oferta:</span>
-            <button class="chip active" onclick="setCarteraEstadoFilter('TODOS', this)">Todas (2)</button>
-            <button class="chip" onclick="setCarteraEstadoFilter('RADICADA', this)">✅ Radicadas (1)</button>
-            <button class="chip" onclick="setCarteraEstadoFilter('PREPARACION', this)">📝 En preparación (1)</button>
-          </div>
-
-          <div class="filter-chips">
-            <span class="chip-label">Proponente Líder:</span>
-            <button class="chip active" onclick="setCarteraProponenteFilter('TODOS', this)">Todos</button>
-            <button class="chip" onclick="setCarteraProponenteFilter('JULIA', this)">Dra. Julia Pardo</button>
-            <button class="chip" onclick="setCarteraProponenteFilter('ALICIA', this)">Ing. Alicia Guzmán</button>
-            <button class="chip" onclick="setCarteraProponenteFilter('LUIS', this)">Dr. Luis Daniel</button>
-          </div>
-        </div>
-      </div>
-
-      <div id="carteraGrid" class="cartera-grid">
-
-        <div class="cartera-card" data-estado="RADICADA" data-proponente="JULIA" data-monto="110000000" data-text="cámara de comercio de bogotá — ccb (clúster farmacéutico) convocatoria privada — cotización aceptada n° 32540 (convocatoria-2807-2026) asesoría técnica especializada en biodisponibilidad (bd), bioequivalencia (be), bioexenciones (guía invima ass-rsa-gu052) y caracterización de laboratorios para 15 empresas farmacéuticas. julia inés pardo carmona">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
-              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-                <span class="cartera-tag tag-emerald">🔒 CERRADA • ✅ RADICADA</span>
-              </div>
-              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: CONVOCATORIA-2807-2026</span>
-            </div>
-
-            <h3>CÁMARA DE COMERCIO DE BOGOTÁ — CCB (Clúster Farmacéutico)</h3>
-            <div class="proc-code">Convocatoria privada, modalidad cotización aceptada • Negociación Itbid N° 32540</div>
-
-            
-            <!-- BANNER OFICIAL DE RADICACIÓN Y CIERRE -->
-            <div class="banner-radicada">
-              <div class="banner-radicada-top">
-                <span class="pulse-dot-green"></span>
-                <span>🔒 CONVOCATORIA CERRADA • ✅ OFERTA RADICADA OFICIALMENTE</span>
-              </div>
-              <div class="banner-radicada-grid">
-                <div><span>Radicación:</span> <strong>30 de septiembre de 2026, 16:55 COT (acuse de Itbid)</strong></div>
-                <div><span>Plataforma:</span> <strong>Portal de contratación CCB (Itbid)</strong></div>
-                <div><span>Proponente:</span> <strong>Julia Inés Pardo Carmona</strong></div>
-                <div><span>Valor ofertado:</span> <strong>$110.000.000 COP (no responsable de IVA)</strong></div>
-                <div><span>Vigencia de la oferta:</span> <strong>90 días, hasta el 29 de diciembre de 2026</strong></div>
-                <div><span>Estado:</span> <strong>En evaluación por la CCB</strong></div>
-              </div>
-            </div>
-
-            <!-- ETAPAS POST-RADICACIÓN (la invitación solo fijó observaciones 25-sep y recepción 30-sep) -->
-            <div class="timeline-steps">
-              <div class="t-step done">
-                <div class="t-step-icon">✓</div>
-                <div class="t-step-title">1. Radicación</div>
-                <div class="t-step-date">30-sep 16:55</div>
-              </div>
-              <div class="t-step active">
-                <div class="t-step-icon">⏳</div>
-                <div class="t-step-title">2. Evaluación</div>
-                <div class="t-step-date">En curso • sin fecha publicada</div>
-              </div>
-              <div class="t-step pending">
-                <div class="t-step-icon">📋</div>
-                <div class="t-step-title">3. Subsanaciones</div>
-                <div class="t-step-date">Solo si la CCB las pide</div>
-              </div>
-              <div class="t-step pending">
-                <div class="t-step-icon">🎯</div>
-                <div class="t-step-title">4. Adjudicación</div>
-                <div class="t-step-date">Fecha por publicar</div>
-              </div>
-            </div>
-
-            <!-- SEGUIMIENTO CCB -->
-            <div class="countdown-box countdown-closed">
-              <div class="countdown-header" style="color:#34d399;">
-                <span>🎯 Seguimiento</span>
-                <span>Centro de mensajes Itbid</span>
-              </div>
-              <div class="countdown-timer" style="color:#a7f3d0; font-size:1.05rem;">
-                Revisar los mensajes de la negociación 32540: la CCB comunica allí el resultado y cualquier subsanación.
-              </div>
-            </div>
-        
-
-            <p class="cartera-desc">Asesoría técnica especializada en Biodisponibilidad (BD), Bioequivalencia (BE), Bioexenciones (Guía INVIMA ASS-RSA-GU052) y caracterización de laboratorios para 15 empresas farmacéuticas.</p>
-            
-            <div class="proponent-box">
-              <div class="proponent-name">
-                Julia Inés Pardo Carmona 
-                <span>(Líder Proponente Habilitado)</span>
-              </div>
-              <div class="proponent-detail">Química Farmacéutica (TP 408) | Especialista en SG-SST (Licencia DADIS 306) | Auditora Líder ICONTEC (+30 años de experiencia) | Experiencia en laboratorios farmacéuticos y CCAA ante INVIMA</div>
-              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
-                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán (NDAs y Reserva de Patentes) + Ing. Alicia Guzmán (Coordinación 150h) + Banco de Expertos BD/BE
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="cartera-financials">
-              <div>
-                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Valor Ofertado</div>
-                <div class="price">$110.000.000 COP</div>
-              </div>
-              <div class="term">8 meses desde el perfeccionamiento del contrato (precio fijo, no responsable de IVA)</div>
-            </div>
-
-            <!-- DOCUMENTOS EN GOOGLE DRIVE (solo abren para la cuenta propietaria) -->
-            <div class="card-actions">
-              <a href="https://drive.google.com/file/d/11Tuo_tvHvgoQWMzmdZVNdtwYZpc49D5_/view" target="_blank" rel="noopener" class="btn btn-primary">
-                📄 Propuesta Técnica PDF
-              </a>
-              <a href="https://drive.google.com/file/d/1OxIEzA1SneRw0TAudFw_YKqbMWE0rEB9/view" target="_blank" rel="noopener" class="btn btn-secondary">
-                💰 Propuesta Económica
-              </a>
-              <a href="https://drive.google.com/file/d/1Lrpj__NOh0-8IANTPVLmxgJK5YjYSbLt/view" target="_blank" rel="noopener" class="btn btn-secondary">
-                ✉️ Invitación de la CCB
-              </a>
-              <a href="https://drive.google.com/file/d/1YBVrfgr1NjV77rqFWCJJsXah9_5w8ATU/view" target="_blank" rel="noopener" class="btn btn-secondary">
-                ✅ Checklist de radicación
-              </a>
-            </div>
-
-            <!-- ENLACE OFICIAL / ESTADO DEL PROCESO -->
-            <div style="margin-top:0.75rem;">
-              <a href="https://portaldecontratacion.ccb.org.co/negociaciones/ver/32540" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.5rem; background:linear-gradient(135deg, #4f46e5, #4338ca); box-shadow:0 4px 12px rgba(79, 70, 229, 0.35); font-weight:700;">
-                🌐 Ver Negociación 32540 en Itbid CCB
-              </a>
-            </div>
-
-            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
-            <div class="drive-repo-box">
-              <div class="drive-repo-title">
-                <span>☁️ Carpeta en Google Drive</span>
-              </div>
-              <div class="drive-repo-path">
-                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\01 CAMARA DE COMERCIO DE BOGOTA (Proceso 32540 - Farmaceutico)
-              </div>
-              <div class="drive-repo-actions">
-                <a href="https://drive.google.com/drive/folders/1aQhBS8yB-_ktFMFJpB8FEC1GjG0NXYTe" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
-                  ☁️ Abrir Carpeta Drive
-                </a>
-                <button onclick="copiarRutaDrive(this, 'G:\\Mi unidad\\CONVOCATORIAS_Y_LICITACIONES_2026\\01 CAMARA DE COMERCIO DE BOGOTA (Proceso 32540 - Farmaceutico)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
-                  📋 Copiar Ruta
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <div class="cartera-card" data-estado="PREPARACION" data-proponente="JULIA" data-monto="0" data-text="contraloría distrital de cartagena de indias d.t. y c. gestión directa contratación directa propuesta vigencia 2027 consultoría especializada para la mejora continua, la optimización de procesos y el acompañamiento a la certificación iso 9001:2015 / enmienda 1:2024 articulada con mipg y ptep. julia inés pardo carmona">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
-              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-                <span class="cartera-tag tag-indigo">🤝 GESTIÓN DIRECTA • 📝 PROPUESTA 2027 EN PREPARACIÓN</span>
-              </div>
-              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:600;">Ref: COT-CDC-2027-01 (interna)</span>
-            </div>
-
-            <h3>CONTRALORÍA DISTRITAL DE CARTAGENA DE INDIAS D.T. Y C.</h3>
-            <div class="proc-code">Cliente actual (contrato 2026 por gestión propia) • Contratación directa, no se publica como convocatoria</div>
-
-            <div class="countdown-box countdown-normal">
-              <div class="countdown-header" style="color:#2dd4bf;">
-                <span>📝 Estado</span>
-                <span style="background:rgba(0,0,0,0.3); padding:0.15rem 0.5rem; border-radius:4px;">Sin fecha de cierre</span>
-              </div>
-              <div class="countdown-timer" style="color:#fff; font-size:1.05rem;">
-                Propuesta para la vigencia 2027 en borrador. Falta definir el valor y enviarla a la entidad.
-              </div>
-            </div>
-
-            <p class="cartera-desc">Consultoría especializada para la mejora continua, la optimización de procesos y el acompañamiento a la certificación ISO 9001:2015 / Enmienda 1:2024 articulada con MIPG y PTEP (vigencia 2027, 12 meses según el borrador).</p>
-            
-            <div class="proponent-box">
-              <div class="proponent-name">
-                Julia Inés Pardo Carmona 
-                <span>(Líder Proponente Habilitado)</span>
-              </div>
-              <div class="proponent-detail">Química Farmacéutica (TP 408) | Especialista en SG-SST (Licencia DADIS 306) | Auditora Líder ICONTEC (ISO 9001, 14001, 45001) | Experiencia previa en auditoría fiscal en Contraloría</div>
-              <div class="proponent-detail" style="margin-top:0.4rem; color:#cbd5e1;">
-                <strong>Equipo de Apoyo:</strong> Dr. Luis Daniel Guzmán (Auditor ISO 27001 / Jurídico MIPG) + Ing. Alicia Guzmán (Coordinación de Procesos)
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="cartera-financials">
-              <div>
-                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700;">Valor</div>
-                <div class="price">Por confirmar</div>
-              </div>
-              <div class="term">12 meses, febrero 2027 a enero 2028 (según el borrador)</div>
-            </div>
-
-            <!-- DOCUMENTOS EN GOOGLE DRIVE (solo abren para la cuenta propietaria) -->
-            <div class="card-actions">
-              <a href="https://drive.google.com/file/d/1EZh9XEGBtYsQRYzr-YJeB3XnLxvwKRsW/view" target="_blank" rel="noopener" class="btn btn-primary" style="grid-column: 1/-1;">
-                📄 Borrador de la propuesta 2027 (PDF)
-              </a>
-            </div>
-
-            <!-- REPOSITORIO CENTRAL EN GOOGLE DRIVE -->
-            <div class="drive-repo-box">
-              <div class="drive-repo-title">
-                <span>☁️ Carpeta en Google Drive</span>
-              </div>
-              <div class="drive-repo-path">
-                📂 G:\Mi unidad\CONVOCATORIAS_Y_LICITACIONES_2026\06 CONTRALORIA CARTAGENA (Proceso COT-CDC-2027-01 - Calidad MIPG)
-              </div>
-              <div class="drive-repo-actions">
-                <a href="https://drive.google.com/drive/folders/1lXLzafX50dXX4qg9JRPTWqV6wddmDV6k" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem; background:linear-gradient(135deg, #0284c7, #0369a1);">
-                  ☁️ Abrir Carpeta Drive
-                </a>
-                <button onclick="copiarRutaDrive(this, 'G:\\Mi unidad\\CONVOCATORIAS_Y_LICITACIONES_2026\\06 CONTRALORIA CARTAGENA (Proceso COT-CDC-2027-01 - Calidad MIPG)')" class="btn btn-secondary" style="flex:1; padding:0.45rem 0.75rem; font-size:0.75rem;">
-                  📋 Copiar Ruta
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-      </div>
     </div>
 
     <!-- TAB 2: RADAR DE OPORTUNIDADES -->
-    <div id="tab-radar" class="tab-pane">
+    <div id="tab-radar" class="tab-pane active">
       <div class="section-header">
         <div class="section-title">
           <h2>Radar SECOP II: procesos que hoy reciben ofertas</h2>
@@ -2170,6 +985,9 @@
         <div class="view-controls">
           <button class="btn btn-secondary" onclick="exportFilteredCSV()">
             📥 Exportar CSV (<span id="exportCount">0</span>)
+          </button>
+          <button class="btn btn-secondary" onclick="descargarCalendarioICS()">
+            📅 Calendario de cierres (.ICS)
           </button>
           <button id="btnViewGrid" class="btn btn-primary" onclick="setViewMode('grid')">
             🔲 Cuadrícula
@@ -2192,15 +1010,6 @@
           <button class="btn-reset-filters" onclick="resetAllFilters()">
             🔄 Restablecer Filtros
           </button>
-        </div>
-
-        <!-- Filter 1: Proponente Asignado -->
-        <div class="filter-chips">
-          <span class="chip-label">Proponente:</span>
-          <button class="chip active" onclick="setProfileFilter('TODOS', this)">Todos</button>
-          <button class="chip" onclick="setProfileFilter('JULIA', this)">💊 Dra. Julia Pardo (Farmacia/HSEQ)</button>
-          <button class="chip" onclick="setProfileFilter('ALICIA', this)">🛡️ Ing. Alicia Guzmán (Cumplimiento/SGI)</button>
-          <button class="chip" onclick="setProfileFilter('LUIS', this)">⚖️ Dr. Luis Daniel (Legal/ISO 27001)</button>
         </div>
 
         <!-- Filter 2: Compatibilidad / Viabilidad Técnica -->
@@ -2306,7 +1115,7 @@
               <th>Objeto Contractual</th>
               <th>Presupuesto (COP)</th>
               <th>Ubicación / Alcance</th>
-              <th>Proponente Sugerido</th>
+              <th>Modalidad</th>
               <th>Acción</th>
             </tr>
           </thead>
@@ -2317,598 +1126,6 @@
       </div>
     </div>
 
-    <!-- TAB 3: DIRECTORIO DE HOMOLOGACIÓN -->
-    <div id="tab-homologacion" class="tab-pane">
-      <div class="section-header">
-        <div class="section-title">
-          <h2>Directorio Oficial de Proveedores de Grandes Compradores</h2>
-          <p>Enlaces directos a los portales de compras, plataformas de homologación y categorías de demanda.</p>
-        </div>
-      </div>
-
-      <div class="directorio-grid">
-
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">SAP Ariba / SIPROE Ecopetrol / Nexo Público</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal</span>
-            </div>
-            <div class="dir-name">Esenttia S.A. (Grupo Ecopetrol)</div>
-            <div class="dir-location">📍 Zona Industrial de Mamonal Km 8, Cartagena | NIT: 806001222-6</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías HSEQ ISO 9001 / ISO 14001 / ISO 45001</span><span class='dir-cat-tag'>Seguridad de Procesos y Gestión de Riesgos Químicos</span><span class='dir-cat-tag'>Sistemas de Cumplimiento SAGRILAFT y PTEE</span><span class='dir-cat-tag'>Seguridad de la Información ISO 27001</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (HSEQ/Química) + Alicia Guzmán (SAGRILAFT/Procesos) + Luis Daniel (Cumplimiento Legal)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://siproe.ecopetrol.com.co/slc_selfreg" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://proveedores.ecopetrol.com.co" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">SIPROE / SAP Ariba / Nexo Público</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal</span>
-            </div>
-            <div class="dir-name">Refinería de Cartagena S.A.S. (Reficar / Ecopetrol)</div>
-            <div class="dir-location">📍 Zona Industrial de Mamonal Km 13, Cartagena | NIT: 900130635-4</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías Técnicas HSEQ y Gestión de Riesgos</span><span class='dir-cat-tag'>Control de Calidad y Ensayos de Laboratorio ISO 17025</span><span class='dir-cat-tag'>Asesoría Jurídica Administrativa y Laboral</span><span class='dir-cat-tag'>Oficialía de Cumplimiento SAGRILAFT / PTEE</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (Calidad/HSEQ) + Luis Daniel Guzmán (Legal/ISO 27001)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://siproe.ecopetrol.com.co/slc_selfreg" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.refineriadecartagena.com.co/proveedores" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Suplos Cloud</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Nacional / Internacional</span>
-            </div>
-            <div class="dir-name">Cementos Argos S.A. (Grupo Argos)</div>
-            <div class="dir-location">📍 Mamonal Km 7, Cartagena (Planta y Terminal Portuario) | NIT: 890100251-8</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Sistemas Integrados de Gestión (SGI) y Auditorías Internas</span><span class='dir-cat-tag'>Gerencia de Proyectos Operativos y Logísticos</span><span class='dir-cat-tag'>Cumplimiento SAGRILAFT / PTEE / Debida Diligencia</span><span class='dir-cat-tag'>Seguridad de la Información y Habeas Data</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Ingeniera Industrial - Experiencia IDT/Argos) + Julia Pardo (HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://proveedores.suplos.com/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://colombia.argos.co/proveedores/" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Canal Directo de Compras / Coupa</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal / Multinacional</span>
-            </div>
-            <div class="dir-name">Yara Colombia S.A.</div>
-            <div class="dir-location">📍 Mamonal Km 11, Cartagena | NIT: 860002506-6</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías de Calidad y Buenas Prácticas de Manufactura</span><span class='dir-cat-tag'>Laboratorios de Control Químico y Ambiental</span><span class='dir-cat-tag'>Gestión de Riesgos y SG-SST</span><span class='dir-cat-tag'>Sistemas de Cumplimiento Ético y Antisoborno</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (Química Farmacéutica, Auditora Líder HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.yara.com.co/acerca-de-yara/proveedores/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.yara.com.co" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Exiros (Portal Global Techint) / Vendor Portal</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal / Global</span>
-            </div>
-            <div class="dir-name">Tenaris TuboCaribe Ltda. (Grupo Techint)</div>
-            <div class="dir-location">📍 Zona Franca Parque Central / Mamonal Km 14, Turbaco-Cartagena | NIT: 806000843-1</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías de Sistemas de Gestión y Calidad</span><span class='dir-cat-tag'>Coordinación de Seguridad y Salud en el Trabajo (SST)</span><span class='dir-cat-tag'>Consultoría en Gestión de Procesos Industriales</span><span class='dir-cat-tag'>Blindaje Jurídico y Protección de Datos</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Ingeniera Industrial) + Julia Pardo (HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.exiros.com/es/proveedores/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.tenaris.com/es/proveedores/" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Portal Global Cabot / Ariba</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal / Global</span>
-            </div>
-            <div class="dir-name">Cabot Colombiana S.A.</div>
-            <div class="dir-location">📍 Mamonal Km 12, Cartagena | NIT: 890400030-9</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Gestión de Calidad y Laboratorios de Ensayo</span><span class='dir-cat-tag'>Auditorías Ambientales ISO 14001 y HSEQ</span><span class='dir-cat-tag'>Gestión de Riesgos Ocupacionales</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (Química / Auditora Líder HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.cabotcorp.com/suppliers" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.cabotcorp.com/suppliers/supplier-resources" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">SAP Ariba / Portal Proveedores Orbia</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Mamonal / Global</span>
-            </div>
-            <div class="dir-name">Vestolit Colombia S.A.S. (Grupo Orbia / Mexichem)</div>
-            <div class="dir-location">📍 Mamonal Km 9, Cartagena | NIT: 890400329-8</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías de Calidad de Procesos Químicos</span><span class='dir-cat-tag'>Programas de Transparencia y Ética Empresarial PTEE</span><span class='dir-cat-tag'>Gestión de Riesgos LA/FT y Debida Diligencia</span><span class='dir-cat-tag'>Formación Virtual de Proveedores y Contratistas</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Oficial de Cumplimiento) + Julia Pardo (Química)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.orbia.com/sustainability/supply-chain/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.orbia.com/suppliers/" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Portal de Proveedores Compas</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Portuario</span>
-            </div>
-            <div class="dir-name">Compas S.A. (Terminal Portuario Puerto Mamonal)</div>
-            <div class="dir-location">📍 Mamonal Km 11, Cartagena | NIT: 806008678-1</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Sistemas Integrados de Gestión HSEQ y BASC</span><span class='dir-cat-tag'>Oficialía de Cumplimiento SARLAFT / SAGRILAFT</span><span class='dir-cat-tag'>Reingeniería de Procesos Operativos y Logísticos</span><span class='dir-cat-tag'>Seguridad de la Información ISO 27001</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Ex-Coordinadora SGI en Puerto Mamonal) + Luis Daniel Guzmán (Legal)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.compas.com.co/proveedores/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.compas.com.co" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Portal de Proveedores SPRC</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Regional / Hub Internacional</span>
-            </div>
-            <div class="dir-name">Grupo Puerto de Cartagena (SPRC & CONTECAR)</div>
-            <div class="dir-location">📍 Manga / Albornoz, Cartagena | NIT: 800222045-8</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>SARLAFT / SAGRILAFT / Control OEA y BASC</span><span class='dir-cat-tag'>Seguridad de la Información ISO/IEC 27001:2022</span><span class='dir-cat-tag'>Programas de Transformación Digital y Capacitación E-Learning</span><span class='dir-cat-tag'>Protección de Datos Personales Ley 1581</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Luis Daniel Guzmán (ISO 27001/Habeas Data) + Alicia Guzmán (BASC/Oficial de Cumplimiento)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.puertocartagena.com/es/proveedores" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.puertocartagena.com" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Dow Global Procurement / Ariba</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Local / Multinacional</span>
-            </div>
-            <div class="dir-name">Dow Química de Colombia S.A.</div>
-            <div class="dir-location">📍 Mamonal Km 7, Cartagena | NIT: 860002164-3</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías HSEQ y Control de Calidad</span><span class='dir-cat-tag'>Sistemas de Gestión de Seguridad y Salud en el Trabajo</span><span class='dir-cat-tag'>Cumplimiento Normativo y Buenas Prácticas</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (Química Farmacéutica / HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://www.dow.com/en-us/about/suppliers.html" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.dow.com" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Suplos Cloud</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Regional Caribe / Nacional</span>
-            </div>
-            <div class="dir-name">Promigas S.A. E.S.P.</div>
-            <div class="dir-location">📍 Barranquilla / Red de Transporte de Gas en Bolívar y Caribe | NIT: 890104676-0</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Cumplimiento SARLAFT / SAGRILAFT / PTEE</span><span class='dir-cat-tag'>Seguridad de la Información ISO 27001</span><span class='dir-cat-tag'>Sistemas Integrados de Gestión HSEQ</span><span class='dir-cat-tag'>Plataforma E-learning y Formación Virtual</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Cumplimiento) + Luis Daniel Guzmán (Seguridad Información / Legal)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://proveedores.suplos.com/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.promigas.com/proveedores" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Suplos Cloud</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Regional / Nacional</span>
-            </div>
-            <div class="dir-name">Celsia Colombia S.A. E.S.P. (Grupo Argos)</div>
-            <div class="dir-location">📍 Medellín / Presencia en el Caribe Colombiano | NIT: 900276962-1</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías HSEQ ISO 9001 / 14001 / 45001</span><span class='dir-cat-tag'>Gerencia y Monitoreo de Proyectos Energéticos</span><span class='dir-cat-tag'>Sistemas de Cumplimiento Ético y Debida Diligencia</span><span class='dir-cat-tag'>Capacitación E-learning a Contratistas</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Gerencia Proyectos/Industrial) + Julia Pardo (HSEQ)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://proveedores.suplos.com/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.celsia.com/proveedores/" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Suplos Cloud</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Nacional / Planta Mamonal</span>
-            </div>
-            <div class="dir-name">Organización Terpel S.A.</div>
-            <div class="dir-location">📍 Bogotá / Terminal de Almacenamiento en Mamonal Cartagena | NIT: 860004593-3</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Auditorías de Calidad y Calificación de Laboratorios</span><span class='dir-cat-tag'>Oficialía de Cumplimiento SAGRILAFT</span><span class='dir-cat-tag'>Seguridad de la Información y Protección de Datos</span><span class='dir-cat-tag'>Plataforma E-learning para Red de Estaciones</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (SAGRILAFT) + Luis Daniel Guzmán (Datos/ISO 27001)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://proveedores.suplos.com/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.terpel.com/proveedores" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Suplos Cloud / SAP Ariba</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Nacional</span>
-            </div>
-            <div class="dir-name">Bancolombia S.A.</div>
-            <div class="dir-location">📍 Nacional (Medellín / Bogotá / Cobertura Caribe) | NIT: 890903938-8</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Oficialía de Cumplimiento SARLAFT / Prevención LA/FT</span><span class='dir-cat-tag'>Protección de Datos Personales y Habeas Data</span><span class='dir-cat-tag'>Auditorías ISO/IEC 27001:2022 Seguridad Digital</span><span class='dir-cat-tag'>Capacitación Corporativa E-learning Masiva</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Alicia Guzmán (Oficial Cumplimiento) + Luis Daniel Guzmán (Abogado / ISO 27001)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://proveedores.suplos.com/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://www.bancolombia.com/proveedores" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="dir-card">
-          <div>
-            <div class="dir-header">
-              <span class="dir-platform">Portal de Proveedores Nutresa / Ariba</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">Nacional / Internacional</span>
-            </div>
-            <div class="dir-name">Grupo Nutresa S.A.</div>
-            <div class="dir-location">📍 Nacional / Plantas en la Región Caribe y Medellín | NIT: 890900050-1</div>
-
-            <div class="dir-categories">
-              <div class="dir-cat-title">Categorías Demandadas:</div>
-              <div class="dir-cats-list">
-    <span class='dir-cat-tag'>Buenas Prácticas de Manufactura (BPM) y HACCP</span><span class='dir-cat-tag'>Certificaciones Sanitarias INVIMA (CCAA, Registro Sanitario)</span><span class='dir-cat-tag'>Auditorías HSEQ y Control de Proveedores</span><span class='dir-cat-tag'>Plataformas E-learning de Inocuidad y Calidad</span>
-              </div>
-            </div>
-
-            <div style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-muted);">
-              <strong>Proponente Idóneo:</strong> Julia Inés Pardo (Química Farmacéutica / Inocuidad / CCAA / INVIMA)
-            </div>
-          </div>
-
-          <div>
-            <div class="card-actions">
-              <a href="https://gruponutresa.com/proveedores/" target="_blank" class="btn btn-primary">
-                📝 Auto-Registro
-              </a>
-              <a href="https://gruponutresa.com/proveedores/gestion-de-proveedores/" target="_blank" class="btn btn-secondary">
-                🌐 Portal Compras
-              </a>
-            </div>
-          </div>
-        </div>
-    
-      </div>
-    </div>
-
-    <!-- TAB 4: DOSSIERS DE INSCRIPCIÓN Y PAQUETES ZIP -->
-    <div id="tab-dossiers" class="tab-pane">
-      <div class="section-header">
-        <div class="section-title">
-          <h2>Dossiers y Paquetes de Homologación Listos para Carga</h2>
-          <p>Paquetes ZIP y guías operativas con respuestas a debida diligencia y todos los PDFs requeridos.</p>
-        </div>
-      </div>
-
-      <div class="cartera-grid">
-        <!-- Suplos ZIP -->
-        <div class="cartera-card" style="border-color: rgba(56, 189, 248, 0.4);">
-          <div>
-            <span class="cartera-tag tag-blue">ZIP Listo para Carga (2.81 MB)</span>
-            <h3>Paquete Homologación Suplos Cloud</h3>
-            <div class="proc-code">Argos • Promigas • Celsia • Terpel • Bancolombia</div>
-            <p class="cartera-desc">Archivo comprimido que contiene la Hoja de Vida, Cédula, Tarjeta COPNIA, Diplomas UTB, Cursos UIAF, Diplomado Infolaft y certificaciones laborales de <strong>Alicia Esther Guzmán Pardo</strong>.</p>
-          </div>
-          <div class="card-actions" style="margin-top:1.5rem;">
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_HOMOLOGACION_SUPLOS_ALICIA_GUZMAN.zip" download class="btn btn-primary">
-              📦 Descargar Paquete ZIP Suplos
-            </a>
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_INSCRIPCION_SUPLOS.md" target="_blank" class="btn btn-secondary">
-              📖 Ver Guía Markdown
-            </a>
-          </div>
-        </div>
-
-        <!-- Ecopetrol ZIP -->
-        <div class="cartera-card" style="border-color: rgba(16, 185, 129, 0.4);">
-          <div>
-            <span class="cartera-tag tag-emerald">ZIP Listo para Carga (3.57 MB)</span>
-            <h3>Paquete Homologación Ecopetrol / SIPROE</h3>
-            <div class="proc-code">Esenttia Mamonal • Reficar • Ecopetrol • Cenit</div>
-            <p class="cartera-desc">Archivo comprimido con los 13 certificados de la <strong>Dra. Julia Inés Pardo Carmona</strong> (RUT 2026, Tarjeta QF 408, Posgrado SST, Licencia DADIS 306, Contrato CCC $105M y Contraloría).</p>
-          </div>
-          <div class="card-actions" style="margin-top:1.5rem;">
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_HOMOLOGACION_ECOPETROL_JULIA_PARDO.zip" download class="btn btn-primary">
-              📦 Descargar Paquete ZIP Ecopetrol
-            </a>
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_INSCRIPCION_ECOPETROL_SIPROE_ARIBA.md" target="_blank" class="btn btn-secondary">
-              📖 Ver Guía SIPROE/Ariba
-            </a>
-          </div>
-        </div>
-
-        <!-- Tenaris / Yara -->
-        <div class="cartera-card" style="border-color: rgba(245, 158, 11, 0.4);">
-          <div>
-            <span class="cartera-tag tag-amber">Mamonal Químico & Siderúrgico</span>
-            <h3>Inscripción Tenaris TuboCaribe y Yara</h3>
-            <div class="proc-code">Tenaris (Exiros Techint) • Yara Mamonal (Canal Directo)</div>
-            <p class="cartera-desc">Guía para el registro de proveedores en el portal Exiros para Tenaris y minuta de presentación de portafolio técnico para compras en Yara Colombia.</p>
-          </div>
-          <div class="card-actions" style="margin-top:1.5rem;">
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_INSCRIPCION_TENARIS_Y_YARA_MAMONAL.md" target="_blank" class="btn btn-primary" style="grid-column: 1/-1;">
-              📖 Ver Guía Operativa Tenaris y Yara
-            </a>
-          </div>
-        </div>
-
-        <!-- Luis Daniel Legal ZIP -->
-        <div class="cartera-card" style="border-color: rgba(99, 102, 241, 0.4);">
-          <div>
-            <span class="cartera-tag tag-indigo">ZIP Listo para Carga (3.62 MB)</span>
-            <h3>Paquete Homologación Legal & Ciberseguridad ISO 27001</h3>
-            <div class="proc-code">Cámaras de Comercio • Banca • Industria Mamonal</div>
-            <p class="cartera-desc">Expediente del <strong>Dr. Luis Daniel Guzmán Pardo</strong> con Tarjeta Profesional CSJ 288012, Diploma Unicartagena, Certificación Auditor ISO 27001 ICONTEC, Certificado Gobernación de Bolívar y contratos corporativos.</p>
-          </div>
-          <div class="card-actions" style="margin-top:1.5rem;">
-            <a href="dossiers_inscripcion_proveedores/DOSSIER_HOMOLOGACION_LEGAL_LUIS_GUZMAN.zip" download class="btn btn-primary">
-              📦 Descargar Paquete ZIP Legal
-            </a>
-            <a href="propuesta_grupo_bicentenario_0112_2025/18_HOJA_DE_VIDA_LUIS_DANIEL_GUZMAN_ABOGADO.pdf" target="_blank" class="btn btn-secondary">
-              📄 Ver Hoja de Vida
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  
     <!-- TAB 5: CATÁLOGO DE CÓDIGOS UNSPSC -->
     <div id="tab-unspsc" class="tab-pane">
       <div class="section-header">
@@ -2925,7 +1142,6 @@
             <div class="dir-header">
               <span class="dir-company" style="font-size:1.15rem; color:var(--accent-emerald);">💊 Farmacéutica, Cosméticos, Alimentos e Insumos Médicos</span>
             </div>
-            <div class="dir-location">Líder: <strong>Dra. Julia Inés Pardo Carmona (Química Farmacéutica)</strong></div>
             <div class="dir-categories" style="margin-top:1rem;">
               <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
               <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
@@ -3010,7 +1226,6 @@
             <div class="dir-header">
               <span class="dir-company" style="font-size:1.15rem; color:var(--accent-blue);">🛡️ Oficialía de Cumplimiento (SAGRILAFT / PTEE), Riesgos y HSEQ</span>
             </div>
-            <div class="dir-location">Líder: <strong>Ing. Alicia Esther Guzmán Pardo (Oficial de Cumplimiento)</strong></div>
             <div class="dir-categories" style="margin-top:1rem;">
               <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
               <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
@@ -3085,7 +1300,6 @@
             <div class="dir-header">
               <span class="dir-company" style="font-size:1.15rem; color:var(--accent-indigo);">⚖️ Blindaje Jurídico, Ciberseguridad ISO 27001 & Datos Personales</span>
             </div>
-            <div class="dir-location">Líder: <strong>Dr. Luis Daniel Guzmán Pardo (Abogado y Auditor ISO 27001)</strong></div>
             <div class="dir-categories" style="margin-top:1rem;">
               <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
               <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
@@ -3150,7 +1364,6 @@
             <div class="dir-header">
               <span class="dir-company" style="font-size:1.15rem; color:var(--accent-amber);">🌐 Plataforma Tecnológica E-Learning & Campus Virtual</span>
             </div>
-            <div class="dir-location">Líder: <strong>Next Level S.A.S. (app.nextlevelsas.com)</strong></div>
             <div class="dir-categories" style="margin-top:1rem;">
               <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
               <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
@@ -3194,514 +1407,36 @@
     </div>
 
 
-    <!-- TAB 6: BANCO DE EXPERTOS & RED DE SUBCONTRATACIÓN (CCB 32540) -->
-    <div id="tab-expertos" class="tab-pane">
-      <div class="section-header">
-        <div class="section-title">
-          <h2>Banco de Expertos & Red de Subcontratación Estratégica (CCB 32540)</h2>
-          <p>Ecosistema técnico especializado para la ejecución operativa de la consultoría farmacéutica en Biodisponibilidad, Bioequivalencia y Bioexenciones ($110.000.000 COP).</p>
-        </div>
-        <a href="https://www.linkedin.com/search/results/people/?keywords=%22Quimico%20Farmaceutico%22%20Bioequivalencia%20Colombia" target="_blank" class="btn btn-primary">
-          🔍 Buscar Especialistas en LinkedIn
-        </a>
-      </div>
 
-      <!-- Resumen Financiero de Subcontratación y Margen Operativo -->
-      <div class="portfolio-financial-panel">
-        <div class="p-fin-header">
-          <div>
-            <h3 style="font-family:'Outfit'; font-size:1.25rem; color:#fff; display:flex; align-items:center; gap:0.5rem;">
-              <span>💼 Estructura de Subcontratación y Margen Neto Libre (Contrato CCB)</span>
-            </h3>
-            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
-              Modelo de tercerización por honorarios técnicos independientes bajo la dirección general de la Dra. Julia Inés Pardo Carmona.
-            </p>
-          </div>
-          <span class="cartera-tag tag-emerald" style="font-size:0.8rem; padding:0.35rem 0.8rem;">
-            ✅ Contrato Radicado: $110.000.000 COP
-          </span>
-        </div>
+  </main>
 
-        <div class="p-fin-grid">
-          <div class="p-fin-item">
-            <div class="lbl">Presupuesto Radicado</div>
-            <div class="val">$110.000.000</div>
-            <div class="sub">Persona Natural (IVA $0)</div>
-          </div>
-          <div class="p-fin-item">
-            <div class="lbl">Subcontratación Expertos</div>
-            <div class="val" style="color:#f43f5e;">$33.000.000 - $39.000.000</div>
-            <div class="sub">30% - 35% del contrato</div>
-          </div>
-          <div class="p-fin-item">
-            <div class="lbl">Retenciones Estimadas</div>
-            <div class="val" style="color:#f59e0b;">~$7.600.000</div>
-            <div class="sub">ReteFuente (6%) + ReteICA (0.9%)</div>
-          </div>
-          <div class="p-fin-item highlight">
-            <div class="lbl">Utilidad Neta Libre</div>
-            <div class="val">$63.400.000 - $69.400.000</div>
-            <div class="sub">57.6% a 63.1% Margen Neto Libre</div>
-          </div>
-        </div>
+  <footer class="portal-footer">
+    Información pública de SECOP II (datos abiertos de Colombia Compra Eficiente en datos.gov.co), filtrada por afinidad temática.
+    Verifica siempre el pliego y la fecha y hora de cierre en SECOP II antes de ofertar. • Next Level S.A.S.
+  </footer>
 
-        <!-- Tabla Desglose de Componentes Operativos -->
-        <table class="opps-table" style="margin-top:1rem; font-size:0.825rem;">
-          <thead>
-            <tr>
-              <th>Componente</th>
-              <th>Rol a Subcontratar</th>
-              <th>Dedicación</th>
-              <th>Honorarios Estimados (COP)</th>
-              <th>Estado de Gestión</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Comp. 1: Formación (10h)</strong></td>
-              <td>Docente Senior en Biofarmacia y Regulación</td>
-              <td>10h dictadas + memorias</td>
-              <td style="color:var(--accent-emerald); font-weight:700;">$5.000.000 - $6.000.000</td>
-              <td><span class="badge-fit">Cantera Mapeada</span></td>
-            </tr>
-            <tr>
-              <td><strong>Comp. 2: 15 Empresas (150h)</strong></td>
-              <td>Químico Farmacéutico Especialista en Guía INVIMA / BD / BE</td>
-              <td>150 horas (10h/empresa)</td>
-              <td style="color:var(--accent-emerald); font-weight:700;">$19.500.000 - $22.500.000 ($130k-$150k/h)</td>
-              <td><span class="badge-fit">Perfiles en Contacto</span></td>
-            </tr>
-            <tr>
-              <td><strong>Comp. 3: Mapeo de Laboratorios</strong></td>
-              <td>Químico Analista / Asistente BPL / Cromatografía</td>
-              <td>~50h levantamiento fichas</td>
-              <td style="color:var(--accent-emerald); font-weight:700;">$5.000.000 - $6.500.000</td>
-              <td><span class="badge-fit">CROs Identificadas</span></td>
-            </tr>
-            <tr>
-              <td><strong>Logística & Desplazamientos</strong></td>
-              <td>Tiquetes y viáticos Cartagena - Bogotá</td>
-              <td>3 desplazamientos</td>
-              <td style="color:var(--accent-emerald); font-weight:700;">$3.500.000 - $4.000.000</td>
-              <td><span class="badge-fit">Presupuestado</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Tarjetas de Perfiles / Candidatos Mapeados -->
-      <div style="margin-bottom:1.5rem;">
-        <h3 style="font-family:'Outfit'; font-size:1.3rem; color:#fff; margin-bottom:0.5rem;">
-          📋 Candidatos & Cantera Técnica Especializada
-        </h3>
-        <p style="font-size:0.85rem; color:#94a3b8;">
-          Profesionales de máxima idoneidad académica y regulatoria para vincular formalmente mediante Contrato de Prestación de Servicios (OPS).
-        </p>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:1.25rem;">
-
-        <!-- Perfil 1 -->
-        <div class="expert-card" style="border-top:3px solid var(--accent-indigo);">
-          <div>
-            <div class="expert-badge badge-prof">🎓 Catedrática Titular — UNAL Bogotá</div>
-            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Dra. Yolima Baena Aristizábal</h4>
-            <div style="font-size:0.8rem; color:var(--accent-indigo); font-weight:600; margin-bottom:0.75rem;">
-              Química Farmacéutica, M.Sc., Ph.D. en Ciencias Farmacéuticas
-            </div>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
-              Profesora Titular del Departamento de Farmacia de la Universidad Nacional de Colombia. Titular formal de las cátedras de <em>Biodisponibilidad, Bioequivalencia y Biofarmacia</em>. Máxima autoridad pedagógica del país.
-            </p>
-            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
-              <div><strong>Rol Asignado:</strong> Docente Principal Componente 1 (10 horas)</div>
-              <div style="margin-top:0.25rem;"><strong>Honorarios Sugeridos:</strong> $5.000.000 - $6.000.000 COP</div>
-              <div style="margin-top:0.25rem;"><strong>Canal:</strong> HERMES UNAL / LinkedIn Bogotá</div>
-            </div>
-          </div>
-          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
-            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Yolima%20Baena%22" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
-              Ver en LinkedIn 🌐
-            </a>
-            <button onclick="copiarPitchPersonalizado('Dra. Yolima Baena', this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
-              📋 Copiar Pitch
-            </button>
-          </div>
-        </div>
-
-        <!-- Perfil 2 -->
-        <div class="expert-card" style="border-top:3px solid var(--accent-blue);">
-          <div>
-            <div class="expert-badge badge-prof">🔬 Investigador Senior — UNAL Bogotá</div>
-            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Dr. Néstor Álvaro Ospitia Ferrer</h4>
-            <div style="font-size:0.8rem; color:var(--accent-blue); font-weight:600; margin-bottom:0.75rem;">
-              Químico Farmacéutico, Docente e Investigador en Ciencias Farmacéuticas
-            </div>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
-              Profesor Asociado de la Universidad Nacional de Colombia. Experto en diseño experimental, perfiles de disolución y aplicación de la normativa de bioequivalencia ante INVIMA.
-            </p>
-            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
-              <div><strong>Rol Asignado:</strong> Asesor Pedagógico y Validador Curricular</div>
-              <div style="margin-top:0.25rem;"><strong>Honorarios Sugeridos:</strong> $4.000.000 - $5.000.000 COP</div>
-              <div style="margin-top:0.25rem;"><strong>Canal:</strong> Departamento de Farmacia UNAL</div>
-            </div>
-          </div>
-          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
-            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Nestor%20Ospitia%22%20farmacia" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
-              Ver en LinkedIn 🌐
-            </a>
-            <button onclick="copiarPitchPersonalizado('Dr. Néstor Ospitia', this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
-              📋 Copiar Pitch
-            </button>
-          </div>
-        </div>
-
-        <!-- Perfil 3 -->
-        <div class="expert-card" style="border-top:3px solid var(--accent-amber);">
-          <div>
-            <div class="expert-badge badge-invima">🏛️ Ex-Evaluadores INVIMA / Consultoras RA</div>
-            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">Consultores Senior Asuntos Regulatorios</h4>
-            <div style="font-size:0.8rem; color:var(--accent-amber); font-weight:600; margin-bottom:0.75rem;">
-              Global Regulatory Affairs (GRA) / RA Asuntos Regulatorios S.A.S.
-            </div>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
-              Especialistas con experiencia directa en la Sala Especializada de Medicamentos del INVIMA. Expertos en diligenciamiento del formato ASS-RSA-FM079, bioexenciones BCS y perfiles f2.
-            </p>
-            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
-              <div><strong>Rol Asignado:</strong> Consultoría a las 15 Empresas (150 horas técnicas)</div>
-              <div style="margin-top:0.25rem;"><strong>Tarifa Negociada:</strong> $130.000 - $150.000 COP / hora</div>
-              <div style="margin-top:0.25rem;"><strong>Modelo:</strong> OPS por entregables validados</div>
-            </div>
-          </div>
-          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
-            <a href="https://www.linkedin.com/search/results/people/?keywords=%22Asuntos%20Regulatorios%22%20Bioequivalencia%20Bogota" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
-              Ver en LinkedIn 🌐
-            </a>
-            <button onclick="copiarPitchGenerico(this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
-              📋 Copiar Pitch
-            </button>
-          </div>
-        </div>
-
-        <!-- Perfil 4 -->
-        <div class="expert-card" style="border-top:3px solid var(--accent-emerald);">
-          <div>
-            <div class="expert-badge badge-cro">🏥 Centros Clínicos & CROs Acreditadas</div>
-            <h4 style="font-family:'Outfit'; font-size:1.15rem; color:#fff; margin-bottom:0.35rem;">DominguezLab Colombia / Cecif</h4>
-            <div style="font-size:0.8rem; color:var(--accent-emerald); font-weight:600; margin-bottom:0.75rem;">
-              Centros de Biofarmacia y Estudios Clínicos de BD/BE
-            </div>
-            <p style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
-              CROs con instalaciones bioanalíticas y clínicas en Colombia y Latinoamérica. Cuentan con cromatografía líquida HPLC-MS/MS validada y camas de internación para estudios in vivo.
-            </p>
-            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:6px; font-size:0.775rem;">
-              <div><strong>Rol Asignado:</strong> Aliados en Caracterización de Laboratorios (Comp. 3)</div>
-              <div style="margin-top:0.25rem;"><strong>Aporte:</strong> Fichas de capacidades analíticas y tarifarios</div>
-              <div style="margin-top:0.25rem;"><strong>Canal:</strong> Alianza institucional y vinculación de analistas</div>
-            </div>
-          </div>
-          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
-            <a href="https://www.linkedin.com/search/results/people/?keywords=%22DominguezLab%22" target="_blank" class="btn btn-secondary" style="flex:1; font-size:0.75rem;">
-              Ver en LinkedIn 🌐
-            </a>
-            <button onclick="copiarPitchGenerico(this)" class="btn btn-primary" style="flex:1; font-size:0.75rem;">
-              📋 Copiar Pitch
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Guion de Contacto Copiable con 1 Clic -->
-      <div class="pitch-box">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
-          <h4 style="font-family:'Outfit'; color:#fff; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;">
-            <span>📨 Guion de Contacto Directo / Pitch de LinkedIn y Correo</span>
-          </h4>
-          <button id="btnCopiarGuionFull" onclick="copiarGuionCompleto(this)" class="btn btn-primary" style="padding:0.4rem 0.9rem; font-size:0.8rem;">
-            📋 Copiar Guion Completo
-          </button>
-        </div>
-        <p style="font-size:0.775rem; color:#94a3b8; margin-bottom:0.75rem;">
-          Utilice este mensaje estructurado para invitar a los candidatos a formar parte del equipo técnico con honorarios atractivos y flexibilidad horaria:
-        </p>
-        <div id="guionTexto" style="background:rgba(0,0,0,0.5); padding:1rem; border-radius:6px; font-size:0.8rem; color:#cbd5e1; line-height:1.6; border:1px solid rgba(255,255,255,0.08); font-family:monospace; white-space:pre-wrap;">Asunto: Invitación Consultoría Especializada en Bioequivalencia — Clúster Farmacéutico CCB
-
-Estimado(a) [Nombre del Profesional],
-
-Le saludo muy cordialmente. Desde nuestra firma y bajo la dirección de la Dra. Julia Inés Pardo Carmona (Química Farmacéutica, Auditora Líder HSEQ), hemos estructurado y radicado ante la Cámara de Comercio de Bogotá (CCB) el proyecto de asesoría técnica especializada en Biodisponibilidad, Bioequivalencia (Resolución 1124/2016 y Guía INVIMA ASS-RSA-GU052) y Caracterización de Laboratorios para 15 empresas del Clúster Farmacéutico (Proceso N° 32540).
-
-Conociendo su sólida trayectoria profesional en biofarmacia y regulación sanitaria, nos gustaría invitarle a formar parte del equipo técnico especializado bajo la modalidad de Prestación de Servicios Profesionales por Horas (remoto/híbrido flexible durante 8 meses), con honorarios muy competitivos y soporte en nuestra plataforma digital (https://app.nextlevelsas.com/).
-
-¿Podríamos coordinar una breve llamada de 10 minutos esta semana para compartirle los detalles del alcance y coordinar su vinculación?
-
-Atentamente,
-Dra. Julia Inés Pardo Carmona
-Directora de Proyecto — C.C. 30.759.850 | TP 408
-Contacto Next Level: https://app.nextlevelsas.com/</div>
-      </div>
-
-    </div>
-
-
-    <!-- TAB 7: CENTRO DE CONTROL DE AUTOMATIZACIÓN, SINCRONIZACIÓN Y ALERTAS EN VIVO -->
-    <div id="tab-alertas" class="tab-pane">
-      <div class="section-header">
-        <div class="section-title">
-          <h2>Centro de Control Autónomo: Sincronización en Tiempo Real y Alertas de Vencimiento</h2>
-          <p>Supervisión continua de procesos licitatorios, estados de conectores en la nube, alertas automáticas de cierre y recordatorios operativos de adjudicación.</p>
-        </div>
-        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-          <button onclick="forzarSincronizacionManual(this)" class="btn btn-primary" style="background:linear-gradient(135deg, #0284c7, #0369a1);">
-            🔄 Sincronizar Ahora
-          </button>
-          <button onclick="descargarCalendarioICS()" class="btn btn-secondary">
-            📅 Descargar Calendario (.ICS)
-          </button>
-          <button onclick="probarNotificacionWeb(this)" class="btn btn-secondary">
-            🔔 Activar Notificaciones Web
-          </button>
-        </div>
-      </div>
-
-      <!-- Estado real de la actualización automática -->
-      <div class="sync-health-bar">
-        <div class="sync-card" style="--sync-color: #10b981;">
-          <div class="sync-card-header">
-            <span class="sync-card-title">Radar SECOP II</span>
-            <span class="sync-status-badge">● DIARIO</span>
-          </div>
-          <div class="sync-card-val"><span class="radar-total">0</span> Procesos</div>
-          <div class="sync-card-desc" id="syncRadarDesc">Actualización diaria 06:00 COT (GitHub Actions)</div>
-        </div>
-
-        <div class="sync-card" style="--sync-color: #a855f7;">
-          <div class="sync-card-header">
-            <span class="sync-card-title">GitHub Pages</span>
-            <span class="sync-status-badge" style="background:rgba(168,85,247,0.15); color:#c084fc; border-color:rgba(168,85,247,0.3);">● PUBLICADO</span>
-          </div>
-          <div class="sync-card-val">Sitio web</div>
-          <div class="sync-card-desc">giconsultingsas.github.io/dashboard-licitaciones/</div>
-        </div>
-
-        <div class="sync-card" style="--sync-color: #38bdf8;">
-          <div class="sync-card-header">
-            <span class="sync-card-title">Invitaciones privadas</span>
-            <span class="sync-status-badge" style="background:rgba(56,189,248,0.15); color:#38bdf8; border-color:rgba(56,189,248,0.3);">● CORREO</span>
-          </div>
-          <div class="sync-card-val">Itbid CCB</div>
-          <div class="sync-card-desc">Llegan a giconsultingsas@gmail.com desde messages-noreply@itbid.org</div>
-        </div>
-      </div>
-
-      <!-- Alertas de vencimiento -->
-      <div style="margin-bottom:1.25rem;">
-        <h3 style="font-family:'Outfit'; font-size:1.3rem; color:#fff; display:flex; align-items:center; gap:0.5rem;">
-          <span>🚨 Seguimiento y Próximos Cierres</span>
-        </h3>
-        <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.25rem;">
-          La propuesta en evaluación y los procesos del radar con alta afinidad que cierran en los próximos 7 días.
-        </p>
-      </div>
-
-      <div class="alerts-grid" id="alertsGrid">
-
-        <!-- Seguimiento CCB -->
-        <div class="alert-panel-card alert-hito">
-          <div>
-            <div class="alert-badge-top hito">🎯 EN EVALUACIÓN</div>
-            <h4 style="font-family:'Outfit'; font-size:1.2rem; color:#fff; margin-bottom:0.25rem;">Cámara de Comercio de Bogotá — CCB</h4>
-            <div style="font-size:0.8rem; color:#34d399; font-weight:700; margin-bottom:0.5rem;">
-              Asesoría BD/BE para el sector farmacéutico (CONVOCATORIA-2807-2026)
-            </div>
-            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">
-              <strong>Estado:</strong> oferta radicada el 30-sep a las 16:55 (acuse de Itbid). La CCB no publicó fecha de resultados.<br>
-              <strong>Acción:</strong> revisar el centro de mensajes de la negociación 32540 y responder a tiempo si piden subsanar.
-            </div>
-          </div>
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-            <a href="https://portaldecontratacion.ccb.org.co/negociaciones/ver/32540" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1; font-size:0.775rem;">
-              🌐 Abrir en Itbid
-            </a>
-            <a href="https://drive.google.com/drive/folders/1aQhBS8yB-_ktFMFJpB8FEC1GjG0NXYTe" target="_blank" rel="noopener" class="btn btn-secondary" style="flex:1; font-size:0.775rem;">
-              ☁️ Carpeta Drive
-            </a>
-          </div>
-        </div>
-
-        <!-- Las alertas del radar se generan con JavaScript a partir de OPORTUNIDADES -->
-      </div>
-
-      <!-- Centro de Recordatorios Operativos y Checklist Persistente -->
-      <div class="reminders-box">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
-          <div>
-            <h3 style="font-family:'Outfit'; font-size:1.25rem; color:#fff;">
-              📋 Recordatorios Operativos y Bitácora de Gestión
-            </h3>
-            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
-              Checklist interactivo con guardado automático en el navegador (localStorage) para trazabilidad del equipo.
-            </p>
-          </div>
-          <span style="font-size:0.75rem; color:#10b981; font-weight:700;">✓ Auto-Guardado Activo</span>
-        </div>
-
-        <div id="remindersContainer">
-          <!-- Rendered by JS with persistent localStorage -->
-        </div>
-
-        <div style="margin-top:1rem; display:flex; gap:0.5rem;">
-          <input type="text" id="newReminderInput" class="search-input" placeholder="Escribir nuevo recordatorio o tarea operativa..." style="flex:1; font-size:0.85rem;" onkeypress="if(event.key==='Enter') agregarNuevoRecordatorio()">
-          <button onclick="agregarNuevoRecordatorio()" class="btn btn-primary" style="font-size:0.825rem; padding:0.6rem 1.2rem;">
-            ➕ Añadir Recordatorio
-          </button>
-    
-      <!-- Matriz Preventiva de Riesgos de Producción & Blindaje Contractual -->
-      <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; margin-top:2rem;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
-          <div>
-            <h3 style="font-family:'Outfit'; font-size:1.25rem; color:#fff; display:flex; align-items:center; gap:0.5rem;">
-              <span>🛡️ Matriz Preventiva de Riesgos de Producción & Protocolo de Contingencia</span>
-            </h3>
-            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.25rem;">
-              Diagnóstico proactivo de vulnerabilidades en formulación, radicación en plataformas, subcontratación y ejecución contractual en Colombia.
-            </p>
-          </div>
-          <span style="font-size:0.75rem; color:#38bdf8; font-weight:700; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); padding:0.25rem 0.65rem; border-radius:999px;">
-            6 Vectores Blindados
-          </span>
-        </div>
-
-        <div class="risk-matrix-grid">
-          <!-- Vector 1 -->
-          <div class="risk-card risk-critico">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#fb7185; text-transform:uppercase;">1. Jurídico & Subsanaciones</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Término Perentorio (24-48h)</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Descalificación por no contestar observaciones o requerimientos de subsanación dentro del término legal fijado por el comité evaluador.
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Monitoreo diario en 2 ventanas fijas (08:00 y 16:00 COT). Alertas tempranas activas y carpeta de antecedentes actualizada.
-              </div>
-            </div>
-          </div>
-
-          <!-- Vector 2 -->
-          <div class="risk-card risk-critico">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#fb7185; text-transform:uppercase;">2. Plataforma de Cierre</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Saturación de Servidores SECOP II</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Colapso del portal SECOP II o Itbid en los últimos 60 minutos previos a las 17:00:00 COT, bloqueando el cargue de la oferta.
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Regla de oro de radicación con 24 a 48 horas de anticipación. Registro de tickets con sello de tiempo ante Colombia Compra Eficiente.
-              </div>
-            </div>
-          </div>
-
-          <!-- Vector 3 -->
-          <div class="risk-card risk-medio">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#fbbf24; text-transform:uppercase;">3. Financiero & Tributario</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Descuentos de Retenciones e IVA</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Retenciones imprevistas (ReteFuente 11%, ReteICA 0.966%, Estampillas) que reduzcan el flujo de caja esperado de la propuesta.
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Declaración explícita de "No Responsable de IVA" (Art. 437 E.T.) y proyección en simulador ($110M ➔ $96.8M líquido antes de costos).
-              </div>
-            </div>
-          </div>
-
-          <!-- Vector 4 -->
-          <div class="risk-card risk-medio">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#fbbf24; text-transform:uppercase;">4. Subcontratación & Alianzas</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Disponibilidad de Doctores y CROs</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Indisponibilidad de perfiles PhD clave durante las 150 horas de asesoría técnica o retrasos en la entrega de fichas de bioexención.
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Redundancia con 4 perfiles calificados en Pestaña 6 (UNAL, Ex-INVIMA, CRO DominguezLab) y acuerdos previos de confidencialidad NDA.
-              </div>
-            </div>
-          </div>
-
-          <!-- Vector 5 -->
-          <div class="risk-card risk-bajo">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#38bdf8; text-transform:uppercase;">5. Documental & Page Budget</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Páginas Huérfanas en PDF (ReportLab)</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Rechazo formal por exceder el presupuesto estricto de páginas permitido por el pliego (2 o 3 páginas exactas).
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Calibración milimétrica en ReportLab (leading y fontSize proporcionales) y verificación visual pre-radicación con subagente.
-              </div>
-            </div>
-          </div>
-
-          <!-- Vector 6 -->
-          <div class="risk-card risk-controlado">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <span style="font-size:0.7rem; font-weight:800; color:#34d399; text-transform:uppercase;">6. Continuidad de Datos</span>
-                <span style="font-size:0.65rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:2px 6px; border-radius:4px;">BLINDADO</span>
-              </div>
-              <h4 style="font-size:0.95rem; color:#fff; margin-bottom:0.4rem;">Fallo de Enlaces Locales en Web Pública</h4>
-              <p style="font-size:0.775rem; color:#cbd5e1; line-height:1.45;">
-                <strong>Riesgo:</strong> Bloqueo de seguridad del navegador al hacer clic en rutas `file:///` desde el portal en GitHub Pages.
-              </p>
-              <div style="font-size:0.725rem; color:#94a3b8; margin-top:0.5rem; background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
-                <strong>🛡️ Mitigación:</strong> Interceptor JavaScript que detecta origen web, copia la ruta Windows al portapapeles y notifica vía Toast.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  
-      </main>
-
-  <!-- Interactive Detail Modal -->
+  <!-- Detalle del proceso -->
   <div id="oppModal" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModalDirect()">✕</button>
       <div id="modalEntity" class="modal-entity">Entidad</div>
       <h3 id="modalTitle" class="modal-title">Título del Proceso</h3>
-      
+
       <div class="modal-grid">
         <div class="modal-field">
           <label>Presupuesto Oficial</label>
           <div id="modalPrice" class="val" style="color:var(--accent-emerald); font-size:1.2rem;">$0 COP</div>
         </div>
         <div class="modal-field">
-          <label>Ubicación / Alcance</label>
+          <label>Ubicación</label>
           <div id="modalAlcance" class="val">Ubicación</div>
         </div>
         <div class="modal-field">
-          <label>Proponente Sugerido</label>
-          <div id="modalProfile" class="val" style="color:var(--accent-amber);">Proponente</div>
+          <label>Sector temático</label>
+          <div id="modalSector" class="val" style="color:var(--accent-amber);">—</div>
         </div>
         <div class="modal-field">
-          <label>Afinidad con el perfil</label>
+          <label>Afinidad</label>
           <div id="modalFit" class="val" style="color:var(--accent-emerald);">—</div>
         </div>
       </div>
@@ -3711,9 +1446,8 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         <p id="modalDesc">Descripción</p>
       </div>
 
-      
       <!-- Datos del proceso en SECOP II -->
-      <div class="scoring-box" style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(56, 189, 248, 0.35); border-radius:var(--radius-sm); padding:1rem; margin:1rem 0;">
+      <div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(56, 189, 248, 0.35); border-radius:var(--radius-sm); padding:1rem; margin:1rem 0;">
         <div style="font-size:0.75rem; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:0.75rem;">
           <span>📋 Datos del proceso en SECOP II</span>
         </div>
@@ -3731,67 +1465,27 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
             <div id="modalCierre" style="font-weight:800; color:#fff; font-size:0.95rem; margin-top:2px;">—</div>
           </div>
         </div>
-        <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.75rem;">Coincidencias con el perfil: <strong id="modalCoincidencias" style="color:#e2e8f0;">—</strong></div>
-      </div>
-
-      <!-- Simulador Financiero en Tiempo Real -->
-      <div class="simulador-box" style="background:rgba(15, 23, 42, 0.9); border:1px solid rgba(16, 185, 129, 0.3); border-radius:var(--radius-sm); padding:1rem; margin:1rem 0;">
-        <div style="font-size:0.75rem; font-weight:700; color:var(--accent-emerald); text-transform:uppercase; margin-bottom:0.75rem; display:flex; justify-content:space-between; align-items:center;">
-          <span>⚡ Simulador Financiero & Proyección de Liquidación</span>
-          <span style="color:var(--text-dim); font-size:0.7rem; font-weight:normal;">Persona Natural (IVA $0)</span>
-        </div>
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:0.75rem; text-align:center;">
-          <div style="background:rgba(255,255,255,0.03); padding:0.6rem; border-radius:6px;">
-            <div style="font-size:0.7rem; color:var(--text-dim);">Póliza Seriedad (10%)</div>
-            <div id="simPoliza" style="font-weight:700; color:var(--accent-amber); font-size:0.9rem; margin-top:2px;">$0</div>
-            <div style="font-size:0.65rem; color:var(--text-dim);">Prima est. ~1.5%</div>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); padding:0.6rem; border-radius:6px;">
-            <div style="font-size:0.7rem; color:var(--text-dim);">ReteFuente (4% - 11%)</div>
-            <div id="simReteFuente" style="font-weight:700; color:var(--accent-rose); font-size:0.9rem; margin-top:2px;">$0</div>
-            <div style="font-size:0.65rem; color:var(--text-dim);">Descuento tributario</div>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); padding:0.6rem; border-radius:6px;">
-            <div style="font-size:0.7rem; color:var(--text-dim);">ReteICA (~0.966%)</div>
-            <div id="simReteICA" style="font-weight:700; color:var(--accent-rose); font-size:0.9rem; margin-top:2px;">$0</div>
-            <div style="font-size:0.65rem; color:var(--text-dim);">Impuesto local</div>
-          </div>
-          <div style="background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.35); padding:0.6rem; border-radius:6px;">
-            <div style="font-size:0.7rem; color:var(--accent-emerald);">Neto Líquido Proyectado</div>
-            <div id="simNeto" style="font-weight:800; color:var(--accent-emerald); font-size:1.05rem; margin-top:2px;">$0</div>
-            <div style="font-size:0.65rem; color:var(--accent-emerald);">Honorarios líquidos</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estado en Pipeline Comercial -->
-      <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.25); padding:0.75rem 1rem; border-radius:var(--radius-sm); margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <span style="font-size:0.8rem; font-weight:600; color:var(--text-muted);">Estado en Pipeline:</span>
-          <select id="modalStatusSelect" onchange="updateOppStatus()" style="background:var(--bg-surface); color:#fff; border:1px solid var(--border-subtle); padding:0.4rem 0.8rem; border-radius:var(--radius-sm); font-size:0.8rem; cursor:pointer;">
-            <option value="RADAR">📡 En Radar (Sin marcar)</option>
-            <option value="PRIORITARIA">⭐ Prioritaria (Alta viabilidad)</option>
-            <option value="ESTRUCTURACION">📝 En Estructuración</option>
-            <option value="RADICADA">🚀 Radicada / Presentada</option>
-            <option value="DESCARTADA">❌ Descartada</option>
-          </select>
-        </div>
-        <span id="statusSavedNotice" style="font-size:0.75rem; color:var(--accent-emerald); display:none; font-weight:600;">✓ Guardado en Pipeline</span>
+        <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.75rem;">Palabras clave encontradas: <strong id="modalCoincidencias" style="color:#e2e8f0;">—</strong></div>
+        <div style="font-size:0.7rem; color:#64748b; margin-top:0.35rem;">SECOP publica solo la fecha de cierre; la hora exacta está en el pliego.</div>
       </div>
 
       <div style="display:flex; justify-content:flex-end; gap:1rem;">
         <button class="btn btn-secondary" onclick="closeModalDirect()">Cerrar</button>
-        <a id="modalSecopLink" href="#" target="_blank" class="btn btn-primary">
+        <a id="modalSecopLink" href="#" target="_blank" rel="noopener" class="btn btn-primary">
           🌐 Ver Proceso Oficial en SECOP II
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Embedded Data & Client-Side Filtering -->
+  <div id="toastNotification" class="toast-notification">
+    <span id="toastIcon" style="font-size:1.2rem;">📋</span>
+    <span id="toastMsg" style="line-height:1.35;">Mensaje del sistema</span>
+  </div>
+
   <script>
-    const OPORTUNIDADES = [{"id_requerimiento":"FFDS-MC-047-2026","id_proceso":"CO1.REQ.11090056","entidad":"FONDO FINANCIERO DISTRITAL DE SALUD..","objeto":"Desarrollar acciones de apropiación en el marco del Modelo Integrado de Planeación y Gestión - MIPG y los sistemas de gestión, que contribuyan al cumplimiento de las metas de los proyectos de inversión del Fondo Financiero Distrital de Salud (FFDS)","presupuesto_cop":139988500,"presupuesto_formato":"$139.988.500 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-24","cierre":"2026-10-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10955691","perfil_sugerido":"Ing. Alicia Esther Guzmán Pardo (Cumplimiento / Calidad)","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["mipg","modelo integrado de planeacion"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"FFDS-MC-046-2026","id_proceso":"CO1.REQ.11093298","entidad":"FONDO FINANCIERO DISTRITAL DE SALUD..","objeto":"020-055000_0141_8114 Contratar el servicio para realizar Auditoría de Certificación del Sistema de Gestión de la Seguridad de la Información NTC ISO 27001:2022","presupuesto_cop":31832500,"presupuesto_formato":"$31.832.500 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-24","cierre":"2026-10-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10954740","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["iso 27001","seguridad de la informacion"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"RFI-30-2026","id_proceso":"CO1.REQ.11125535","entidad":"REGION ADMINISTRATIVA Y DE PLANEACION ESPECIAL - RAPE REGION CENTRAL","objeto":"Prestar servicios profesionales para realizar un programa de formacion en auditoria interna del Sistema Integrado de Gestion - HSEQ, orientada al fortalecimiento de las competencias de los servidores y colaboradores de la RAPE - Región Central","presupuesto_cop":0,"presupuesto_formato":"Sin presupuesto publicado","plataforma":"SECOP II","modalidad":"Solicitud de información a los Proveedores","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-30","cierre":"2026-10-06","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10985299","perfil_sugerido":"Ing. Alicia Esther Guzmán Pardo (Cumplimiento / Calidad)","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["sistema integrado de gestion","auditoria interna"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"4152.010.32.1.1599-2026 (Manifestación de interés (Menor Cuantía)) (Presentación de oferta)","id_proceso":"CO1.REQ.11144511","entidad":"SANTIAGO DE CALI DISTRITO ESPECIAL - SECRETARIA DE MOVILIDAD","objeto":"PRESTAR SERVICIOS PROFESIONALES DE APOYO JURÍDICO PARA LA GESTIÓN INTEGRAL DE LAS PQRS Y ACCIONES JUDICIALES RADICADAS ANTE LA SECRETARÍA DE MOVILIDAD DEL DISTRITO ESPECIAL DE SANTIAGO DE CALI, DE CONFORMIDAD CON LAS NECESIDADES DEL SERVICIO","presupuesto_cop":800000000,"presupuesto_formato":"$800.000.000 COP","plataforma":"SECOP II","modalidad":"Selección Abreviada de Menor Cuantía","alcance":"Resto del país (Valle del Cauca)","ubicacion":"Cali, Valle del Cauca","fase":"Presentación de oferta","publicacion":"2026-10-02","cierre":"2026-10-07","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10999509","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["apoyo juridico"],"score_relevancia":1,"nueva":true},{"id_requerimiento":"MSPS-RFI-066-2026","id_proceso":"CO1.REQ.11139394","entidad":"MINISTERIO DE SALUD Y PROTECCIÓN SOCIAL","objeto":"Contratar el servicio de auditoría de primer seguimiento bajo la norma NTC-ISO/IEC 27001:2022 de los procesos que se encuentran definidos dentro del alcance del sistema de gestión de seguridad de la información (SGSI) del Ministerio de Salud y Protección Social","presupuesto_cop":0,"presupuesto_formato":"Sin presupuesto publicado","plataforma":"SECOP II","modalidad":"Solicitud de información a los Proveedores","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-01","cierre":"2026-10-08","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10994063","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["iso/iec 27001","seguridad de la informacion"],"score_relevancia":2,"nueva":true},{"id_requerimiento":"USPEC-SA-SI-022-2026 (Presentación de oferta)","id_proceso":"CO1.REQ.11141924","entidad":"UNIDAD DE SERVICIOS PENITENCIARIOS Y CARCELARIOS - USPEC1","objeto":"Renovar, implementar y mantener el fortalecimiento de una solución integral de ciberseguridad para la USPEC con su respectivo soporte y mantenimiento, en los términos del Anexo Técnico Ciberseguridad.","presupuesto_cop":613388932,"presupuesto_formato":"$613.388.932 COP","plataforma":"SECOP II","modalidad":"Selección abreviada subasta inversa","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-01","cierre":"2026-10-08","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10997541","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":true},{"id_requerimiento":"LP-CARDIQUE-012-2026","id_proceso":"CO1.REQ.11060552","entidad":"CORPORACIÓN AUTÓNOMA REGIONAL DEL CANAL DEL DIQUE","objeto":"PRESTACION DE SERVICIOS PROFESIONALES ESPECIALIZADOS PARA EL SEGUIMIENTO DEL SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO SG-SST  ASI COMO LA MEDICION DE HABILIDADES Y COMPETENCIAS LABORALES EL AFRONTAMIENTO A LA VIDA NO LABORAL EMPRESARIAL SEGUIMIENTO Y MEDICION DEL CLIMA Y CULTURA ORGANIZACIONAL DE LA CORPORACION AUTONOMA REGIONAL DEL CANAL DEL DIQUE - CARDIQUE","presupuesto_cop":520289267,"presupuesto_formato":"$520.289.267 COP","plataforma":"SECOP II","modalidad":"Licitación pública","alcance":"Región Caribe (Bolívar)","ubicacion":"Cartagena, Bolívar","fase":"Presentación de observaciones","publicacion":"2026-09-18","cierre":"2026-10-19","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10921608","perfil_sugerido":"Dra. Julia Inés Pardo Carmona (Química Farmacéutica / HSEQ)","sector":"FARMACEUTICO / SALUD","coincidencias":["sg-sst","sistema de gestion de la seguridad y salud"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"SAMC 010-2026","id_proceso":"CO1.REQ.11072251","entidad":"INSTITUTO PARA EL DESARROLLO DE ANTIOQUIA IDEA","objeto":"REALIZAR PRUEBAS DE CIBERSEGURIDAD, Y EJECUTAR EL PLAN DE SENSIBILIZACIÓN EN SEGURIDAD DE LA INFORMACIÓN PARA EL INSTITUTO PARA EL DESARROLLO DE ANTIOQUIA - IDEA","presupuesto_cop":196481932,"presupuesto_formato":"$196.481.932 COP","plataforma":"SECOP II","modalidad":"Selección Abreviada de Menor Cuantía","alcance":"Resto del país (Antioquia)","ubicacion":"Antioquia","fase":"Presentación de observaciones","publicacion":"2026-09-22","cierre":"2026-10-19","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10937934","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["seguridad de la informacion","ciberseguridad"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"TMSA-SASI-05-2026","id_proceso":"CO1.REQ.11092272","entidad":"TRANSMILENIO S.A.","objeto":"TIC25-125 CONTRATAR LA PRESTACIÓN DEL SERVICIO INTEGRAL DE OUTSOURCING DE CIBERSEGURIDAD PARA LA PROTECCIÓN DE LA INFRAESTRUCTURA CRÍTICA TECNOLÓGICA QUE SOPORTA LA OPERACIÓN DE TRANSMILENIO S.A.","presupuesto_cop":1592493368,"presupuesto_formato":"$1.592.493.368 COP","plataforma":"SECOP II","modalidad":"Selección abreviada subasta inversa","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de observaciones","publicacion":"2026-09-25","cierre":"2026-10-21","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10963278","perfil_sugerido":"Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":false}];
-    const RADAR_META = {"generado":"2026-10-05T03:46:33.960Z","fecha_corte":"2026-10-04","procesos_abiertos_secop":2374,"total":9,"fuente":"SECOP II, datos abiertos (datos.gov.co, conjunto p6dx-8zbt)"};
+    const OPORTUNIDADES = [{"id_requerimiento":"FFDS-MC-047-2026","id_proceso":"CO1.REQ.11090056","entidad":"FONDO FINANCIERO DISTRITAL DE SALUD..","objeto":"Desarrollar acciones de apropiación en el marco del Modelo Integrado de Planeación y Gestión - MIPG y los sistemas de gestión, que contribuyan al cumplimiento de las metas de los proyectos de inversión del Fondo Financiero Distrital de Salud (FFDS)","presupuesto_cop":139988500,"presupuesto_formato":"$139.988.500 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-24","cierre":"2026-10-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10955691","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["mipg","modelo integrado de planeacion"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"FFDS-MC-046-2026","id_proceso":"CO1.REQ.11093298","entidad":"FONDO FINANCIERO DISTRITAL DE SALUD..","objeto":"020-055000_0141_8114 Contratar el servicio para realizar Auditoría de Certificación del Sistema de Gestión de la Seguridad de la Información NTC ISO 27001:2022","presupuesto_cop":31832500,"presupuesto_formato":"$31.832.500 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-24","cierre":"2026-10-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10954740","sector":"LEGAL / ISO 27001","coincidencias":["iso 27001","seguridad de la informacion"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"RFI-30-2026","id_proceso":"CO1.REQ.11125535","entidad":"REGION ADMINISTRATIVA Y DE PLANEACION ESPECIAL - RAPE REGION CENTRAL","objeto":"Prestar servicios profesionales para realizar un programa de formacion en auditoria interna del Sistema Integrado de Gestion - HSEQ, orientada al fortalecimiento de las competencias de los servidores y colaboradores de la RAPE - Región Central","presupuesto_cop":0,"presupuesto_formato":"Sin presupuesto publicado","plataforma":"SECOP II","modalidad":"Solicitud de información a los Proveedores","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-09-30","cierre":"2026-10-06","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10985299","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["sistema integrado de gestion","auditoria interna"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"4152.010.32.1.1599-2026 (Manifestación de interés (Menor Cuantía)) (Presentación de oferta)","id_proceso":"CO1.REQ.11144511","entidad":"SANTIAGO DE CALI DISTRITO ESPECIAL - SECRETARIA DE MOVILIDAD","objeto":"PRESTAR SERVICIOS PROFESIONALES DE APOYO JURÍDICO PARA LA GESTIÓN INTEGRAL DE LAS PQRS Y ACCIONES JUDICIALES RADICADAS ANTE LA SECRETARÍA DE MOVILIDAD DEL DISTRITO ESPECIAL DE SANTIAGO DE CALI, DE CONFORMIDAD CON LAS NECESIDADES DEL SERVICIO","presupuesto_cop":800000000,"presupuesto_formato":"$800.000.000 COP","plataforma":"SECOP II","modalidad":"Selección Abreviada de Menor Cuantía","alcance":"Resto del país (Valle del Cauca)","ubicacion":"Cali, Valle del Cauca","fase":"Presentación de oferta","publicacion":"2026-10-02","cierre":"2026-10-07","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10999509","sector":"LEGAL / ISO 27001","coincidencias":["apoyo juridico"],"score_relevancia":1,"nueva":true},{"id_requerimiento":"MSPS-RFI-066-2026","id_proceso":"CO1.REQ.11139394","entidad":"MINISTERIO DE SALUD Y PROTECCIÓN SOCIAL","objeto":"Contratar el servicio de auditoría de primer seguimiento bajo la norma NTC-ISO/IEC 27001:2022 de los procesos que se encuentran definidos dentro del alcance del sistema de gestión de seguridad de la información (SGSI) del Ministerio de Salud y Protección Social","presupuesto_cop":0,"presupuesto_formato":"Sin presupuesto publicado","plataforma":"SECOP II","modalidad":"Solicitud de información a los Proveedores","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-01","cierre":"2026-10-08","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10994063","sector":"LEGAL / ISO 27001","coincidencias":["iso/iec 27001","seguridad de la informacion"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"USPEC-SA-SI-022-2026 (Presentación de oferta)","id_proceso":"CO1.REQ.11141924","entidad":"UNIDAD DE SERVICIOS PENITENCIARIOS Y CARCELARIOS - USPEC1","objeto":"Renovar, implementar y mantener el fortalecimiento de una solución integral de ciberseguridad para la USPEC con su respectivo soporte y mantenimiento, en los términos del Anexo Técnico Ciberseguridad.","presupuesto_cop":613388932,"presupuesto_formato":"$613.388.932 COP","plataforma":"SECOP II","modalidad":"Selección abreviada subasta inversa","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-01","cierre":"2026-10-08","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10997541","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":false},{"id_requerimiento":"LP-CARDIQUE-012-2026","id_proceso":"CO1.REQ.11060552","entidad":"CORPORACIÓN AUTÓNOMA REGIONAL DEL CANAL DEL DIQUE","objeto":"PRESTACION DE SERVICIOS PROFESIONALES ESPECIALIZADOS PARA EL SEGUIMIENTO DEL SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO SG-SST  ASI COMO LA MEDICION DE HABILIDADES Y COMPETENCIAS LABORALES EL AFRONTAMIENTO A LA VIDA NO LABORAL EMPRESARIAL SEGUIMIENTO Y MEDICION DEL CLIMA Y CULTURA ORGANIZACIONAL DE LA CORPORACION AUTONOMA REGIONAL DEL CANAL DEL DIQUE - CARDIQUE","presupuesto_cop":520289267,"presupuesto_formato":"$520.289.267 COP","plataforma":"SECOP II","modalidad":"Licitación pública","alcance":"Región Caribe (Bolívar)","ubicacion":"Cartagena, Bolívar","fase":"Presentación de observaciones","publicacion":"2026-09-18","cierre":"2026-10-19","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10921608","sector":"FARMACEUTICO / SALUD","coincidencias":["sg-sst","sistema de gestion de la seguridad y salud"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"SAMC 010-2026","id_proceso":"CO1.REQ.11072251","entidad":"INSTITUTO PARA EL DESARROLLO DE ANTIOQUIA IDEA","objeto":"REALIZAR PRUEBAS DE CIBERSEGURIDAD, Y EJECUTAR EL PLAN DE SENSIBILIZACIÓN EN SEGURIDAD DE LA INFORMACIÓN PARA EL INSTITUTO PARA EL DESARROLLO DE ANTIOQUIA - IDEA","presupuesto_cop":196481932,"presupuesto_formato":"$196.481.932 COP","plataforma":"SECOP II","modalidad":"Selección Abreviada de Menor Cuantía","alcance":"Resto del país (Antioquia)","ubicacion":"Antioquia","fase":"Presentación de observaciones","publicacion":"2026-09-22","cierre":"2026-10-19","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10937934","sector":"LEGAL / ISO 27001","coincidencias":["seguridad de la informacion","ciberseguridad"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"TMSA-SASI-05-2026","id_proceso":"CO1.REQ.11092272","entidad":"TRANSMILENIO S.A.","objeto":"TIC25-125 CONTRATAR LA PRESTACIÓN DEL SERVICIO INTEGRAL DE OUTSOURCING DE CIBERSEGURIDAD PARA LA PROTECCIÓN DE LA INFRAESTRUCTURA CRÍTICA TECNOLÓGICA QUE SOPORTA LA OPERACIÓN DE TRANSMILENIO S.A.","presupuesto_cop":1592493368,"presupuesto_formato":"$1.592.493.368 COP","plataforma":"SECOP II","modalidad":"Selección abreviada subasta inversa","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de observaciones","publicacion":"2026-09-25","cierre":"2026-10-21","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10963278","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":false}];
+    const RADAR_META = {"generado":"2026-10-05T15:41:11.132Z","fecha_corte":"2026-10-05","procesos_abiertos_secop":2371,"total":9,"fuente":"SECOP II, datos abiertos (datos.gov.co, conjunto p6dx-8zbt)"};
 
     // --- Utilidades del radar ---
     // Los textos vienen de SECOP II (fuente externa): se escapan antes de insertarlos como HTML.
@@ -3815,6 +1509,7 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       return parseInt(d, 10) + '-' + meses[parseInt(m, 10) - 1] + '-' + a;
     }
 
+    // SECOP publica solo la fecha de cierre; la hora exacta está en el pliego.
     function textoCierre(opp) {
       const dias = diasHastaCierre(opp);
       if (dias === Infinity) return 'Cierre sin fecha';
@@ -3828,68 +1523,23 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       return n + (n === 1 ? ' coincidencia' : ' coincidencias');
     }
 
+    function enlaceSecop(opp) {
+      return /^https:\/\//.test(opp.link_secop || '') ? opp.link_secop : '#';
+    }
+
     // Procesos del radar que siguen abiertos según la fecha de hoy (el radar se publica una vez al día).
     function oportunidadesVigentes() {
       return OPORTUNIDADES.filter(o => diasHastaCierre(o) >= 0);
     }
 
-    // State for Tab 1 (Cartera)
-    let carteraEstadoFilter = 'TODOS';
-    let carteraProponenteFilter = 'TODOS';
-    let carteraSearchQuery = '';
-
-    function filterCartera() {
-      const input = document.getElementById('searchCarteraInput');
-      carteraSearchQuery = (input ? input.value : '').toLowerCase().trim();
-      renderCarteraFiltered();
+    // Procesos con 2 o más coincidencias que cierran dentro de los próximos `dias` días.
+    function proximosCierres(dias) {
+      return oportunidadesVigentes()
+        .filter(o => (o.coincidencias || []).length >= 2 && diasHastaCierre(o) <= dias)
+        .sort((a, b) => (a.cierre || '').localeCompare(b.cierre || ''));
     }
 
-    function setCarteraEstadoFilter(estado, el) {
-      carteraEstadoFilter = estado;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      renderCarteraFiltered();
-    }
-
-    function setCarteraProponenteFilter(prop, el) {
-      carteraProponenteFilter = prop;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      renderCarteraFiltered();
-    }
-
-    function renderCarteraFiltered() {
-      const cards = document.querySelectorAll('#carteraGrid .cartera-card');
-      let visibleCount = 0;
-      let visibleAmount = 0;
-
-      cards.forEach(card => {
-        const est = card.getAttribute('data-estado') || '';
-        const prop = card.getAttribute('data-proponente') || '';
-        const text = card.getAttribute('data-text') || '';
-        const monto = parseFloat(card.getAttribute('data-monto') || '0');
-
-        const matchText = carteraSearchQuery === '' || text.includes(carteraSearchQuery);
-        const matchEst = (carteraEstadoFilter === 'TODOS') || (est === carteraEstadoFilter);
-        const matchProp = (carteraProponenteFilter === 'TODOS') || (prop === carteraProponenteFilter);
-
-        if (matchText && matchEst && matchProp) {
-          card.style.display = 'flex';
-          visibleCount++;
-          visibleAmount += monto;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      const elCount = document.getElementById('carteraVisibleCount');
-      if (elCount) elCount.innerText = visibleCount;
-      const elAmt = document.getElementById('carteraVisibleAmount');
-      if (elAmt) elAmt.innerText = '$' + visibleAmount.toLocaleString('es-CO') + ' COP';
-    }
-
-    // State for Tab 2 (Radar)
-    let currentProfile = 'TODOS';
+    // --- Estado y filtros del radar ---
     let currentRegion = 'TODOS';
     let currentBudget = 'TODOS';
     let currentFit = 'TODOS';
@@ -3898,75 +1548,34 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
     let currentPageSize = 30;
     let displayedLimit = 30;
     let searchQuery = '';
-    let currentViewMode = 'grid';
 
-    function switchTab(tabId) {
+    function switchTab(tabId, boton) {
       document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
       document.getElementById('tab-' + tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
+      if (boton) boton.classList.add('active');
     }
 
     function setViewMode(mode) {
-      currentViewMode = mode;
       const grid = document.getElementById('oppsContainer');
       const table = document.getElementById('oppsTableContainer');
-      const btnGrid = document.getElementById('btnViewGrid');
-      const btnTable = document.getElementById('btnViewTable');
-
-      if (mode === 'grid') {
-        grid.style.display = 'grid';
-        table.style.display = 'none';
-        btnGrid.className = 'btn btn-primary';
-        btnTable.className = 'btn btn-secondary';
-      } else {
-        grid.style.display = 'none';
-        table.style.display = 'block';
-        btnGrid.className = 'btn btn-secondary';
-        btnTable.className = 'btn btn-primary';
-      }
+      grid.style.display = mode === 'grid' ? 'grid' : 'none';
+      table.style.display = mode === 'grid' ? 'none' : 'block';
+      document.getElementById('btnViewGrid').className = mode === 'grid' ? 'btn btn-primary' : 'btn btn-secondary';
+      document.getElementById('btnViewTable').className = mode === 'grid' ? 'btn btn-secondary' : 'btn btn-primary';
     }
 
-    function setProfileFilter(profile, el) {
-      currentProfile = profile;
+    function activarChip(el) {
       el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
       el.classList.add('active');
       displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
       renderFilteredOpportunities();
     }
 
-    function setFitFilter(fit, el) {
-      currentFit = fit;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
-      renderFilteredOpportunities();
-    }
-
-    function setSectorFilter(sector, el) {
-      currentSector = sector;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
-      renderFilteredOpportunities();
-    }
-
-    function setRegionFilter(region, el) {
-      currentRegion = region;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
-      renderFilteredOpportunities();
-    }
-
-    function setBudgetFilter(budget, el) {
-      currentBudget = budget;
-      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
-      renderFilteredOpportunities();
-    }
+    function setFitFilter(fit, el) { currentFit = fit; activarChip(el); }
+    function setSectorFilter(sector, el) { currentSector = sector; activarChip(el); }
+    function setRegionFilter(region, el) { currentRegion = region; activarChip(el); }
+    function setBudgetFilter(budget, el) { currentBudget = budget; activarChip(el); }
 
     function setSortMode(mode) {
       currentSort = mode;
@@ -3974,8 +1583,8 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
     }
 
     function setPageSize(val) {
-      currentPageSize = (val === 'ALL') ? 'ALL' : parseInt(val);
-      displayedLimit = (val === 'ALL') ? 9999 : parseInt(val);
+      currentPageSize = (val === 'ALL') ? 'ALL' : parseInt(val, 10);
+      displayedLimit = (val === 'ALL') ? 9999 : parseInt(val, 10);
       renderFilteredOpportunities();
     }
 
@@ -4002,7 +1611,6 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
     }
 
     function resetAllFilters() {
-      currentProfile = 'TODOS';
       currentRegion = 'TODOS';
       currentBudget = 'TODOS';
       currentFit = 'TODOS';
@@ -4021,12 +1629,9 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       const pageSel = document.getElementById('pageSizeSelect');
       if (pageSel) pageSel.value = '30';
 
-      document.querySelectorAll('#tab-radar .chip').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('#tab-radar .filter-chips').forEach(group => {
-        const firstChip = group.querySelector('.chip');
-        if (firstChip) firstChip.classList.add('active');
+        group.querySelectorAll('.chip').forEach((c, i) => c.classList.toggle('active', i === 0));
       });
-
       renderFilteredOpportunities();
     }
 
@@ -4035,38 +1640,14 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       if (sector.startsWith('FARMACEUTICO')) return { label: '💊 Farmacéutico / Salud', cls: 'badge-sector-farmacia', sector: 'FARMACEUTICO' };
       if (sector.startsWith('CUMPLIMIENTO')) return { label: '🛡️ Cumplimiento / Calidad', cls: 'badge-sector-cumplimiento', sector: 'CUMPLIMIENTO' };
       if (sector.startsWith('LEGAL')) return { label: '⚖️ Legal / Ciber', cls: 'badge-sector-legal', sector: 'LEGAL' };
-      const txt = ((opp.entidad || '') + ' ' + (opp.objeto || '')).toLowerCase();
-      if (/farmaceutic|medicamento|invima|bpe|bpm|laboratorio|salud|hospital|reactiv|biomedic/.test(txt)) {
-        return { label: '💊 Farmacéutico', cls: 'badge-sector-farmacia', sector: 'FARMACEUTICO' };
-      }
-      if (/sagrilaft|sarlaft|ptee|cumplimiento|riesgo|uiaf|control interno|mipg|pesv/.test(txt)) {
-        return { label: '🛡️ Cumplimiento', cls: 'badge-sector-cumplimiento', sector: 'CUMPLIMIENTO' };
-      }
-      if (/juridic|legal|contrato|iso 27001|ciberseguridad|seguridad digital|datos personales|habeas/.test(txt)) {
-        return { label: '⚖️ Legal / Ciber', cls: 'badge-sector-legal', sector: 'LEGAL' };
-      }
-      if (/reficar|ecopetrol|mamonal|puerto|mantenimiento|valvula|tuber|obra|suministro/.test(txt)) {
-        return { label: '🏭 Industrial', cls: 'badge-sector-industrial', sector: 'INDUSTRIAL' };
-      }
-      return { label: '🏛️ General / Público', cls: 'badge-nacional', sector: 'GENERAL' };
+      return { label: '🏛️ General', cls: 'badge-nacional', sector: 'GENERAL' };
     }
 
     function getFilteredList() {
-      let list = oportunidadesVigentes().filter(opp => {
-        const textToSearch = [
-          opp.entidad || '',
-          opp.objeto || '',
-          opp.referencia || '',
-          opp.id_requerimiento || '',
-          opp.ubicacion || ''
-        ].join(' ').toLowerCase();
-
+      const list = oportunidadesVigentes().filter(opp => {
+        const textToSearch = [opp.entidad, opp.objeto, opp.id_requerimiento, opp.ubicacion, opp.modalidad]
+          .map(v => v || '').join(' ').toLowerCase();
         const matchText = searchQuery === '' || textToSearch.includes(searchQuery);
-
-        let matchProfile = true;
-        if (currentProfile === 'JULIA') matchProfile = (opp.perfil_sugerido || '').includes('Julia');
-        if (currentProfile === 'ALICIA') matchProfile = (opp.perfil_sugerido || '').includes('Alicia');
-        if (currentProfile === 'LUIS') matchProfile = (opp.perfil_sugerido || '').includes('Luis');
 
         let matchRegion = true;
         if (currentRegion === 'CARIBE') matchRegion = (opp.alcance || '').includes('Caribe');
@@ -4079,21 +1660,15 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         if (currentBudget === '30M_100M') matchBudget = val >= 30000000 && val < 100000000;
         if (currentBudget === 'MENOR_30M') matchBudget = val < 30000000;
 
-        let matchFit = true;
         const score = (opp.coincidencias || []).length;
+        let matchFit = true;
         if (currentFit === 'TOP_FIT') matchFit = score >= 2;
         if (currentFit === 'REGULAR_FIT') matchFit = score === 1;
 
-        let matchSector = true;
-        if (currentSector !== 'TODOS') {
-          const info = clasificarSectorOpp(opp);
-          matchSector = (info.sector === currentSector);
-        }
-
-        return matchText && matchProfile && matchRegion && matchBudget && matchFit && matchSector;
+        const matchSector = currentSector === 'TODOS' || clasificarSectorOpp(opp).sector === currentSector;
+        return matchText && matchRegion && matchBudget && matchFit && matchSector;
       });
 
-      // Sort
       if (currentSort === 'CIERRE_ASC') {
         list.sort((a, b) => (a.cierre || '9999').localeCompare(b.cierre || '9999') || (b.score_relevancia || 0) - (a.score_relevancia || 0));
       } else if (currentSort === 'FIT_DESC') {
@@ -4106,22 +1681,13 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         list.sort((a, b) => (a.entidad || '').localeCompare(b.entidad || ''));
       }
 
-      // Update Live KPIs
       const totalAmount = list.reduce((acc, o) => acc + (o.presupuesto_cop || 0), 0);
-      const highPriority = list.filter(o => (o.coincidencias || []).length >= 2).length;
-      const avgAmount = list.length > 0 ? Math.round(totalAmount / list.length) : 0;
-
       const fmtMoney = (n) => '$' + n.toLocaleString('es-CO') + ' COP';
-
-      const elCount = document.getElementById('kpiFilteredCount');
-      if (elCount) elCount.innerText = list.length;
-      const elAmt = document.getElementById('kpiFilteredAmount');
-      if (elAmt) elAmt.innerText = fmtMoney(totalAmount);
-      const elPri = document.getElementById('kpiHighPriorityCount');
-      if (elPri) elPri.innerText = highPriority;
-      const elAvg = document.getElementById('kpiAverageAmount');
-      if (elAvg) elAvg.innerText = fmtMoney(avgAmount);
-
+      const fijar = (id, texto) => { const el = document.getElementById(id); if (el) el.innerText = texto; };
+      fijar('kpiFilteredCount', list.length);
+      fijar('kpiFilteredAmount', fmtMoney(totalAmount));
+      fijar('kpiHighPriorityCount', list.filter(o => (o.coincidencias || []).length >= 2).length);
+      fijar('kpiAverageAmount', fmtMoney(list.length ? Math.round(totalAmount / list.length) : 0));
       return list;
     }
 
@@ -4134,39 +1700,26 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       const filtered = getFilteredList();
       const exportCountEl = document.getElementById('exportCount');
       if (exportCountEl) exportCountEl.innerText = filtered.length;
+      const loadMore = document.getElementById('loadMoreContainer');
 
       if (filtered.length === 0) {
         container.innerHTML = `
           <div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--text-dim);">
             <div style="font-size:2.5rem; margin-bottom:0.75rem;">🔍</div>
-            <p style="font-size:1.05rem; font-weight:600; color:#fff;">No se encontraron procesos que coincidan con los criterios seleccionados.</p>
-            <p style="margin-top:0.5rem; font-size:0.85rem;">Intenta seleccionar "Todos" en los filtros o restablecer la búsqueda.</p>
+            <p style="font-size:1.05rem; font-weight:600; color:#fff;">No hay procesos que coincidan con los criterios seleccionados.</p>
+            <p style="margin-top:0.5rem; font-size:0.85rem;">Prueba con "Todos" en los filtros o restablece la búsqueda.</p>
             <button class="btn btn-secondary" onclick="resetAllFilters()" style="margin-top:1rem;">Restablecer Filtros</button>
-          </div>
-        `;
-        tableBody.innerHTML = `
-          <tr>
-            <td colspan="8" style="text-align:center; padding:2rem; color:var(--text-dim);">
-              No se encontraron procesos con los filtros aplicados.
-            </td>
-          </tr>
-        `;
-        const loadMore = document.getElementById('loadMoreContainer');
+          </div>`;
+        tableBody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:2rem; color:var(--text-dim);">No hay procesos con los filtros aplicados.</td></tr>';
         if (loadMore) loadMore.style.display = 'none';
         return;
       }
 
-      const itemsToShow = filtered.slice(0, displayedLimit);
-
-      itemsToShow.forEach((opp, idx) => {
-        const isCaribe = (opp.alcance || '').includes('Caribe');
-        const badgeClass = isCaribe ? 'badge-caribe' : 'badge-nacional';
+      filtered.slice(0, displayedLimit).forEach(opp => {
+        const badgeClass = (opp.alcance || '').includes('Caribe') ? 'badge-caribe' : 'badge-nacional';
         const afinidad = textoAfinidad(opp);
         const secInfo = clasificarSectorOpp(opp);
-        const enlace = /^https:\/\//.test(opp.link_secop || '') ? opp.link_secop : '#';
-        const proponente = esc((opp.perfil_sugerido || '').split('(')[0]);
 
-        // Render Card
         const card = document.createElement('div');
         card.className = 'opp-card';
         card.onclick = () => openModal(opp);
@@ -4191,12 +1744,9 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
           </div>
           <div class="opp-footer">
             <div class="opp-price">${esc(opp.presupuesto_formato)}</div>
-            <div class="opp-profile">${proponente}</div>
-          </div>
-        `;
+          </div>`;
         container.appendChild(card);
 
-        // Render Table Row
         const tr = document.createElement('tr');
         tr.onclick = () => openModal(opp);
         tr.innerHTML = `
@@ -4206,24 +1756,15 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
           <td style="max-width:320px; line-height:1.4;">${esc((opp.objeto || '').slice(0, 110))}...</td>
           <td style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:1rem;">${esc(opp.presupuesto_formato)}</td>
           <td><span class="opp-badge ${badgeClass}">${esc(opp.alcance)}</span></td>
-          <td style="color:var(--accent-amber); font-weight:600;">${proponente}</td>
+          <td style="color:var(--accent-amber); font-weight:600;">${esc(opp.modalidad || '')}</td>
           <td>
-            <a href="${esc(enlace)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
-              Ver 🌐
-            </a>
-          </td>
-        `;
+            <a href="${esc(enlaceSecop(opp))}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.75rem;">Ver 🌐</a>
+          </td>`;
         tableBody.appendChild(tr);
       });
 
-      // Toggle Load More button
-      const loadMore = document.getElementById('loadMoreContainer');
-      if (loadMore) {
-        loadMore.style.display = (displayedLimit < filtered.length) ? 'flex' : 'none';
-      }
+      if (loadMore) loadMore.style.display = (displayedLimit < filtered.length) ? 'flex' : 'none';
     }
-
-    let activeOpp = null;
 
     function copiarCodigo(codigo, btn) {
       navigator.clipboard.writeText(codigo).then(() => {
@@ -4239,235 +1780,61 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       });
     }
 
-    function getOppPipelineStatus(id) {
-      return localStorage.getItem('opp_status_' + id) || 'RADAR';
-    }
-
-    function setOppPipelineStatus(id, status) {
-      localStorage.setItem('opp_status_' + id, status);
-    }
-
-    function updateOppStatus() {
-      if (!activeOpp) return;
-      const sel = document.getElementById('modalStatusSelect');
-      const oppId = activeOpp.id_requerimiento || activeOpp.objeto.slice(0, 30);
-      setOppPipelineStatus(oppId, sel.value);
-      
-      const notice = document.getElementById('statusSavedNotice');
-      notice.style.display = 'inline';
-      setTimeout(() => { notice.style.display = 'none'; }, 2000);
-      
-      renderFilteredOpportunities();
-    }
-
-    function calcularSimulacionFinanciera(presupuesto) {
-      const p = presupuesto || 0;
-      const primaPoliza = Math.round(p * 0.10 * 0.015);
-      const reteFuente = Math.round(p * 0.06);
-      const reteICA = Math.round(p * 0.00966);
-      const neto = p - primaPoliza - reteFuente - reteICA;
-
-      const fmt = (v) => '$' + v.toLocaleString('es-CO') + ' COP';
-      document.getElementById('simPoliza').innerText = fmt(primaPoliza);
-      document.getElementById('simReteFuente').innerText = fmt(reteFuente);
-      document.getElementById('simReteICA').innerText = fmt(reteICA);
-      document.getElementById('simNeto').innerText = fmt(Math.max(0, neto));
-    }
-
     function openModal(opp) {
-      activeOpp = opp;
-      calcularSimulacionFinanciera(opp.presupuesto_cop || 0);
-      const oppId = opp.id_requerimiento || (opp.objeto ? opp.objeto.slice(0, 30) : 'OPP');
-      document.getElementById('modalStatusSelect').value = getOppPipelineStatus(oppId);
-      document.getElementById('modalEntity').innerText = opp.entidad;
-      document.getElementById('modalTitle').innerText = (opp.objeto || '').slice(0, 140) + '...';
-      document.getElementById('modalDesc').innerText = opp.objeto || '';
-      document.getElementById('modalPrice').innerText = opp.presupuesto_formato;
-      document.getElementById('modalAlcance').innerText = opp.ubicacion || opp.alcance || 'Colombia';
-      document.getElementById('modalProfile').innerText = opp.perfil_sugerido;
-      document.getElementById('modalFit').innerText = textoAfinidad(opp);
-      document.getElementById('modalModalidad').innerText = opp.modalidad || '—';
-      document.getElementById('modalPublicacion').innerText = fmtFecha(opp.publicacion);
-      document.getElementById('modalCierre').innerText = textoCierre(opp);
-      document.getElementById('modalCoincidencias').innerText = (opp.coincidencias || []).join(', ') || '—';
-
-      const secopBtn = document.getElementById('modalSecopLink');
-      secopBtn.href = /^https:\/\//.test(opp.link_secop || '') ? opp.link_secop : '#';
-
+      const fijar = (id, texto) => { document.getElementById(id).innerText = texto; };
+      fijar('modalEntity', opp.entidad);
+      fijar('modalTitle', (opp.objeto || '').slice(0, 140) + '...');
+      fijar('modalDesc', opp.objeto || '');
+      fijar('modalPrice', opp.presupuesto_formato);
+      fijar('modalAlcance', opp.ubicacion || opp.alcance || 'Colombia');
+      fijar('modalSector', clasificarSectorOpp(opp).label);
+      fijar('modalFit', textoAfinidad(opp));
+      fijar('modalModalidad', opp.modalidad || '—');
+      fijar('modalPublicacion', fmtFecha(opp.publicacion));
+      fijar('modalCierre', textoCierre(opp));
+      fijar('modalCoincidencias', (opp.coincidencias || []).join(', ') || '—');
+      document.getElementById('modalSecopLink').href = enlaceSecop(opp);
       document.getElementById('oppModal').classList.add('active');
     }
 
     function closeModal(e) {
-      if (e.target.id === 'oppModal') {
-        document.getElementById('oppModal').classList.remove('active');
-      }
+      if (e.target.id === 'oppModal') document.getElementById('oppModal').classList.remove('active');
     }
 
     function closeModalDirect() {
       document.getElementById('oppModal').classList.remove('active');
     }
 
-    function exportFilteredCSV() {
-      const filtered = getFilteredList();
-      if (filtered.length === 0) {
-        alert('No hay oportunidades para exportar con los filtros seleccionados.');
-        return;
-      }
-
-      const q = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
-      let csv = 'Cierre,Entidad,Sector,Coincidencias,Modalidad,Objeto,Presupuesto COP,Ubicacion,Proponente Sugerido,Link SECOP\n';
-      filtered.forEach(o => {
-        csv += [
-          o.cierre || '', q(o.entidad), q(clasificarSectorOpp(o).label), q((o.coincidencias || []).join('; ')),
-          q(o.modalidad), q(o.objeto), o.presupuesto_cop || 0, q(o.ubicacion), q(o.perfil_sugerido), o.link_secop || ''
-        ].join(',') + '\n';
-      });
-
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
+    function descargarArchivo(contenido, tipo, nombre) {
+      const url = URL.createObjectURL(new Blob([contenido], { type: tipo }));
       const a = document.createElement('a');
       a.href = url;
-      a.download = `licitaciones_filtradas_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.download = nombre;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
 
-
-    // --- LÓGICA DE RECORDATORIOS OPERATIVOS CON LOCALSTORAGE ---
-    // v2: la lista anterior traía propuestas que no correspondían a convocatorias reales.
-    const REMINDERS_KEY = 'procura_reminders_v2';
-    const DEFAULT_REMINDERS = [
-      { id: 'rem_1', text: 'Radicación de la oferta CCB 2807-2026 en Itbid (30-sep 16:55 COT)', tag: 'CCB', completed: true },
-      { id: 'rem_2', text: 'Revisar el centro de mensajes de la negociación 32540 en Itbid (resultado o subsanaciones)', tag: 'CCB', completed: false },
-      { id: 'rem_3', text: 'Definir el valor de la propuesta 2027 para la Contraloría Distrital de Cartagena y enviarla', tag: 'CONTRALORÍA', completed: false },
-      { id: 'rem_4', text: 'Revisar el radar SECOP II: procesos de alta afinidad que cierran esta semana', tag: 'RADAR', completed: false }
-    ];
-
-    function getReminders() {
-      try {
-        const saved = localStorage.getItem(REMINDERS_KEY);
-        if (saved) return JSON.parse(saved);
-      } catch(e) {}
-      return DEFAULT_REMINDERS.map(r => ({ ...r }));
-    }
-
-    function saveReminders(reminders) {
-      try { localStorage.setItem(REMINDERS_KEY, JSON.stringify(reminders)); } catch(e) {}
-      renderReminders();
-    }
-
-    function toggleReminder(id) {
-      const list = getReminders();
-      const item = list.find(r => r.id === id);
-      if (item) {
-        item.completed = !item.completed;
-        saveReminders(list);
-      }
-    }
-
-    function agregarNuevoRecordatorio() {
-      const input = document.getElementById('newReminderInput');
-      const text = input ? input.value.trim() : '';
-      if (!text) return;
-
-      const list = getReminders();
-      list.push({
-        id: 'rem_' + Date.now(),
-        text: text,
-        tag: 'OPERATIVO',
-        completed: false
-      });
-      saveReminders(list);
-      input.value = '';
-    }
-
-    function eliminarRecordatorio(id) {
-      let list = getReminders();
-      list = list.filter(r => r.id !== id);
-      saveReminders(list);
-    }
-
-    function renderReminders() {
-      const container = document.getElementById('remindersContainer');
-      if (!container) return;
-
-      const list = getReminders();
-      container.innerHTML = '';
-
-      list.forEach(r => {
-        const itemEl = document.createElement('div');
-        itemEl.className = 'reminder-item';
-
-        const tagColor = r.tag === 'CCB' ? 'var(--accent-emerald)' : (r.tag === 'RADAR' ? 'var(--accent-rose)' : 'var(--accent-blue)');
-
-        itemEl.innerHTML = '<input type="checkbox" class="reminder-checkbox">' +
-          '<div class="reminder-text">' + esc(r.text) + '</div>' +
-          '<span class="reminder-tag" style="background:rgba(255,255,255,0.06); color:' + tagColor + '; border:1px solid rgba(255,255,255,0.1);">' + esc(r.tag) + '</span>' +
-          '<button class="del-btn" style="background:transparent; border:none; color:#64748b; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Eliminar recordatorio">✕</button>';
-
-        const chkBox = itemEl.querySelector('.reminder-checkbox');
-        if (chkBox) {
-          chkBox.checked = r.completed;
-          chkBox.onchange = function() { toggleReminder(r.id); };
-        }
-        const textDiv = itemEl.querySelector('.reminder-text');
-        if (textDiv && r.completed) {
-          textDiv.classList.add('completed');
-        }
-        const delBtn = itemEl.querySelector('.del-btn');
-        if (delBtn) {
-          delBtn.onclick = function() { eliminarRecordatorio(r.id); };
-        }
-
-        container.appendChild(itemEl);
-      });
-    }
-
-    // --- ACCIÓN: CARGAR LA ÚLTIMA VERSIÓN PUBLICADA ---
-    // El radar se regenera una vez al día en GitHub Actions; este botón solo recarga la página publicada.
-    function forzarSincronizacionManual(btn) {
-      btn.innerHTML = '🔄 Cargando la última versión publicada...';
-      btn.disabled = true;
-      window.location.href = window.location.pathname + '?v=' + Date.now();
-    }
-
-    // Procesos del radar con alta afinidad que cierran dentro de los próximos `dias` días.
-    function proximosCierres(dias) {
-      return oportunidadesVigentes()
-        .filter(o => (o.coincidencias || []).length >= 2 && diasHastaCierre(o) <= dias)
-        .sort((a, b) => (a.cierre || '').localeCompare(b.cierre || ''));
-    }
-
-    // --- ACCIÓN: PROBAR NOTIFICACIÓN WEB ---
-    function probarNotificacionWeb(btn) {
-      if (!("Notification" in window)) {
-        alert("Este navegador no soporta notificaciones de escritorio.");
+    function exportFilteredCSV() {
+      const filtered = getFilteredList();
+      if (filtered.length === 0) {
+        mostrarToast('No hay procesos para exportar con los filtros seleccionados.', 3500, '📥');
         return;
       }
-
-      Notification.requestPermission().then(permission => {
-        if (permission === "granted") {
-          const proximos = proximosCierres(7);
-          const cuerpo = proximos.length
-            ? proximos.length + ' proceso(s) de alta afinidad cierran esta semana. El primero: ' + proximos[0].entidad + ' (' + textoCierre(proximos[0]) + ').'
-            : 'No hay procesos de alta afinidad que cierren en los próximos 7 días.';
-          new Notification("Licitaciones Next Level", { body: cuerpo });
-          btn.innerHTML = '✓ ¡Notificación Enviada!';
-          btn.style.background = '#10b981';
-          setTimeout(() => {
-            btn.innerHTML = '🔔 Activar Notificaciones Web';
-            btn.style.background = '';
-          }, 2500);
-        } else {
-          alert("Permiso de notificaciones denegado. Habilítalo en la configuración de tu navegador.");
-        }
+      const q = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      let csv = 'Cierre,Entidad,Sector,Coincidencias,Modalidad,Objeto,Presupuesto COP,Ubicacion,Link SECOP\n';
+      filtered.forEach(o => {
+        csv += [
+          o.cierre || '', q(o.entidad), q(clasificarSectorOpp(o).label), q((o.coincidencias || []).join('; ')),
+          q(o.modalidad), q(o.objeto), o.presupuesto_cop || 0, q(o.ubicacion), o.link_secop || ''
+        ].join(',') + '\n';
       });
+      descargarArchivo(csv, 'text/csv;charset=utf-8;', 'radar_secop_' + hoyColombia() + '.csv');
     }
 
-    // --- ACCIÓN: GENERAR Y DESCARGAR CALENDARIO (.ICS) ---
-    // Un evento de día completo por cada proceso de alta afinidad que cierra en los próximos 30 días.
-    // SECOP II publica solo la fecha de cierre; la hora exacta está en el pliego del proceso.
+    // --- Calendario (.ICS) ---
+    // Un evento de día completo por cada proceso con 2 o más coincidencias que cierra en los próximos 30 días.
     function descargarCalendarioICS() {
       const procesos = proximosCierres(30);
       if (procesos.length === 0) {
@@ -4476,18 +1843,17 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
       }
       const icsTexto = (s) => String(s || '').replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\r?\n/g, '\\n');
       const sello = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
-      const lineas = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Next Level SAS//Radar Licitaciones//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+      const lineas = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Next Level SAS//Radar SECOP//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
       procesos.forEach(o => {
-        const dia = o.cierre.replace(/-/g, '');
         const siguiente = new Date(Date.parse(o.cierre) + 86400000).toISOString().slice(0, 10).replace(/-/g, '');
         lineas.push(
           'BEGIN:VEVENT',
           'UID:' + icsTexto(o.id_proceso || o.id_requerimiento) + '@dashboard-licitaciones',
           'DTSTAMP:' + sello,
-          'DTSTART;VALUE=DATE:' + dia,
+          'DTSTART;VALUE=DATE:' + o.cierre.replace(/-/g, ''),
           'DTEND;VALUE=DATE:' + siguiente,
           'SUMMARY:' + icsTexto('Cierre SECOP II: ' + o.entidad + ' (' + o.presupuesto_formato + ')'),
-          'DESCRIPTION:' + icsTexto((o.objeto || '').slice(0, 300) + ' | Ref: ' + o.id_requerimiento + ' | ' + (o.link_secop || '')),
+          'DESCRIPTION:' + icsTexto((o.objeto || '').slice(0, 300) + ' | Ref: ' + o.id_requerimiento + ' | ' + (o.link_secop || '') + ' | Hora exacta en el pliego'),
           'LOCATION:SECOP II',
           'BEGIN:VALARM',
           'TRIGGER:-P2D',
@@ -4514,334 +1880,53 @@ Contacto Next Level: https://app.nextlevelsas.com/</div>
         partes.push(actual);
         return partes.join(CRLF + ' ');
       };
-
-      const blob = new Blob([lineas.map(plegar).join(CRLF)], { type: 'text/calendar;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'cierres_radar_' + hoyColombia() + '.ics';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      descargarArchivo(lineas.map(plegar).join(CRLF), 'text/calendar;charset=utf-8;', 'cierres_radar_' + hoyColombia() + '.ics');
     }
 
-    // --- Indicadores y alertas que dependen del radar publicado ---
-    function renderRadarResumen() {
-      const vigentes = oportunidadesVigentes();
-      document.querySelectorAll('.radar-total').forEach(el => { el.innerText = vigentes.length; });
-
-      const corte = RADAR_META.fecha_corte ? fmtFecha(RADAR_META.fecha_corte) : 'sin datos';
-      const elCorte = document.getElementById('radarCorteTexto');
-      if (elCorte) elCorte.innerText = 'Procesos de SECOP II que reciben ofertas y encajan con el perfil • Corte: ' + corte;
-      const elSub = document.getElementById('radarSubtitulo');
-      if (elSub) elSub.innerText = 'Fuente: ' + RADAR_META.fuente + '. Corte: ' + corte + '. De ' + (RADAR_META.procesos_abiertos_secop || 0).toLocaleString('es-CO') + ' procesos abiertos en SECOP II, estos encajan con el perfil de Next Level.';
-      const elSync = document.getElementById('syncRadarDesc');
-      if (elSync) elSync.innerText = 'Última actualización: ' + (RADAR_META.generado ? new Date(RADAR_META.generado).toLocaleString('es-CO', { timeZone: 'America/Bogota' }) : 'pendiente') + ' • Diario 06:00 COT (GitHub Actions)';
-
-      const proximo = vigentes.slice().sort((a, b) => (a.cierre || '9999').localeCompare(b.cierre || '9999'))[0];
-      const elProx = document.getElementById('topKpiProximoCierre');
-      const elProxDet = document.getElementById('topKpiProximoCierreDetalle');
-      if (proximo && elProx && elProxDet) {
-        const dias = diasHastaCierre(proximo);
-        elProx.innerText = dias === 0 ? 'Hoy' : (dias + (dias === 1 ? ' día' : ' días'));
-        elProxDet.innerText = proximo.entidad + ' • ' + textoCierre(proximo);
-      }
-
-      const grid = document.getElementById('alertsGrid');
-      const semana = proximosCierres(7);
-      if (grid) {
-        grid.querySelectorAll('.alerta-radar').forEach(el => el.remove());
-        semana.slice(0, 6).forEach(o => {
-          const dias = diasHastaCierre(o);
-          const card = document.createElement('div');
-          card.className = 'alert-panel-card alerta-radar ' + (dias <= 2 ? 'alert-critica' : 'alert-media');
-          const enlace = /^https:\/\//.test(o.link_secop || '') ? o.link_secop : '#';
-          card.innerHTML = `
-            <div>
-              <div class="alert-badge-top ${dias <= 2 ? 'crit' : 'med'}">⏰ ${esc(textoCierre(o)).toUpperCase()}</div>
-              <h4 style="font-family:'Outfit'; font-size:1.1rem; color:#fff; margin-bottom:0.25rem;">${esc(o.entidad)}</h4>
-              <div style="font-size:0.8rem; color:#38bdf8; font-weight:700; margin-bottom:0.5rem;">${esc(o.modalidad)} • ${esc(o.presupuesto_formato)}</div>
-              <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5; margin-bottom:1rem;">${esc((o.objeto || '').slice(0, 220))}</div>
-            </div>
-            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="${esc(enlace)}" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1; font-size:0.775rem;">🌐 Ver en SECOP II</a>
-            </div>`;
-          grid.appendChild(card);
-        });
-      }
-      const elAlertas = document.getElementById('alertasCount');
-      if (elAlertas) elAlertas.innerText = 1 + semana.length;
-    }
-
-    // Initial render
-    renderFilteredOpportunities();
-    renderReminders();
-    renderCarteraFiltered();
-    renderRadarResumen();
-
-        // --- TOAST NOTIFICATIONS DEFENSIVAS ---
     let toastTimeout = null;
     function mostrarToast(mensaje, duracion = 4000, icono = '📋') {
       const el = document.getElementById('toastNotification');
       const msgEl = document.getElementById('toastMsg');
       const iconEl = document.getElementById('toastIcon');
       if (!el || !msgEl) return;
-
       msgEl.innerText = mensaje;
       if (iconEl) iconEl.innerText = icono;
-
       el.classList.add('show');
       if (toastTimeout) clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => {
-        el.classList.remove('show');
-      }, duracion);
+      toastTimeout = setTimeout(() => el.classList.remove('show'), duracion);
     }
 
-    // --- INTERCEPTOR DEFENSIVO DE ENLACES FILE:/// EN PRODUCCIÓN WEB ---
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href^="file:///"]');
-      if (link && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
-        e.preventDefault();
-        const rawHref = link.getAttribute('href');
-        const rawPath = decodeURIComponent(rawHref.replace('file:///', ''));
-        const winPath = rawPath.split('/').join(String.fromCharCode(92));
-        
-        navigator.clipboard.writeText(winPath).then(() => {
-          mostrarToast('Por seguridad web, el navegador bloquea accesos directos al disco. ¡Ruta copiada al portapapeles! Pégala en el Explorador de Windows: ' + winPath, 5500, '📋');
-        }).catch(() => {
-          prompt('Por seguridad web, copia esta ruta para abrirla en tu Explorador de Windows:', winPath);
-        });
+    // --- Indicadores que dependen del radar publicado ---
+    const HORAS_DESACTUALIZADO = 36;
+
+    function renderRadarResumen() {
+      const vigentes = oportunidadesVigentes();
+      document.querySelectorAll('.radar-total').forEach(el => { el.innerText = vigentes.length; });
+
+      const corte = RADAR_META.fecha_corte ? fmtFecha(RADAR_META.fecha_corte) : 'sin datos';
+      const fijar = (id, texto) => { const el = document.getElementById(id); if (el) el.innerText = texto; };
+      fijar('kpiCorte', corte);
+      fijar('kpiAbiertosSecop', 'De ' + (RADAR_META.procesos_abiertos_secop || 0).toLocaleString('es-CO') + ' procesos abiertos en SECOP II');
+      fijar('radarSubtitulo', 'Fuente: ' + RADAR_META.fuente + '. Corte: ' + corte + '. Solo procesos publicados, sin adjudicar, con recepción de ofertas vigente y objeto de consultoría.');
+
+      const proximo = vigentes.slice().sort((a, b) => (a.cierre || '9999').localeCompare(b.cierre || '9999'))[0];
+      if (proximo) {
+        const dias = diasHastaCierre(proximo);
+        fijar('topKpiProximoCierre', dias === 0 ? 'Hoy' : (dias + (dias === 1 ? ' día' : ' días')));
+        fijar('topKpiProximoCierreDetalle', proximo.entidad + ' • ' + textoCierre(proximo));
       }
-    });
 
-    // --- MANEJO DE COPIADO DE RUTAS GOOGLE DRIVE ---
-    function copiarRutaDrive(btn, ruta) {
-      if (!ruta) return;
-      navigator.clipboard.writeText(ruta).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✓ ¡Ruta Copiada!';
-        btn.style.background = '#10b981';
-        btn.style.color = '#fff';
-        mostrarToast('Ruta copiada al portapapeles: ' + ruta, 3000, '✓');
-        setTimeout(() => {
-          btn.innerHTML = orig;
-          btn.style.background = '';
-          btn.style.color = '';
-        }, 2000);
-      }).catch(err => {
-        prompt('Copia la ruta de la carpeta en Google Drive:', ruta);
-      });
-    }
-
-    // --- TEMPORIZADOR EN VIVO CON HARDENING DE ZONA HORARIA (COT / UTC-5) ---
-    function updateLiveCountdowns() {
-      const now = new Date();
-
-      document.querySelectorAll('.live-cd').forEach(el => {
-        const deadlineAttr = el.getAttribute('data-deadline');
-        if (!deadlineAttr) return;
-
-        // Garantizar zona horaria de Colombia (COT / UTC-5) sin importar la hora local del navegador
-        let targetStr = deadlineAttr;
-        if (!targetStr.includes('Z') && !targetStr.includes('+') && !targetStr.includes('-05:00')) {
-          targetStr += '-05:00';
-        }
-
-        const target = new Date(targetStr);
-        const diffMs = target - now;
-
-        if (diffMs <= 0) {
-          el.innerText = '🔒 Plazo de Recepción Concluido';
-          el.style.color = '#34d399';
-        } else {
-          const totalSecs = Math.floor(diffMs / 1000);
-          const days = Math.floor(totalSecs / 86400);
-          const hours = Math.floor((totalSecs % 86400) / 3600);
-          const mins = Math.floor((totalSecs % 3600) / 60);
-          const secs = totalSecs % 60;
-
-          el.innerText = '⏳ ' + days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's restantes';
-        }
-      });
-    }
-
-    setInterval(updateLiveCountdowns, 1000);
-    updateLiveCountdowns();
-
-    // Funciones para copiar Guiones de Contacto
-    function copiarGuionCompleto(btn) {
-      const texto = document.getElementById('guionTexto').innerText;
-      navigator.clipboard.writeText(texto).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✓ ¡Copiado!';
-        btn.style.background = '#10b981';
-        setTimeout(() => {
-          btn.innerHTML = orig;
-          btn.style.background = '';
-        }, 2000);
-      });
-    }
-
-    function copiarPitchPersonalizado(nombre, btn) {
-      let texto = document.getElementById('guionTexto').innerText;
-      texto = texto.replace('[Nombre del Profesional]', nombre);
-      navigator.clipboard.writeText(texto).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✓ ¡Copiado!';
-        btn.style.background = '#10b981';
-        setTimeout(() => {
-          btn.innerHTML = orig;
-          btn.style.background = '';
-        }, 2000);
-      });
-    }
-
-    function copiarPitchGenerico(btn) {
-      const texto = document.getElementById('guionTexto').innerText;
-      navigator.clipboard.writeText(texto).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✓ ¡Copiado!';
-        btn.style.background = '#10b981';
-        setTimeout(() => {
-          btn.innerHTML = orig;
-          btn.style.background = '';
-        }, 2000);
-      });
-    }
-
-
-    // ==========================================
-    // MASTER CRYPTOGRAPHIC SECURITY GATE (SHA-256)
-    // ==========================================
-    const MASTER_HASH = '4d63d0eac10f75d72c6da51494601b70370df97c5d3fa5edd5f1ce9d82edc789';
-    const SESSION_AUTH_KEY = 'nextlevel_sec_auth_v1';
-
-    async function sha256(message) {
-      const msgBuffer = new TextEncoder().encode(message);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    function initSecurityGate() {
-      const gate = document.getElementById('securityGate');
-      const appWrapper = document.getElementById('appMainWrapper');
-      if (!gate) return;
-
-      if (sessionStorage.getItem(SESSION_AUTH_KEY) === 'VERIFIED_ACTIVE') {
-        gate.classList.add('unlocked');
-        if (appWrapper) appWrapper.classList.remove('app-blurred');
-      } else {
-        gate.classList.remove('unlocked');
-        if (appWrapper) appWrapper.classList.add('app-blurred');
-        setTimeout(() => {
-          const inp = document.getElementById('gatePasswordInput');
-          if (inp) inp.focus();
-        }, 150);
+      const generado = Date.parse(RADAR_META.generado || '');
+      const aviso = document.getElementById('avisoCorte');
+      if (aviso) {
+        const viejo = !generado || (Date.now() - generado) > HORAS_DESACTUALIZADO * 3600 * 1000;
+        aviso.style.display = viejo ? 'block' : 'none';
+        fijar('avisoCorteFecha', generado ? new Date(generado).toLocaleString('es-CO', { timeZone: 'America/Bogota' }) : 'sin datos');
       }
     }
 
-    async function handleSecurityUnlock(e) {
-      if (e) e.preventDefault();
-      const input = document.getElementById('gatePasswordInput');
-      const errBox = document.getElementById('gateErrorMessage');
-      const gate = document.getElementById('securityGate');
-      const appWrapper = document.getElementById('appMainWrapper');
-      const btn = document.getElementById('gateSubmitBtn');
-
-      if (!input) return;
-      const pwd = input.value.trim();
-
-      if (btn) btn.innerHTML = '<span>Verificando credenciales...</span>';
-
-      try {
-        if (!(window.crypto && window.crypto.subtle)) {
-          throw new Error('El navegador no permite verificar la clave (se requiere HTTPS).');
-        }
-        const isValid = (await sha256(pwd)) === MASTER_HASH;
-
-        if (isValid) {
-          sessionStorage.setItem(SESSION_AUTH_KEY, 'VERIFIED_ACTIVE');
-          if (errBox) errBox.style.display = 'none';
-          gate.classList.add('unlocked');
-          if (appWrapper) appWrapper.classList.remove('app-blurred');
-          input.value = '';
-          if (typeof showHardeningToast === 'function') {
-            showHardeningToast('Autenticación Exitosa', 'Acceso seguro concedido al Portal Corporativo.', 'success');
-          }
-        } else {
-          if (errBox) {
-            errBox.style.display = 'block';
-            errBox.classList.remove('shake');
-            void errBox.offsetWidth;
-            errBox.classList.add('shake');
-          }
-          input.value = '';
-          input.focus();
-        }
-      } catch (err) {
-        console.error('Error in crypto authentication:', err);
-        if (errBox) {
-          errBox.innerText = '⚠️ No se pudo verificar la clave en este navegador. Ábrelo desde la dirección https.';
-          errBox.style.display = 'block';
-        }
-      } finally {
-        if (btn) btn.innerHTML = '<span>Desbloquear Portal Seguro</span><span>→</span>';
-      }
-    }
-
-    function lockSecurityGate() {
-      sessionStorage.removeItem(SESSION_AUTH_KEY);
-      const gate = document.getElementById('securityGate');
-      const appWrapper = document.getElementById('appMainWrapper');
-      if (gate) {
-        gate.classList.remove('unlocked');
-        const input = document.getElementById('gatePasswordInput');
-        if (input) {
-          input.value = '';
-          setTimeout(() => input.focus(), 150);
-        }
-      }
-      if (appWrapper) appWrapper.classList.add('app-blurred');
-      if (typeof showHardeningToast === 'function') {
-        showHardeningToast('Sesión Bloqueada', 'El portal ha sido bloqueado por seguridad.', 'info');
-      }
-    }
-
-    function toggleGatePasswordVisibility() {
-      const inp = document.getElementById('gatePasswordInput');
-      if (!inp) return;
-      inp.type = inp.type === 'password' ? 'text' : 'password';
-    }
-
-    // Auto-lock tras 30 minutos de inactividad
-    let inactivityTimer;
-    function resetInactivityTimer() {
-      clearTimeout(inactivityTimer);
-      inactivityTimer = setTimeout(() => {
-        if (sessionStorage.getItem(SESSION_AUTH_KEY) === 'VERIFIED_ACTIVE') {
-          lockSecurityGate();
-          console.log('Portal auto-bloqueado por inactividad.');
-        }
-      }, 30 * 60 * 1000);
-    }
-    window.addEventListener('mousemove', resetInactivityTimer);
-    window.addEventListener('keydown', resetInactivityTimer);
-    window.addEventListener('click', resetInactivityTimer);
-    resetInactivityTimer();
-
-    // Iniciar verificación al cargar
-    initSecurityGate();
-
+    renderRadarResumen();
+    renderFilteredOpportunities();
   </script>
-
-  </div> <!-- /#appMainWrapper -->
-
-  <!-- Floating Toast Notification for Production Defensive UX -->
-  <div id="toastNotification" class="toast-notification">
-    <span id="toastIcon" style="font-size:1.2rem;">📋</span>
-    <span id="toastMsg" style="line-height:1.35;">Mensaje del sistema</span>
-  </div>
-
 </body>
 </html>

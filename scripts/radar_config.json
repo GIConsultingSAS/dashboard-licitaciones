@@ -4,7 +4,7 @@
   "dias_nueva": 3,
   "perfiles": [
     {
-      "nombre": "Dra. Julia Inés Pardo Carmona (Química Farmacéutica / HSEQ)",
+      "nombre": "Farmacéutico, salud y HSEQ",
       "sector": "FARMACEUTICO / SALUD",
       "palabras_clave": [
         "farmaceutic", "dispositivo medico", "registro sanitario", "asuntos regulatorios", "buenas practicas de manufactura",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "nombre": "Ing. Alicia Esther Guzmán Pardo (Cumplimiento / Calidad)",
+      "nombre": "Cumplimiento, calidad y riesgos",
       "sector": "CUMPLIMIENTO / CALIDAD",
       "palabras_clave": [
         "sagrilaft", "sarlaft", "ptee", "ptep", "oficial de cumplimiento", "lavado de activos",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "nombre": "Dr. Luis Daniel Guzmán Pardo (Abogado / ISO 27001)",
+      "nombre": "Legal, seguridad de la información y datos",
       "sector": "LEGAL / ISO 27001",
       "palabras_clave": [
         "iso 27001", "iso/iec 27001", "seguridad de la informacion", "seguridad digital",
