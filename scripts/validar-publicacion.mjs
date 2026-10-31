@@ -1,0 +1,22 @@
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
+const notice=await readFile(new URL('../cargoport-propuesta.html',import.meta.url),'utf8');
+const extract=(key)=>{
+  const m=html.match(new RegExp('^\\s*const '+key+' = (.*);$','m'));
+  assert.ok(m,'Falta variable '+key);
+  return JSON.parse(m[1]);
+};
+const items=extract('OPORTUNIDADES');
+const meta=extract('RADAR_META');
+assert.ok(Array.isArray(items),'Lista de oportunidades invalida');
+assert.equal(items.length,meta.total,'El conteo no coincide');
+assert.ok(Number.isInteger(meta.procesos_abiertos_secop)&&meta.procesos_abiertos_secop>=0,'Numero de procesos invalido');
+const ms=Date.parse(meta.generado);
+assert.ok(Number.isFinite(ms)&&Math.abs(Date.now()-ms)<30*60*1000,'Datos no generados recientemente');
+const hoy=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Bogota',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+assert.equal(meta.fecha_corte,hoy,'Corte en zona horaria incorrecta');
+assert.match(notice,/Propuesta temporalmente no disponible/i,'Falta aviso');
+assert.doesNotMatch(notice,/<script|sourceMappingURL|raw\.githubusercontent|api[_-]?key|token=/i,'El aviso contiene recursos o indicadores peligrosos');
+assert.ok(!/const (OPORTUNIDADES|RADAR_META) = undefined/.test(html));
+console.log(JSON.stringify({status:'PASS',fecha:meta.fecha_corte,total:meta.total,procesos:meta.procesos_abiertos_secop,artifact_files:2}));
