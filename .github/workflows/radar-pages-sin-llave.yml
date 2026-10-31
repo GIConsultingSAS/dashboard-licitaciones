@@ -1,5 +1,7 @@
 name: Radar SECOP II - Pages sin llave privada
 on:
+  schedule:
+    - cron: '0 11 * * *'  # 06:00 America/Bogota
   workflow_dispatch:
     inputs:
       modo:
@@ -19,21 +21,22 @@ concurrency:
 
 jobs:
   construir:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       contents: read
       pages: write
     steps:
       - name: Checkout sin credenciales persistentes
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
       - name: Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
+          package-manager-cache: false
 
       - name: Pruebas del clasificador
         run: node --test "scripts/*.test.mjs"
@@ -51,19 +54,19 @@ jobs:
           test "$(find _site -type f | wc -l)" -eq 2
 
       - name: Configurar GitHub Pages
-        if: github.event.inputs.modo == 'publicar'
+        if: github.event_name == 'schedule' || github.event.inputs.modo == 'publicar'
         uses: actions/configure-pages@v5
 
       - name: Subir artefacto de Pages
-        if: github.event.inputs.modo == 'publicar'
+        if: github.event_name == 'schedule' || github.event.inputs.modo == 'publicar'
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
   publicar:
-    if: github.event.inputs.modo == 'publicar'
+    if: github.event_name == 'schedule' || github.event.inputs.modo == 'publicar'
     needs: construir
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
