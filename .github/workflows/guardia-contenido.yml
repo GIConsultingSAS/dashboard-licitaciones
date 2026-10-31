@@ -1,0 +1,56 @@
+name: Guardia de contenido del portal
+
+# El portal público solo puede mostrar el radar de SECOP II (spec 005, contracts/portal-publico.md).
+# Falla si reaparece cartera, puerta de clave, enlaces privados o nombres internos.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  guardia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Revisar el contenido de index.html
+        env:
+          # Términos adicionales (por ejemplo, nombres de personas) separados por coma, fuera del repositorio público.
+          GUARDIA_TERMINOS: ${{ secrets.GUARDIA_TERMINOS }}
+        run: |
+          node - <<'EOF'
+          const fs = require('fs');
+          const html = fs.readFileSync('index.html', 'utf8');
+          const reglas = [
+            ['cartera', /cartera-card|data-monto/],
+            ['propuestas retiradas', /Ref: (BICENTENARIO|MINTIC|EPC|BOGOTABIO)/],
+            ['puerta de clave', /MASTER_HASH|securityGate/],
+            ['enlaces privados', /drive\.google\.com|portaldecontratacion\.ccb\.org\.co|file:\/\/\//],
+            ['proponente sugerido', /perfil_sugerido/]
+          ];
+          const extra = (process.env.GUARDIA_TERMINOS || '').split(',').map(t => t.trim()).filter(Boolean);
+          const hallazgos = reglas.filter(([, re]) => re.test(html)).map(([nombre]) => nombre);
+          if (extra.some(t => html.includes(t))) hallazgos.push('término interno protegido');
+          if (hallazgos.length) {
+            fs.writeFileSync('hallazgos.txt', hallazgos.join(', '));
+            console.error('Contenido no permitido en el portal público: ' + hallazgos.join(', '));
+            process.exit(1);
+          }
+          console.log('OK: el portal cumple el contrato de contenido público.');
+          EOF
+
+      - name: Abrir un issue si main tiene contenido no permitido
+        if: failure() && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          detalle=$(cat hallazgos.txt 2>/dev/null || echo "ver la corrida")
+          gh issue create -R "$GITHUB_REPOSITORY" \
+            --title "Contenido no permitido en el portal público ($GITHUB_SHA)" \
+            --body "La guardia detectó: $detalle. Commit: $GITHUB_SHA. Corrida: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. Revertir el commit (spec 005, contracts/portal-publico.md)."

@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Procesos de SECOP II que hoy reciben ofertas, filtrados por afinidad temática.">
+  <title>Radar de Licitaciones SECOP II | Next Level</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-base: #060913;
+      --bg-surface: #0b1120;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(99, 102, 241, 0.5);
+      
+      --accent-blue: #38bdf8;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --glow-blue: 0 0 25px rgba(56, 189, 248, 0.25);
+      --glow-emerald: 0 0 25px rgba(16, 185, 129, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(6, 9, 19, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #fff;
+      box-shadow: var(--glow-blue);
+    }
+
+    .brand-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #fff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-info p {
+      font-size: 0.75rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .status-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      backdrop-filter: blur(12px);
+    }
+
+    .metric-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--card-color, var(--accent-blue)), transparent);
+    }
+
+    .metric-label {
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-subtext {
+      font-size: 0.775rem;
+      color: var(--text-dim);
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      background: rgba(99, 102, 241, 0.15);
+      border-bottom: 2px solid var(--accent-indigo);
+    }
+
+    .tab-btn .badge-count {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .tab-btn.active .badge-count {
+      background: var(--accent-indigo);
+      color: #fff;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-indigo), #4f46e5);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    /* Filter Toolbar (Tab 2) */
+    .filter-toolbar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      font-size: 0.95rem;
+      color: #fff;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
+    }
+
+    .view-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .chip-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .chip:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .chip.active {
+      background: var(--accent-indigo);
+      color: #fff;
+      border-color: var(--accent-indigo);
+    }
+
+    /* Enhanced Filter Toolbar & KPI Bar */
+    .filter-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .select-styled {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: #f1f5f9;
+      font-size: 0.825rem;
+      font-weight: 500;
+      padding: 0.45rem 0.9rem;
+      outline: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .select-styled:focus {
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    .btn-reset-filters {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .btn-reset-filters:hover {
+      background: rgba(239, 68, 68, 0.25);
+      color: #fff;
+    }
+
+    .live-kpi-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .live-kpi-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .live-kpi-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+
+    .live-kpi-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #38bdf8;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .badge-sector {
+      font-size: 0.675rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .badge-sector-farmacia { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    .badge-sector-cumplimiento { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .badge-sector-legal { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+
+    .load-more-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .btn-load-more {
+      background: linear-gradient(135deg, #1e3a8a, #0284c7);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.75rem 2.25rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+    }
+
+    .btn-load-more:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+    }
+
+    /* Opportunity Cards Grid */
+    .opps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .opp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .opp-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .opp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .opp-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    .badge-caribe { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .badge-nacional { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.25); }
+
+    .badge-fit {
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .opp-entity {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .opp-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .opp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.775rem;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+
+    .opp-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .opp-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .opp-price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+    }
+
+    /* Table View for Opportunities */
+    .opps-table-container {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      backdrop-filter: blur(12px);
+    }
+
+    .opps-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .opps-table th {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .opps-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      vertical-align: middle;
+    }
+
+    .opps-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+    }
+
+    /* Directory (Tab 3) */
+    .directorio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .dir-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .dir-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .dir-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+
+    .dir-categories {
+      margin-bottom: 1.25rem;
+    }
+
+    .dir-cat-title {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      max-width: 740px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: none;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .modal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .modal-entity {
+      color: var(--accent-blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-body p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-field label {
+      font-size: 0.725rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+
+    .modal-field .val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+    header { padding: 1rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+
+    main { padding: 1rem; }
+
+    .metrics-grid { grid-template-columns: 1fr; }
+
+    .opps-grid { grid-template-columns: 1fr; }
+
+    }
+
+    /* --- TOAST NOTIFICATIONS & BLINDAJE DE PRODUCCIÓN --- */
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #38bdf8;
+      color: #fff;
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+      font-size: 0.85rem;
+      z-index: 99999;
+      transform: translateY(150%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      max-width: 460px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      backdrop-filter: blur(16px);
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+
+
+    .aviso-corte {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .portal-footer {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 2.5rem;
+      color: var(--text-dim);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">NL</div>
+      <div class="brand-info">
+        <h1>RADAR DE LICITACIONES</h1>
+        <p>Procesos de SECOP II que hoy reciben ofertas • Next Level S.A.S.</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="status-badge">
+        <span class="dot"></span>
+        <span><span class="radar-total">0</span> Procesos Abiertos</span>
+      </div>
+      <a href="https://app.nextlevelsas.com/" target="_blank" rel="noopener" class="btn btn-secondary">
+        🌐 E-Learning Next Level
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Aviso de datos desactualizados (se muestra si el último corte tiene más de 36 h) -->
+    <div id="avisoCorte" class="aviso-corte" style="display:none;">
+      ⚠️ Datos desactualizados: el último corte válido es del <strong id="avisoCorteFecha">—</strong>. La actualización diaria no se ha completado; verifica cada proceso en SECOP II.
+    </div>
+
+    <!-- Indicadores del radar -->
+    <div class="metrics-grid">
+      <div class="metric-card" style="--card-color: var(--accent-emerald);">
+        <div class="metric-label">
+          <span>Procesos Abiertos en el Radar</span>
+          <span style="color: var(--accent-emerald);">● Recepción vigente</span>
+        </div>
+        <div class="metric-value radar-total" style="color:#34d399;">0</div>
+        <div class="metric-subtext" id="kpiAbiertosSecop">—</div>
+      </div>
+
+      <div class="metric-card" style="--card-color: var(--accent-rose);">
+        <div class="metric-label">
+          <span>Próximo Cierre</span>
+          <span style="color: var(--accent-rose);">● SECOP II</span>
+        </div>
+        <div class="metric-value" id="topKpiProximoCierre" style="font-size:1.7rem; color:#fb7185;">—</div>
+        <div class="metric-subtext" id="topKpiProximoCierreDetalle">Sin procesos abiertos en el radar</div>
+      </div>
+
+      <div class="metric-card" style="--card-color: var(--accent-blue);">
+        <div class="metric-label">
+          <span>Corte de Datos</span>
+          <span style="color: var(--accent-blue);">● Diario 06:00 COT</span>
+        </div>
+        <div class="metric-value" id="kpiCorte" style="font-size:1.7rem;">—</div>
+        <div class="metric-subtext">Fuente: SECOP II, datos abiertos (datos.gov.co)</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('radar', this)">
+        📡 Radar SECOP II (Abiertas Hoy)
+        <span class="badge-count"><span class="radar-total">0</span> Procesos</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('unspsc', this)">
+        🏷️ Catálogo Códigos UNSPSC
+        <span class="badge-count">20 Códigos</span>
+      </button>
+    </div>
+
+    <!-- TAB 2: RADAR DE OPORTUNIDADES -->
+    <div id="tab-radar" class="tab-pane active">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>Radar SECOP II: procesos que hoy reciben ofertas</h2>
+          <p id="radarSubtitulo">Procesos publicados en SECOP II con recepción de ofertas vigente, filtrados por el perfil de Next Level.</p>
+        </div>
+        <div class="view-controls">
+          <button class="btn btn-secondary" onclick="exportFilteredCSV()">
+            📥 Exportar CSV (<span id="exportCount">0</span>)
+          </button>
+          <button class="btn btn-secondary" onclick="descargarCalendarioICS()">
+            📅 Calendario de cierres (.ICS)
+          </button>
+          <button id="btnViewGrid" class="btn btn-primary" onclick="setViewMode('grid')">
+            🔲 Cuadrícula
+          </button>
+          <button id="btnViewTable" class="btn btn-secondary" onclick="setViewMode('table')">
+            📋 Tabla Detallada
+          </button>
+        </div>
+      </div>
+
+      <!-- Enhanced Filter Controls -->
+      <div class="filter-toolbar">
+        <!-- Search Row with Live Counter & Reset Button -->
+        <div class="search-row">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por entidad, objeto contractual, ID requerimiento, municipio, palabras clave..." oninput="filterOpportunities()">
+            <button id="btnClearSearch" onclick="clearSearchInput()" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text-dim); cursor:pointer; font-size:1.1rem; display:none;" title="Limpiar búsqueda">✕</button>
+          </div>
+          <button class="btn-reset-filters" onclick="resetAllFilters()">
+            🔄 Restablecer Filtros
+          </button>
+        </div>
+
+        <!-- Filter 2: Compatibilidad / Viabilidad Técnica -->
+        <div class="filter-chips">
+          <span class="chip-label">Afinidad:</span>
+          <button class="chip active" onclick="setFitFilter('TODOS', this)">Todos los Niveles</button>
+          <button class="chip" onclick="setFitFilter('TOP_FIT', this)">🔥 Alta (2 o más coincidencias)</button>
+          <button class="chip" onclick="setFitFilter('REGULAR_FIT', this)">⚡ Básica (1 coincidencia)</button>
+        </div>
+
+        <!-- Filter 3: Sector Contractual -->
+        <div class="filter-chips">
+          <span class="chip-label">Sector:</span>
+          <button class="chip active" onclick="setSectorFilter('TODOS', this)">Todos los Sectores</button>
+          <button class="chip" onclick="setSectorFilter('FARMACEUTICO', this)">🏥 Farmacéutico, Salud & HSEQ</button>
+          <button class="chip" onclick="setSectorFilter('CUMPLIMIENTO', this)">🛡️ Compliance, SAGRILAFT & Riesgos</button>
+          <button class="chip" onclick="setSectorFilter('LEGAL', this)">⚖️ Jurídico, Ciberseguridad & Datos</button>
+        </div>
+
+        <!-- Filter 4: Rango de Presupuesto -->
+        <div class="filter-chips">
+          <span class="chip-label">Presupuesto:</span>
+          <button class="chip active" onclick="setBudgetFilter('TODOS', this)">Todos los Montos</button>
+          <button class="chip" onclick="setBudgetFilter('MAYOR_500M', this)">💎 &gt; $500M COP</button>
+          <button class="chip" onclick="setBudgetFilter('100M_500M', this)">💰 $100M - $500M COP</button>
+          <button class="chip" onclick="setBudgetFilter('30M_100M', this)">💵 $30M - $100M COP</button>
+          <button class="chip" onclick="setBudgetFilter('MENOR_30M', this)">🏷️ &lt; $30M COP</button>
+        </div>
+
+        <!-- Filter 5: Alcance Geográfico -->
+        <div class="filter-chips">
+          <span class="chip-label">Territorio:</span>
+          <button class="chip active" onclick="setRegionFilter('TODOS', this)">Todos</button>
+          <button class="chip" onclick="setRegionFilter('CARIBE', this)">🌴 Región Caribe</button>
+          <button class="chip" onclick="setRegionFilter('NACIONAL', this)">🇨🇴 Resto del país</button>
+        </div>
+
+        <!-- Controls: Ordenamiento y Paginación -->
+        <div class="filter-controls-row">
+          <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <span style="font-size:0.775rem; font-weight:700; color:var(--text-dim); text-transform:uppercase;">Ordenar por:</span>
+            <select id="sortSelect" class="select-styled" onchange="setSortMode(this.value)">
+              <option value="CIERRE_ASC">⏰ Cierre más próximo</option>
+              <option value="FIT_DESC">⭐ Mayor afinidad</option>
+              <option value="PRICE_DESC">💰 Mayor Presupuesto ($$$ → $)</option>
+              <option value="PRICE_ASC">💵 Menor Presupuesto ($ → $$$)</option>
+              <option value="ENTITY_ASC">🏛️ Entidad Contratante (A → Z)</option>
+            </select>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <span style="font-size:0.775rem; font-weight:700; color:var(--text-dim); text-transform:uppercase;">Mostrar en pantalla:</span>
+            <select id="pageSizeSelect" class="select-styled" onchange="setPageSize(this.value)">
+              <option value="30">30 Convocatorias</option>
+              <option value="60">60 Convocatorias</option>
+              <option value="120">120 Convocatorias</option>
+              <option value="ALL">Todas las Convocatorias</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Real-Time Metrics Bar -->
+        <div class="live-kpi-bar">
+          <div class="live-kpi-item">
+            <span class="live-kpi-label">Procesos Filtrados</span>
+            <span class="live-kpi-val" id="kpiFilteredCount">0</span>
+          </div>
+          <div class="live-kpi-item">
+            <span class="live-kpi-label">Monto Total en Convocatorias</span>
+            <span class="live-kpi-val" id="kpiFilteredAmount" style="color:var(--accent-emerald);">$0 COP</span>
+          </div>
+          <div class="live-kpi-item">
+            <span class="live-kpi-label">Convocatorias de Alta Prioridad</span>
+            <span class="live-kpi-val" id="kpiHighPriorityCount" style="color:var(--accent-amber);">0</span>
+          </div>
+          <div class="live-kpi-item">
+            <span class="live-kpi-label">Promedio por Proceso</span>
+            <span class="live-kpi-val" id="kpiAverageAmount" style="color:#cbd5e1;">$0 COP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opportunities Dynamic Grid View -->
+      <div id="oppsContainer" class="opps-grid">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Load More Button -->
+      <div id="loadMoreContainer" class="load-more-container" style="display:none;">
+        <button class="btn-load-more" onclick="loadMoreOpps()">
+          ➕ Mostrar Más Convocatorias (+30)
+        </button>
+      </div>
+
+      <!-- Opportunities Dynamic Table View -->
+      <div id="oppsTableContainer" class="opps-table-container">
+        <table class="opps-table">
+          <thead>
+            <tr>
+              <th>Cierre</th>
+              <th>Sector</th>
+              <th>Entidad Contratante</th>
+              <th>Objeto Contractual</th>
+              <th>Presupuesto (COP)</th>
+              <th>Ubicación / Alcance</th>
+              <th>Modalidad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="oppsTableBody">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 5: CATÁLOGO DE CÓDIGOS UNSPSC -->
+    <div id="tab-unspsc" class="tab-pane">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>Catálogo Oficial de Códigos UNSPSC para Clasificación de Procura</h2>
+          <p>Códigos a 8 dígitos requeridos para el catálogo de bienes y servicios en Suplos Cloud, SAP Ariba, SIPROE Ecopetrol y Exiros. Haz clic en "Copiar" para pegarlos directamente en los formularios de registro.</p>
+        </div>
+      </div>
+
+      <div class="directorio-grid">
+
+        <div class="dir-card" style="border-top: 3px solid var(--accent-emerald);">
+          <div>
+            <div class="dir-header">
+              <span class="dir-company" style="font-size:1.15rem; color:var(--accent-emerald);">💊 Farmacéutica, Cosméticos, Alimentos e Insumos Médicos</span>
+            </div>
+            <div class="dir-categories" style="margin-top:1rem;">
+              <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+    
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">85101700</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de administración en salud y gestión farmacéutica</span>
+                  </div>
+                  <button onclick="copiarCodigo('85101700', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">51101500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Medicamentos y productos farmacéuticos para uso humano</span>
+                  </div>
+                  <button onclick="copiarCodigo('51101500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">51181500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Reactivos y suministros de laboratorio clínico y diagnóstico</span>
+                  </div>
+                  <button onclick="copiarCodigo('51181500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">80101600</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Consultoría en aseguramiento de calidad (BPM, BPL, CCAA INVIMA)</span>
+                  </div>
+                  <button onclick="copiarCodigo('80101600', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">42141500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Dispositivos médicos, instrumental e insumos hospitalarios</span>
+                  </div>
+                  <button onclick="copiarCodigo('42141500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">77101500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de consultoría ambiental y manejo de residuos (ISO 14001)</span>
+                  </div>
+                  <button onclick="copiarCodigo('77101500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:0.95rem;">92121500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Seguridad ocupacional y salud en el trabajo en laboratorios (SG-SST)</span>
+                  </div>
+                  <button onclick="copiarCodigo('92121500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="dir-card" style="border-top: 3px solid var(--accent-blue);">
+          <div>
+            <div class="dir-header">
+              <span class="dir-company" style="font-size:1.15rem; color:var(--accent-blue);">🛡️ Oficialía de Cumplimiento (SAGRILAFT / PTEE), Riesgos y HSEQ</span>
+            </div>
+            <div class="dir-categories" style="margin-top:1rem;">
+              <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+    
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">92121700</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de seguridad, cumplimiento normativo y control de riesgos (SAGRILAFT/PTEE)</span>
+                  </div>
+                  <button onclick="copiarCodigo('92121700', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">80101500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de consultoría empresarial, desarrollo organizacional y procesos</span>
+                  </div>
+                  <button onclick="copiarCodigo('80101500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">80101600</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Auditoría de gestión, control interno y sistemas integrados (ISO 9001, ISO 45001)</span>
+                  </div>
+                  <button onclick="copiarCodigo('80101600', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">80161500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de apoyo gerencial, coordinación de proyectos (PMO) e interventoría</span>
+                  </div>
+                  <button onclick="copiarCodigo('80161500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">86101600</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Capacitación corporativa en gestión del riesgo y prevención LA/FT/FPADM</span>
+                  </div>
+                  <button onclick="copiarCodigo('86101600', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-blue); font-size:0.95rem;">92121800</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Seguridad en la cadena de suministro y comercio seguro (Estándar BASC V6)</span>
+                  </div>
+                  <button onclick="copiarCodigo('92121800', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="dir-card" style="border-top: 3px solid var(--accent-indigo);">
+          <div>
+            <div class="dir-header">
+              <span class="dir-company" style="font-size:1.15rem; color:var(--accent-indigo);">⚖️ Blindaje Jurídico, Ciberseguridad ISO 27001 & Datos Personales</span>
+            </div>
+            <div class="dir-categories" style="margin-top:1rem;">
+              <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+    
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-indigo); font-size:0.95rem;">80121600</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de asesoría jurídica corporativa, contratos y derecho comercial</span>
+                  </div>
+                  <button onclick="copiarCodigo('80121600', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-indigo); font-size:0.95rem;">80121500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de contratación pública, blindaje estatal y régimen sancionatorio</span>
+                  </div>
+                  <button onclick="copiarCodigo('80121500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-indigo); font-size:0.95rem;">81111800</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Consultoría en seguridad de la información y ciberseguridad (ISO/IEC 27001:2022)</span>
+                  </div>
+                  <button onclick="copiarCodigo('81111800', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-indigo); font-size:0.95rem;">81112000</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Gobernanza de privacidad y protección de datos personales (Ley 1581 / SIC)</span>
+                  </div>
+                  <button onclick="copiarCodigo('81112000', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-indigo); font-size:0.95rem;">80121900</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios jurídicos anticorrupción y programas de transparencia (Ley 2195 de 2022)</span>
+                  </div>
+                  <button onclick="copiarCodigo('80121900', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="dir-card" style="border-top: 3px solid var(--accent-amber);">
+          <div>
+            <div class="dir-header">
+              <span class="dir-company" style="font-size:1.15rem; color:var(--accent-amber);">🌐 Plataforma Tecnológica E-Learning & Campus Virtual</span>
+            </div>
+            <div class="dir-categories" style="margin-top:1rem;">
+              <div class="dir-cat-title">Códigos de Compra (Copiar al portapapeles):</div>
+              <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+    
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-amber); font-size:0.95rem;">43232500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Software de gestión educativa, plataformas e-learning y campus virtual corporativo</span>
+                  </div>
+                  <button onclick="copiarCodigo('43232500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-amber); font-size:0.95rem;">81112200</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de mantenimiento y soporte de software en la nube (SaaS empresarial)</span>
+                  </div>
+                  <button onclick="copiarCodigo('81112200', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.8rem;">
+                  <div>
+                    <span style="font-family:'Outfit'; font-weight:700; color:var(--accent-amber); font-size:0.95rem;">81111500</span>
+                    <span style="color:var(--text-muted); margin-left:0.5rem;">Servicios de diseño, desarrollo y arquitectura de software y aplicaciones web</span>
+                  </div>
+                  <button onclick="copiarCodigo('81111500', this)" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.7rem; white-space:nowrap;">
+                    📋 Copiar
+                  </button>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <footer class="portal-footer">
+    Información pública de SECOP II (datos abiertos de Colombia Compra Eficiente en datos.gov.co), filtrada por afinidad temática.
+    Verifica siempre el pliego y la fecha y hora de cierre en SECOP II antes de ofertar. • Next Level S.A.S.
+  </footer>
+
+  <!-- Detalle del proceso -->
+  <div id="oppModal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <div id="modalEntity" class="modal-entity">Entidad</div>
+      <h3 id="modalTitle" class="modal-title">Título del Proceso</h3>
+
+      <div class="modal-grid">
+        <div class="modal-field">
+          <label>Presupuesto Oficial</label>
+          <div id="modalPrice" class="val" style="color:var(--accent-emerald); font-size:1.2rem;">$0 COP</div>
+        </div>
+        <div class="modal-field">
+          <label>Ubicación</label>
+          <div id="modalAlcance" class="val">Ubicación</div>
+        </div>
+        <div class="modal-field">
+          <label>Sector temático</label>
+          <div id="modalSector" class="val" style="color:var(--accent-amber);">—</div>
+        </div>
+        <div class="modal-field">
+          <label>Afinidad</label>
+          <div id="modalFit" class="val" style="color:var(--accent-emerald);">—</div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <label style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--text-dim); margin-bottom:0.5rem; display:block;">Descripción Completa del Objeto:</label>
+        <p id="modalDesc">Descripción</p>
+      </div>
+
+      <!-- Datos del proceso en SECOP II -->
+      <div style="background:rgba(15, 23, 42, 0.95); border:1px solid rgba(56, 189, 248, 0.35); border-radius:var(--radius-sm); padding:1rem; margin:1rem 0;">
+        <div style="font-size:0.75rem; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:0.75rem;">
+          <span>📋 Datos del proceso en SECOP II</span>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:0.75rem; text-align:center;">
+          <div style="background:rgba(255,255,255,0.03); padding:0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.05);">
+            <div style="font-size:0.65rem; color:#94a3b8; text-transform:uppercase; font-weight:600;">Modalidad</div>
+            <div id="modalModalidad" style="font-weight:700; color:#38bdf8; font-size:0.85rem; margin-top:2px;">—</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.05);">
+            <div style="font-size:0.65rem; color:#94a3b8; text-transform:uppercase; font-weight:600;">Publicado</div>
+            <div id="modalPublicacion" style="font-weight:700; color:#a78bfa; font-size:0.95rem; margin-top:2px;">—</div>
+          </div>
+          <div style="background:rgba(244, 63, 94, 0.10); border:1px solid rgba(244, 63, 94, 0.35); padding:0.6rem; border-radius:6px;">
+            <div style="font-size:0.65rem; color:#fb7185; text-transform:uppercase; font-weight:700;">Cierre de recepción</div>
+            <div id="modalCierre" style="font-weight:800; color:#fff; font-size:0.95rem; margin-top:2px;">—</div>
+          </div>
+        </div>
+        <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.75rem;">Palabras clave encontradas: <strong id="modalCoincidencias" style="color:#e2e8f0;">—</strong></div>
+        <div style="font-size:0.7rem; color:#64748b; margin-top:0.35rem;">SECOP publica solo la fecha de cierre; la hora exacta está en el pliego.</div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:1rem;">
+        <button class="btn btn-secondary" onclick="closeModalDirect()">Cerrar</button>
+        <a id="modalSecopLink" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+          🌐 Ver Proceso Oficial en SECOP II
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastNotification" class="toast-notification">
+    <span id="toastIcon" style="font-size:1.2rem;">📋</span>
+    <span id="toastMsg" style="line-height:1.35;">Mensaje del sistema</span>
+  </div>
+
+  <script>
+    const OPORTUNIDADES = [{"id_requerimiento":"ANIM-011-2026","id_proceso":"CO1.REQ.11275900","entidad":"AGENCIA NACIONAL INMOBILIARIA VIRGILIO BARCO VARGAS","objeto":"Contratar los servicios de Auditoría Interna de Calidad bajo la norma ISO 9001:2015 para la Agencia Nacional Inmobiliaria Virgilio Barco Vargas - ANIM","presupuesto_cop":0,"presupuesto_formato":"Sin presupuesto publicado","plataforma":"SECOP II","modalidad":"Solicitud de información a los Proveedores","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-27","cierre":"2026-11-03","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11129675","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["iso 9001","auditoria interna"],"score_relevancia":2,"nueva":false},{"id_requerimiento":"SAMC-SGR-0015-2026 (Manifestación de interés (Menor Cuantía))","id_proceso":"CO1.REQ.11278192","entidad":"GOBERNACION DEL DEPARTAMENTO DEL CESAR","objeto":"BRINDAR LAS HERRAMIENTAS NECESARIAS PARA FORTALECIMIENTO DE LA RED HOSPITALARIA EN LA PREPARACIÓN E IMPLEMENTACIÓN DEL PLAN DE GESTIÓN DEL RIESGO MULTI AMENAZA COMO POLÍTICA DE HOSPITALES RESILIENTE","presupuesto_cop":197910508,"presupuesto_formato":"$197.910.508 COP","plataforma":"SECOP II","modalidad":"Selección Abreviada de Menor Cuantía","alcance":"Región Caribe (Cesar)","ubicacion":"Valledupar, Cesar","fase":"Manifestación de interés (Menor Cuantía)","publicacion":"2026-10-27","cierre":"2026-11-03","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11132194","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["gestion del riesgo"],"score_relevancia":1,"nueva":false},{"id_requerimiento":"CMC 35-2026","id_proceso":"CO1.REQ.11284399","entidad":"TECNOLÓGICO DE ARTES DEBORA ARANGO INSTITUCIÓN REDEFINIDA","objeto":"Contratar la prestación de servicios especializados en tecnologías de la información para la gestión, migración, alojamiento (hosting), despliegue de la plataforma Moodle, soporte técnico e implementación de ciberseguridad en la infraestructura web y LMS que soporta los proyectos y servicios institucionales y externos, conformada por 23 activos digitales (22 sitios web y 1 plataforma Moodle).","presupuesto_cop":27836000,"presupuesto_formato":"$27.836.000 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Antioquia)","ubicacion":"Envigado, Antioquia","fase":"Presentación de oferta","publicacion":"2026-10-28","cierre":"2026-11-03","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11138488","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":true},{"id_requerimiento":"DJC-MC-08.04-099-2026","id_proceso":"CO1.REQ.11285404","entidad":"UNIAJC","objeto":"CONTRATAR LOS SERVICIOS DE ASESORÍA ESPECIALIZADA PARA ARTICULACIÓN SIGO+ ENTRE LOS SISTEMAS DE GESTIÓN DE CALIDAD, SST, AMBIENTAL, SEGURIDAD DE LA INFORMACIÓN, ANTISOBORNO, CONTINUIDAD DEL NEGOCIO Y MIPG, PARA LA VIGENCIA 2026","presupuesto_cop":22602500,"presupuesto_formato":"$22.602.500 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Valle del Cauca)","ubicacion":"Cali, Valle del Cauca","fase":"Presentación de oferta","publicacion":"2026-10-28","cierre":"2026-11-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11138908","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["mipg","gestion de calidad"],"score_relevancia":2,"nueva":true},{"id_requerimiento":"MC-025 DE 2026","id_proceso":"CO1.REQ.11272878","entidad":"ALCALDIA DE MOCOA","objeto":"APOYO A LA CONSULTORÍA PARA LA ACTUALIZACIÓN DEL MANUAL DE CONTRATACIÓN, PARA LA ALCALDÍA DE MOCOA PUTUMAYO, DE ACUERDO A LOS NUEVOS LINEAMIENTOS SEÑALADOS EN EL PROCESO DE CONTRATACIÓN ESTATAL PUTUMAYO","presupuesto_cop":49025340,"presupuesto_formato":"$49.025.340 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (No Definido)","ubicacion":"No Definido","fase":"Presentación de oferta","publicacion":"2026-10-27","cierre":"2026-11-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11128434","sector":"LEGAL / ISO 27001","coincidencias":["contratacion estatal"],"score_relevancia":1,"nueva":false},{"id_requerimiento":"SMC-208-2026","id_proceso":"CO1.REQ.11287119","entidad":"ALCALDIA MUNICIPIO DE VILLAVICENCIO","objeto":"PRESTACIÓN DE SERVICIOS LOGÍSTICOS INTEGRALES PARA LA EJECUCIÓN DE ACCIONES DE PROMOCIÓN, PREVENCIÓN Y GESTIÓN DEL RIESGO FRENTE A ENFERMEDADES TRANSMITIDAS POR VECTORES Y ZOONÓTICAS A TRAVÉS DE JORNADAS Y CAMPAÑAS DE SALUD EN EL MUNICIPIO DE VILLAVICENCIO","presupuesto_cop":99999652,"presupuesto_formato":"$99.999.652 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Meta)","ubicacion":"Villavicencio, Meta","fase":"Presentación de oferta","publicacion":"2026-10-29","cierre":"2026-11-05","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11140866","sector":"CUMPLIMIENTO / CALIDAD","coincidencias":["gestion del riesgo"],"score_relevancia":1,"nueva":true},{"id_requerimiento":"FDLSC-MIC-012-2026(167021)","id_proceso":"CO1.REQ.11266355","entidad":"ALCALDIA LOCAL DE SAN CRISTOBAL","objeto":"CONTRATAR LA PRESTACIÓN DE LOS SERVICIOS ESPECIALIZADOS PARA LA REALIZACIÓN DE EXÁMENES DE ALCOHOLEMIA EN SANGRE Y TAMIZAJE DE SUSTANCIAS PSICOACTIVAS MEDIANTE PRUEBA DE ORINA ¿ TEST DE CINCO (5) SUSTANCIAS, DIRIGIDOS A LOS CONDUCTORES DEL FONDO DE DESARROLLO LOCAL DE SAN CRISTÓBAL, EN EL MARCO DE LA IMPLEMENTACIÓN Y CUMPLIMIENTO DEL SISTEMA DE GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO (SG-SST), EL PLAN ESTRATÉGICO DE SEGURIDAD VIAL (PESV) Y LA NORMATIVIDAD VIGENTE APLICABLE EN MATERIA DE PREVE","presupuesto_cop":22724000,"presupuesto_formato":"$22.724.000 COP","plataforma":"SECOP II","modalidad":"Mínima cuantía","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de oferta","publicacion":"2026-10-26","cierre":"2026-11-09","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11125832","sector":"FARMACEUTICO / SALUD","coincidencias":["sg-sst"],"score_relevancia":1,"nueva":false},{"id_requerimiento":"UMV-SASI-008-2026","id_proceso":"CO1.REQ.11267108","entidad":"UNIDAD ADMINISTRATIVA ESPECIAL DE REHABILITACIÓN Y MANTENIMIENTO VIAL","objeto":"SUSCRIPCIÓN, IMPLEMENTACIÓN Y SOPORTE DE UNA PLATAFORMA DE CIBERSEGURIDAD DE NUEVA GENERACIÓN PARA LA PROTECCIÓN INTEGRAL DE LOS ACTIVOS DIGITALES DE LA UAERMV, ORIENTADA A LA PREVENCIÓN, DETECCIÓN Y RESPUESTA AVANZADA ANTE AMENAZAS EN ENDPOINTS Y PREVENCIÓN DE PÉRDIDAS DE DATOS","presupuesto_cop":523652448,"presupuesto_formato":"$523.652.448 COP","plataforma":"SECOP II","modalidad":"Selección abreviada subasta inversa","alcance":"Resto del país (Distrito Capital de Bogotá)","ubicacion":"Bogotá, Distrito Capital de Bogotá","fase":"Presentación de observaciones","publicacion":"2026-10-26","cierre":"2026-11-18","link_secop":"https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.11125109","sector":"LEGAL / ISO 27001","coincidencias":["ciberseguridad"],"score_relevancia":1,"nueva":false}];
+    const RADAR_META = {"generado":"2026-10-31T15:58:54.765Z","fecha_corte":"2026-10-31","procesos_abiertos_secop":2202,"total":8,"fuente":"SECOP II, datos abiertos (datos.gov.co, conjunto p6dx-8zbt)"};
+
+    // --- Utilidades del radar ---
+    // Los textos vienen de SECOP II (fuente externa): se escapan antes de insertarlos como HTML.
+    function esc(valor) {
+      return String(valor == null ? '' : valor).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    }
+
+    function hoyColombia() {
+      return new Date(Date.now() - 5 * 3600 * 1000).toISOString().slice(0, 10);
+    }
+
+    function diasHastaCierre(opp) {
+      if (!opp.cierre) return Infinity;
+      return Math.round((Date.parse(opp.cierre) - Date.parse(hoyColombia())) / 86400000);
+    }
+
+    function fmtFecha(iso) {
+      if (!iso) return 'sin fecha';
+      const [a, m, d] = iso.split('-');
+      const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+      return parseInt(d, 10) + '-' + meses[parseInt(m, 10) - 1] + '-' + a;
+    }
+
+    // SECOP publica solo la fecha de cierre; la hora exacta está en el pliego.
+    function textoCierre(opp) {
+      const dias = diasHastaCierre(opp);
+      if (dias === Infinity) return 'Cierre sin fecha';
+      if (dias < 0) return 'Cerró el ' + fmtFecha(opp.cierre);
+      if (dias === 0) return 'Cierra hoy';
+      return 'Cierra ' + fmtFecha(opp.cierre) + ' (' + dias + (dias === 1 ? ' día' : ' días') + ')';
+    }
+
+    function textoAfinidad(opp) {
+      const n = (opp.coincidencias || []).length;
+      return n + (n === 1 ? ' coincidencia' : ' coincidencias');
+    }
+
+    function enlaceSecop(opp) {
+      return /^https:\/\//.test(opp.link_secop || '') ? opp.link_secop : '#';
+    }
+
+    // Procesos del radar que siguen abiertos según la fecha de hoy (el radar se publica una vez al día).
+    function oportunidadesVigentes() {
+      return OPORTUNIDADES.filter(o => diasHastaCierre(o) >= 0);
+    }
+
+    // Procesos con 2 o más coincidencias que cierran dentro de los próximos `dias` días.
+    function proximosCierres(dias) {
+      return oportunidadesVigentes()
+        .filter(o => (o.coincidencias || []).length >= 2 && diasHastaCierre(o) <= dias)
+        .sort((a, b) => (a.cierre || '').localeCompare(b.cierre || ''));
+    }
+
+    // --- Estado y filtros del radar ---
+    let currentRegion = 'TODOS';
+    let currentBudget = 'TODOS';
+    let currentFit = 'TODOS';
+    let currentSector = 'TODOS';
+    let currentSort = 'CIERRE_ASC';
+    let currentPageSize = 30;
+    let displayedLimit = 30;
+    let searchQuery = '';
+
+    function switchTab(tabId, boton) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      if (boton) boton.classList.add('active');
+    }
+
+    function setViewMode(mode) {
+      const grid = document.getElementById('oppsContainer');
+      const table = document.getElementById('oppsTableContainer');
+      grid.style.display = mode === 'grid' ? 'grid' : 'none';
+      table.style.display = mode === 'grid' ? 'none' : 'block';
+      document.getElementById('btnViewGrid').className = mode === 'grid' ? 'btn btn-primary' : 'btn btn-secondary';
+      document.getElementById('btnViewTable').className = mode === 'grid' ? 'btn btn-secondary' : 'btn btn-primary';
+    }
+
+    function activarChip(el) {
+      el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
+      renderFilteredOpportunities();
+    }
+
+    function setFitFilter(fit, el) { currentFit = fit; activarChip(el); }
+    function setSectorFilter(sector, el) { currentSector = sector; activarChip(el); }
+    function setRegionFilter(region, el) { currentRegion = region; activarChip(el); }
+    function setBudgetFilter(budget, el) { currentBudget = budget; activarChip(el); }
+
+    function setSortMode(mode) {
+      currentSort = mode;
+      renderFilteredOpportunities();
+    }
+
+    function setPageSize(val) {
+      currentPageSize = (val === 'ALL') ? 'ALL' : parseInt(val, 10);
+      displayedLimit = (val === 'ALL') ? 9999 : parseInt(val, 10);
+      renderFilteredOpportunities();
+    }
+
+    function loadMoreOpps() {
+      displayedLimit += 30;
+      renderFilteredOpportunities();
+    }
+
+    function filterOpportunities() {
+      const input = document.getElementById('searchInput');
+      searchQuery = (input.value || '').toLowerCase().trim();
+      const clearBtn = document.getElementById('btnClearSearch');
+      if (clearBtn) clearBtn.style.display = searchQuery ? 'block' : 'none';
+      displayedLimit = (currentPageSize === 'ALL') ? 9999 : currentPageSize;
+      renderFilteredOpportunities();
+    }
+
+    function clearSearchInput() {
+      document.getElementById('searchInput').value = '';
+      searchQuery = '';
+      const clearBtn = document.getElementById('btnClearSearch');
+      if (clearBtn) clearBtn.style.display = 'none';
+      renderFilteredOpportunities();
+    }
+
+    function resetAllFilters() {
+      currentRegion = 'TODOS';
+      currentBudget = 'TODOS';
+      currentFit = 'TODOS';
+      currentSector = 'TODOS';
+      currentSort = 'CIERRE_ASC';
+      currentPageSize = 30;
+      displayedLimit = 30;
+      searchQuery = '';
+
+      const input = document.getElementById('searchInput');
+      if (input) input.value = '';
+      const clearBtn = document.getElementById('btnClearSearch');
+      if (clearBtn) clearBtn.style.display = 'none';
+      const sortSel = document.getElementById('sortSelect');
+      if (sortSel) sortSel.value = 'CIERRE_ASC';
+      const pageSel = document.getElementById('pageSizeSelect');
+      if (pageSel) pageSel.value = '30';
+
+      document.querySelectorAll('#tab-radar .filter-chips').forEach(group => {
+        group.querySelectorAll('.chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+      });
+      renderFilteredOpportunities();
+    }
+
+    function clasificarSectorOpp(opp) {
+      const sector = opp.sector || '';
+      if (sector.startsWith('FARMACEUTICO')) return { label: '💊 Farmacéutico / Salud', cls: 'badge-sector-farmacia', sector: 'FARMACEUTICO' };
+      if (sector.startsWith('CUMPLIMIENTO')) return { label: '🛡️ Cumplimiento / Calidad', cls: 'badge-sector-cumplimiento', sector: 'CUMPLIMIENTO' };
+      if (sector.startsWith('LEGAL')) return { label: '⚖️ Legal / Ciber', cls: 'badge-sector-legal', sector: 'LEGAL' };
+      return { label: '🏛️ General', cls: 'badge-nacional', sector: 'GENERAL' };
+    }
+
+    function getFilteredList() {
+      const list = oportunidadesVigentes().filter(opp => {
+        const textToSearch = [opp.entidad, opp.objeto, opp.id_requerimiento, opp.ubicacion, opp.modalidad]
+          .map(v => v || '').join(' ').toLowerCase();
+        const matchText = searchQuery === '' || textToSearch.includes(searchQuery);
+
+        let matchRegion = true;
+        if (currentRegion === 'CARIBE') matchRegion = (opp.alcance || '').includes('Caribe');
+        if (currentRegion === 'NACIONAL') matchRegion = !(opp.alcance || '').includes('Caribe');
+
+        let matchBudget = true;
+        const val = opp.presupuesto_cop || 0;
+        if (currentBudget === 'MAYOR_500M') matchBudget = val >= 500000000;
+        if (currentBudget === '100M_500M') matchBudget = val >= 100000000 && val < 500000000;
+        if (currentBudget === '30M_100M') matchBudget = val >= 30000000 && val < 100000000;
+        if (currentBudget === 'MENOR_30M') matchBudget = val < 30000000;
+
+        const score = (opp.coincidencias || []).length;
+        let matchFit = true;
+        if (currentFit === 'TOP_FIT') matchFit = score >= 2;
+        if (currentFit === 'REGULAR_FIT') matchFit = score === 1;
+
+        const matchSector = currentSector === 'TODOS' || clasificarSectorOpp(opp).sector === currentSector;
+        return matchText && matchRegion && matchBudget && matchFit && matchSector;
+      });
+
+      if (currentSort === 'CIERRE_ASC') {
+        list.sort((a, b) => (a.cierre || '9999').localeCompare(b.cierre || '9999') || (b.score_relevancia || 0) - (a.score_relevancia || 0));
+      } else if (currentSort === 'FIT_DESC') {
+        list.sort((a, b) => (b.score_relevancia || 0) - (a.score_relevancia || 0) || (b.presupuesto_cop || 0) - (a.presupuesto_cop || 0));
+      } else if (currentSort === 'PRICE_DESC') {
+        list.sort((a, b) => (b.presupuesto_cop || 0) - (a.presupuesto_cop || 0));
+      } else if (currentSort === 'PRICE_ASC') {
+        list.sort((a, b) => (a.presupuesto_cop || 0) - (b.presupuesto_cop || 0));
+      } else if (currentSort === 'ENTITY_ASC') {
+        list.sort((a, b) => (a.entidad || '').localeCompare(b.entidad || ''));
+      }
+
+      const totalAmount = list.reduce((acc, o) => acc + (o.presupuesto_cop || 0), 0);
+      const fmtMoney = (n) => '$' + n.toLocaleString('es-CO') + ' COP';
+      const fijar = (id, texto) => { const el = document.getElementById(id); if (el) el.innerText = texto; };
+      fijar('kpiFilteredCount', list.length);
+      fijar('kpiFilteredAmount', fmtMoney(totalAmount));
+      fijar('kpiHighPriorityCount', list.filter(o => (o.coincidencias || []).length >= 2).length);
+      fijar('kpiAverageAmount', fmtMoney(list.length ? Math.round(totalAmount / list.length) : 0));
+      return list;
+    }
+
+    function renderFilteredOpportunities() {
+      const container = document.getElementById('oppsContainer');
+      const tableBody = document.getElementById('oppsTableBody');
+      container.innerHTML = '';
+      tableBody.innerHTML = '';
+
+      const filtered = getFilteredList();
+      const exportCountEl = document.getElementById('exportCount');
+      if (exportCountEl) exportCountEl.innerText = filtered.length;
+      const loadMore = document.getElementById('loadMoreContainer');
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--text-dim);">
+            <div style="font-size:2.5rem; margin-bottom:0.75rem;">🔍</div>
+            <p style="font-size:1.05rem; font-weight:600; color:#fff;">No hay procesos que coincidan con los criterios seleccionados.</p>
+            <p style="margin-top:0.5rem; font-size:0.85rem;">Prueba con "Todos" en los filtros o restablece la búsqueda.</p>
+            <button class="btn btn-secondary" onclick="resetAllFilters()" style="margin-top:1rem;">Restablecer Filtros</button>
+          </div>`;
+        tableBody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:2rem; color:var(--text-dim);">No hay procesos con los filtros aplicados.</td></tr>';
+        if (loadMore) loadMore.style.display = 'none';
+        return;
+      }
+
+      filtered.slice(0, displayedLimit).forEach(opp => {
+        const badgeClass = (opp.alcance || '').includes('Caribe') ? 'badge-caribe' : 'badge-nacional';
+        const afinidad = textoAfinidad(opp);
+        const secInfo = clasificarSectorOpp(opp);
+
+        const card = document.createElement('div');
+        card.className = 'opp-card';
+        card.onclick = () => openModal(opp);
+        card.innerHTML = `
+          <div>
+            <div class="opp-header">
+              <div style="display:flex; gap:0.4rem; align-items:center; flex-wrap:wrap;">
+                <span class="opp-badge ${badgeClass}">${esc(opp.alcance)}</span>
+                <span class="badge-sector ${secInfo.cls}">${secInfo.label}</span>
+                ${opp.nueva ? '<span class="opp-badge badge-caribe">🆕 Nueva</span>' : ''}
+              </div>
+              <span class="badge-fit">${esc(afinidad)}</span>
+            </div>
+            <div class="opp-entity">${esc(opp.entidad)}</div>
+            <div class="opp-title">${esc(opp.objeto)}</div>
+            <div class="opp-meta">
+              <div class="opp-meta-item">⏰ ${esc(textoCierre(opp))}</div>
+              <div class="opp-meta-item">📑 ${esc(opp.modalidad || 'Modalidad no informada')}</div>
+              <div class="opp-meta-item">📍 ${esc(opp.ubicacion || 'Colombia')}</div>
+              <div class="opp-meta-item">🔖 Ref: ${esc(opp.id_requerimiento || 'N/A')}</div>
+            </div>
+          </div>
+          <div class="opp-footer">
+            <div class="opp-price">${esc(opp.presupuesto_formato)}</div>
+          </div>`;
+        container.appendChild(card);
+
+        const tr = document.createElement('tr');
+        tr.onclick = () => openModal(opp);
+        tr.innerHTML = `
+          <td><span class="badge-fit">${esc(fmtFecha(opp.cierre))}</span><div style="font-size:0.7rem; color:var(--text-dim); margin-top:0.25rem;">${esc(afinidad)}</div></td>
+          <td><span class="badge-sector ${secInfo.cls}">${secInfo.label}</span></td>
+          <td style="font-weight:700; color:var(--accent-blue); max-width:180px;">${esc(opp.entidad)}</td>
+          <td style="max-width:320px; line-height:1.4;">${esc((opp.objeto || '').slice(0, 110))}...</td>
+          <td style="font-family:'Outfit'; font-weight:700; color:var(--accent-emerald); font-size:1rem;">${esc(opp.presupuesto_formato)}</td>
+          <td><span class="opp-badge ${badgeClass}">${esc(opp.alcance)}</span></td>
+          <td style="color:var(--accent-amber); font-weight:600;">${esc(opp.modalidad || '')}</td>
+          <td>
+            <a href="${esc(enlaceSecop(opp))}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.75rem;">Ver 🌐</a>
+          </td>`;
+        tableBody.appendChild(tr);
+      });
+
+      if (loadMore) loadMore.style.display = (displayedLimit < filtered.length) ? 'flex' : 'none';
+    }
+
+    function copiarCodigo(codigo, btn) {
+      navigator.clipboard.writeText(codigo).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = '✓ ¡Copiado!';
+        btn.style.background = 'var(--accent-emerald)';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1800);
+      });
+    }
+
+    function openModal(opp) {
+      const fijar = (id, texto) => { document.getElementById(id).innerText = texto; };
+      fijar('modalEntity', opp.entidad);
+      fijar('modalTitle', (opp.objeto || '').slice(0, 140) + '...');
+      fijar('modalDesc', opp.objeto || '');
+      fijar('modalPrice', opp.presupuesto_formato);
+      fijar('modalAlcance', opp.ubicacion || opp.alcance || 'Colombia');
+      fijar('modalSector', clasificarSectorOpp(opp).label);
+      fijar('modalFit', textoAfinidad(opp));
+      fijar('modalModalidad', opp.modalidad || '—');
+      fijar('modalPublicacion', fmtFecha(opp.publicacion));
+      fijar('modalCierre', textoCierre(opp));
+      fijar('modalCoincidencias', (opp.coincidencias || []).join(', ') || '—');
+      document.getElementById('modalSecopLink').href = enlaceSecop(opp);
+      document.getElementById('oppModal').classList.add('active');
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'oppModal') document.getElementById('oppModal').classList.remove('active');
+    }
+
+    function closeModalDirect() {
+      document.getElementById('oppModal').classList.remove('active');
+    }
+
+    function descargarArchivo(contenido, tipo, nombre) {
+      const url = URL.createObjectURL(new Blob([contenido], { type: tipo }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = nombre;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportFilteredCSV() {
+      const filtered = getFilteredList();
+      if (filtered.length === 0) {
+        mostrarToast('No hay procesos para exportar con los filtros seleccionados.', 3500, '📥');
+        return;
+      }
+      const q = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      let csv = 'Cierre,Entidad,Sector,Coincidencias,Modalidad,Objeto,Presupuesto COP,Ubicacion,Link SECOP\n';
+      filtered.forEach(o => {
+        csv += [
+          o.cierre || '', q(o.entidad), q(clasificarSectorOpp(o).label), q((o.coincidencias || []).join('; ')),
+          q(o.modalidad), q(o.objeto), o.presupuesto_cop || 0, q(o.ubicacion), o.link_secop || ''
+        ].join(',') + '\n';
+      });
+      descargarArchivo(csv, 'text/csv;charset=utf-8;', 'radar_secop_' + hoyColombia() + '.csv');
+    }
+
+    // --- Calendario (.ICS) ---
+    // Un evento de día completo por cada proceso con 2 o más coincidencias que cierra en los próximos 30 días.
+    function descargarCalendarioICS() {
+      const procesos = proximosCierres(30);
+      if (procesos.length === 0) {
+        mostrarToast('No hay procesos de alta afinidad que cierren en los próximos 30 días.', 3500, '📅');
+        return;
+      }
+      const icsTexto = (s) => String(s || '').replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\r?\n/g, '\\n');
+      const sello = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
+      const lineas = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Next Level SAS//Radar SECOP//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+      procesos.forEach(o => {
+        const siguiente = new Date(Date.parse(o.cierre) + 86400000).toISOString().slice(0, 10).replace(/-/g, '');
+        lineas.push(
+          'BEGIN:VEVENT',
+          'UID:' + icsTexto(o.id_proceso || o.id_requerimiento) + '@dashboard-licitaciones',
+          'DTSTAMP:' + sello,
+          'DTSTART;VALUE=DATE:' + o.cierre.replace(/-/g, ''),
+          'DTEND;VALUE=DATE:' + siguiente,
+          'SUMMARY:' + icsTexto('Cierre SECOP II: ' + o.entidad + ' (' + o.presupuesto_formato + ')'),
+          'DESCRIPTION:' + icsTexto((o.objeto || '').slice(0, 300) + ' | Ref: ' + o.id_requerimiento + ' | ' + (o.link_secop || '') + ' | Hora exacta en el pliego'),
+          'LOCATION:SECOP II',
+          'BEGIN:VALARM',
+          'TRIGGER:-P2D',
+          'ACTION:DISPLAY',
+          'DESCRIPTION:' + icsTexto('Cierra en 2 días: ' + o.entidad),
+          'END:VALARM',
+          'END:VEVENT'
+        );
+      });
+      lineas.push('END:VCALENDAR');
+
+      // RFC 5545: las líneas de más de 75 octetos se parten y continúan con un espacio inicial.
+      const CRLF = String.fromCharCode(13, 10);
+      const plegar = (linea) => {
+        const partes = [];
+        let actual = '';
+        for (const ch of linea) {
+          if (new TextEncoder().encode(actual + ch).length > (partes.length ? 74 : 75)) {
+            partes.push(actual);
+            actual = '';
+          }
+          actual += ch;
+        }
+        partes.push(actual);
+        return partes.join(CRLF + ' ');
+      };
+      descargarArchivo(lineas.map(plegar).join(CRLF), 'text/calendar;charset=utf-8;', 'cierres_radar_' + hoyColombia() + '.ics');
+    }
+
+    let toastTimeout = null;
+    function mostrarToast(mensaje, duracion = 4000, icono = '📋') {
+      const el = document.getElementById('toastNotification');
+      const msgEl = document.getElementById('toastMsg');
+      const iconEl = document.getElementById('toastIcon');
+      if (!el || !msgEl) return;
+      msgEl.innerText = mensaje;
+      if (iconEl) iconEl.innerText = icono;
+      el.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => el.classList.remove('show'), duracion);
+    }
+
+    // --- Indicadores que dependen del radar publicado ---
+    const HORAS_DESACTUALIZADO = 36;
+
+    function renderRadarResumen() {
+      const vigentes = oportunidadesVigentes();
+      document.querySelectorAll('.radar-total').forEach(el => { el.innerText = vigentes.length; });
+
+      const corte = RADAR_META.fecha_corte ? fmtFecha(RADAR_META.fecha_corte) : 'sin datos';
+      const fijar = (id, texto) => { const el = document.getElementById(id); if (el) el.innerText = texto; };
+      fijar('kpiCorte', corte);
+      fijar('kpiAbiertosSecop', 'De ' + (RADAR_META.procesos_abiertos_secop || 0).toLocaleString('es-CO') + ' procesos abiertos en SECOP II');
+      fijar('radarSubtitulo', 'Fuente: ' + RADAR_META.fuente + '. Corte: ' + corte + '. Solo procesos publicados, sin adjudicar, con recepción de ofertas vigente y objeto de consultoría.');
+
+      const proximo = vigentes.slice().sort((a, b) => (a.cierre || '9999').localeCompare(b.cierre || '9999'))[0];
+      if (proximo) {
+        const dias = diasHastaCierre(proximo);
+        fijar('topKpiProximoCierre', dias === 0 ? 'Hoy' : (dias + (dias === 1 ? ' día' : ' días')));
+        fijar('topKpiProximoCierreDetalle', proximo.entidad + ' • ' + textoCierre(proximo));
+      }
+
+      const generado = Date.parse(RADAR_META.generado || '');
+      const aviso = document.getElementById('avisoCorte');
+      if (aviso) {
+        const viejo = !generado || (Date.now() - generado) > HORAS_DESACTUALIZADO * 3600 * 1000;
+        aviso.style.display = viejo ? 'block' : 'none';
+        fijar('avisoCorteFecha', generado ? new Date(generado).toLocaleString('es-CO', { timeZone: 'America/Bogota' }) : 'sin datos');
+      }
+    }
+
+    renderRadarResumen();
+    renderFilteredOpportunities();
+  </script>
+</body>
+</html>
